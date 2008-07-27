@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the '«PROJECTNAMEASIDENTIFIER»' target in the '«PROJECTNAMEASIDENTIFIER»' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+	#import "PFKit.h"
+#endif

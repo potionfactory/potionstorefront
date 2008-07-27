@@ -1,0 +1,745 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		A10333520E32CD1800230ABD /* PFLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333510E32CD1800230ABD /* PFLogging.m */; };
+		A10333550E32CD2200230ABD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333540E32CD2200230ABD /* AppDelegate.m */; };
+		A10333720E32D0CC00230ABD /* BasicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333710E32D0CC00230ABD /* BasicTests.m */; };
+		A154EF7E0E3BE8EA002973AE /* PotionStoreFront.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = A154EF750E3BE81F002973AE /* PotionStoreFront.framework */; };
+		A154EF840E3BE93C002973AE /* PotionStoreFront.h in Headers */ = {isa = PBXBuildFile; fileRef = A154EF820E3BE93C002973AE /* PotionStoreFront.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A154EF850E3BE93C002973AE /* PotionStoreFront.m in Sources */ = {isa = PBXBuildFile; fileRef = A154EF830E3BE93C002973AE /* PotionStoreFront.m */; };
+		A154EFC10E3BEC4A002973AE /* PFStoreWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = A154EFBF0E3BEC4A002973AE /* PFStoreWindowController.h */; };
+		A154EFC20E3BEC4A002973AE /* PFStoreWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A154EFC00E3BEC4A002973AE /* PFStoreWindowController.m */; };
+		A154EFD50E3BED02002973AE /* PotionStoreFront.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A154EF750E3BE81F002973AE /* PotionStoreFront.framework */; };
+		A154F0610E3BF42E002973AE /* Store.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154F05F0E3BF42E002973AE /* Store.xib */; };
+		A154F08E0E3BFFBB002973AE /* master.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F08A0E3BFFBB002973AE /* master.png */; };
+		A154F08F0E3BFFBB002973AE /* amex.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F08B0E3BFFBB002973AE /* amex.png */; };
+		A154F0900E3BFFBB002973AE /* discover.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F08C0E3BFFBB002973AE /* discover.png */; };
+		A154F0910E3BFFBB002973AE /* visa.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F08D0E3BFFBB002973AE /* visa.png */; };
+		A154F0A00E3C02AB002973AE /* PFBox.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F09E0E3C02AB002973AE /* PFBox.h */; };
+		A154F0A10E3C02AB002973AE /* PFBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F09F0E3C02AB002973AE /* PFBox.m */; };
+		A154F0C10E3C0F1F002973AE /* PFGradientView.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F0BF0E3C0F1F002973AE /* PFGradientView.h */; };
+		A154F0C20E3C0F1F002973AE /* PFGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F0C00E3C0F1F002973AE /* PFGradientView.m */; };
+		A154F0FD0E3C1227002973AE /* cash.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F0FB0E3C1227002973AE /* cash.png */; };
+		A154F0FE0E3C1227002973AE /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F0FC0E3C1227002973AE /* lock.png */; };
+		A154F11E0E3C1678002973AE /* countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A154F11C0E3C1678002973AE /* countries.plist */; };
+		A154F12D0E3C19E1002973AE /* PFOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F12B0E3C19E1002973AE /* PFOrder.h */; };
+		A154F12E0E3C19E1002973AE /* PFOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F12C0E3C19E1002973AE /* PFOrder.m */; };
+		A154F1460E3C1B70002973AE /* PFAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F1440E3C1B70002973AE /* PFAddress.h */; };
+		A154F1470E3C1B70002973AE /* PFAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F1450E3C1B70002973AE /* PFAddress.m */; };
+		A154F1690E3C1D6D002973AE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A154F1680E3C1D6D002973AE /* AddressBook.framework */; };
+		A154F2440E3C37AE002973AE /* PFLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333510E32CD1800230ABD /* PFLogging.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A103337A0E32D18D00230ABD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D1107260486CEB800E47090;
+			remoteInfo = PotionStoreFront;
+		};
+		A154EF7A0E3BE8C8002973AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A154EF740E3BE81F002973AE;
+			remoteInfo = PotionStoreFront;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A154EF810E3BE916002973AE /* Copy Framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A154EF7E0E3BE8EA002973AE /* PotionStoreFront.framework in Copy Framework */,
+			);
+			name = "Copy Framework";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* PotionStoreFront_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotionStoreFront_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* TestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TestApp-Info.plist"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A103334E0E32CD1800230ABD /* PFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFKit.h; path = Sources/PFKit.h; sourceTree = "<group>"; };
+		A103334F0E32CD1800230ABD /* PFMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMacros.h; path = Sources/PFMacros.h; sourceTree = "<group>"; };
+		A10333500E32CD1800230ABD /* PFLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFLogging.h; path = Sources/PFLogging.h; sourceTree = "<group>"; };
+		A10333510E32CD1800230ABD /* PFLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFLogging.m; path = Sources/PFLogging.m; sourceTree = "<group>"; };
+		A10333530E32CD2200230ABD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A10333540E32CD2200230ABD /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A10333670E32CEF800230ABD /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10333680E32CEF800230ABD /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		A10333700E32D0CC00230ABD /* BasicTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTests.h; sourceTree = "<group>"; };
+		A10333710E32D0CC00230ABD /* BasicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTests.m; sourceTree = "<group>"; };
+		A154EF750E3BE81F002973AE /* PotionStoreFront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PotionStoreFront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A154EF820E3BE93C002973AE /* PotionStoreFront.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotionStoreFront.h; sourceTree = "<group>"; };
+		A154EF830E3BE93C002973AE /* PotionStoreFront.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PotionStoreFront.m; sourceTree = "<group>"; };
+		A154EF920E3BE9B8002973AE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A154EFBF0E3BEC4A002973AE /* PFStoreWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFStoreWindowController.h; sourceTree = "<group>"; };
+		A154EFC00E3BEC4A002973AE /* PFStoreWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFStoreWindowController.m; sourceTree = "<group>"; };
+		A154F0600E3BF42E002973AE /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/Store.xib; sourceTree = SOURCE_ROOT; };
+		A154F08A0E3BFFBB002973AE /* master.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = master.png; sourceTree = "<group>"; };
+		A154F08B0E3BFFBB002973AE /* amex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amex.png; sourceTree = "<group>"; };
+		A154F08C0E3BFFBB002973AE /* discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover.png; sourceTree = "<group>"; };
+		A154F08D0E3BFFBB002973AE /* visa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visa.png; sourceTree = "<group>"; };
+		A154F09E0E3C02AB002973AE /* PFBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFBox.h; path = ../PFBox.h; sourceTree = "<group>"; };
+		A154F09F0E3C02AB002973AE /* PFBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFBox.m; path = ../PFBox.m; sourceTree = "<group>"; };
+		A154F0BF0E3C0F1F002973AE /* PFGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFGradientView.h; sourceTree = "<group>"; };
+		A154F0C00E3C0F1F002973AE /* PFGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFGradientView.m; sourceTree = "<group>"; };
+		A154F0FB0E3C1227002973AE /* cash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cash.png; sourceTree = "<group>"; };
+		A154F0FC0E3C1227002973AE /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
+		A154F11D0E3C1678002973AE /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = English; path = English.lproj/countries.plist; sourceTree = "<group>"; };
+		A154F12B0E3C19E1002973AE /* PFOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFOrder.h; sourceTree = "<group>"; };
+		A154F12C0E3C19E1002973AE /* PFOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFOrder.m; sourceTree = "<group>"; };
+		A154F1440E3C1B70002973AE /* PFAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAddress.h; sourceTree = "<group>"; };
+		A154F1450E3C1B70002973AE /* PFAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAddress.m; sourceTree = "<group>"; };
+		A154F1680E3C1D6D002973AE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = /System/Library/Frameworks/AddressBook.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				A154EFD50E3BED02002973AE /* PotionStoreFront.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10333640E32CEF800230ABD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A154EF730E3BE81F002973AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A154F1690E3C1D6D002973AE /* AddressBook.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Test App */ = {
+			isa = PBXGroup;
+			children = (
+				A10333530E32CD2200230ABD /* AppDelegate.h */,
+				A10333540E32CD2200230ABD /* AppDelegate.m */,
+			);
+			name = "Test App";
+			path = Source;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A154F1680E3C1D6D002973AE /* AddressBook.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A154EF750E3BE81F002973AE /* PotionStoreFront.framework */,
+				8D1107320486CEB800E47090 /* TestApp.app */,
+				A10333670E32CEF800230ABD /* Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* PotionStoreFront */ = {
+			isa = PBXGroup;
+			children = (
+				A154EF800E3BE916002973AE /* Framework Code */,
+				080E96DDFE201D6D7F000001 /* Test App */,
+				A103336F0E32D0A100230ABD /* Tests */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				A103334D0E32CD1800230ABD /* PFKit */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = PotionStoreFront;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* PotionStoreFront_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			path = Source;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A154F0880E3BFFB3002973AE /* Images */,
+				A154EF920E3BE9B8002973AE /* Info.plist */,
+				8D1107310486CEB800E47090 /* TestApp-Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				A10333680E32CEF800230ABD /* Tests-Info.plist */,
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				A154F11C0E3C1678002973AE /* countries.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A103334D0E32CD1800230ABD /* PFKit */ = {
+			isa = PBXGroup;
+			children = (
+				A103334E0E32CD1800230ABD /* PFKit.h */,
+				A103334F0E32CD1800230ABD /* PFMacros.h */,
+				A10333500E32CD1800230ABD /* PFLogging.h */,
+				A10333510E32CD1800230ABD /* PFLogging.m */,
+			);
+			name = PFKit;
+			path = ../../Code/PFKit;
+			sourceTree = SOURCE_ROOT;
+		};
+		A103336F0E32D0A100230ABD /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A10333700E32D0CC00230ABD /* BasicTests.h */,
+				A10333710E32D0CC00230ABD /* BasicTests.m */,
+			);
+			name = Tests;
+			path = Source;
+			sourceTree = "<group>";
+		};
+		A154EF800E3BE916002973AE /* Framework Code */ = {
+			isa = PBXGroup;
+			children = (
+				A154EF820E3BE93C002973AE /* PotionStoreFront.h */,
+				A154EF830E3BE93C002973AE /* PotionStoreFront.m */,
+				A154EFBF0E3BEC4A002973AE /* PFStoreWindowController.h */,
+				A154EFC00E3BEC4A002973AE /* PFStoreWindowController.m */,
+				A154F32C0E3C5DC1002973AE /* Model */,
+				A154F32D0E3C5DC9002973AE /* View */,
+			);
+			name = "Framework Code";
+			path = Source;
+			sourceTree = "<group>";
+		};
+		A154F0880E3BFFB3002973AE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A154F0FB0E3C1227002973AE /* cash.png */,
+				A154F0FC0E3C1227002973AE /* lock.png */,
+				A154F08A0E3BFFBB002973AE /* master.png */,
+				A154F08B0E3BFFBB002973AE /* amex.png */,
+				A154F08C0E3BFFBB002973AE /* discover.png */,
+				A154F08D0E3BFFBB002973AE /* visa.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		A154F32C0E3C5DC1002973AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A154F12B0E3C19E1002973AE /* PFOrder.h */,
+				A154F12C0E3C19E1002973AE /* PFOrder.m */,
+				A154F1440E3C1B70002973AE /* PFAddress.h */,
+				A154F1450E3C1B70002973AE /* PFAddress.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A154F32D0E3C5DC9002973AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A154F05F0E3BF42E002973AE /* Store.xib */,
+				A154F09E0E3C02AB002973AE /* PFBox.h */,
+				A154F09F0E3C02AB002973AE /* PFBox.m */,
+				A154F0BF0E3C0F1F002973AE /* PFGradientView.h */,
+				A154F0C00E3C0F1F002973AE /* PFGradientView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A154EF700E3BE81F002973AE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A154EF840E3BE93C002973AE /* PotionStoreFront.h in Headers */,
+				A154EFC10E3BEC4A002973AE /* PFStoreWindowController.h in Headers */,
+				A154F0A00E3C02AB002973AE /* PFBox.h in Headers */,
+				A154F0C10E3C0F1F002973AE /* PFGradientView.h in Headers */,
+				A154F12D0E3C19E1002973AE /* PFOrder.h in Headers */,
+				A154F1460E3C1B70002973AE /* PFAddress.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* TestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "TestApp" */;
+			buildPhases = (
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				8D1107290486CEB800E47090 /* Resources */,
+				A154EF810E3BE916002973AE /* Copy Framework */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A154EF7B0E3BE8C8002973AE /* PBXTargetDependency */,
+			);
+			name = TestApp;
+			productInstallPath = "$(HOME)/Applications";
+			productName = PotionStoreFront;
+			productReference = 8D1107320486CEB800E47090 /* TestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A10333660E32CEF800230ABD /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A103336B0E32CEF800230ABD /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				A10333630E32CEF800230ABD /* Sources */,
+				A10333640E32CEF800230ABD /* Frameworks */,
+				A10333620E32CEF800230ABD /* Resources */,
+				A10333650E32CEF800230ABD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A103337B0E32D18D00230ABD /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = A10333670E32CEF800230ABD /* Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		A154EF740E3BE81F002973AE /* PotionStoreFront */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A154EF790E3BE81F002973AE /* Build configuration list for PBXNativeTarget "PotionStoreFront" */;
+			buildPhases = (
+				A154EF720E3BE81F002973AE /* Sources */,
+				A154EF700E3BE81F002973AE /* Headers */,
+				A154EF710E3BE81F002973AE /* Resources */,
+				A154EF730E3BE81F002973AE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PotionStoreFront;
+			productName = PotionStoreFront;
+			productReference = A154EF750E3BE81F002973AE /* PotionStoreFront.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PotionStoreFront" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* PotionStoreFront */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A154EF740E3BE81F002973AE /* PotionStoreFront */,
+				8D1107260486CEB800E47090 /* TestApp */,
+				A10333660E32CEF800230ABD /* Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10333620E32CEF800230ABD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A154EF710E3BE81F002973AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A154F0610E3BF42E002973AE /* Store.xib in Resources */,
+				A154F08E0E3BFFBB002973AE /* master.png in Resources */,
+				A154F08F0E3BFFBB002973AE /* amex.png in Resources */,
+				A154F0900E3BFFBB002973AE /* discover.png in Resources */,
+				A154F0910E3BFFBB002973AE /* visa.png in Resources */,
+				A154F0FD0E3C1227002973AE /* cash.png in Resources */,
+				A154F0FE0E3C1227002973AE /* lock.png in Resources */,
+				A154F11E0E3C1678002973AE /* countries.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A10333650E32CEF800230ABD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				A10333520E32CD1800230ABD /* PFLogging.m in Sources */,
+				A10333550E32CD2200230ABD /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10333630E32CEF800230ABD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10333720E32D0CC00230ABD /* BasicTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A154EF720E3BE81F002973AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A154EF850E3BE93C002973AE /* PotionStoreFront.m in Sources */,
+				A154EFC20E3BEC4A002973AE /* PFStoreWindowController.m in Sources */,
+				A154F0A10E3C02AB002973AE /* PFBox.m in Sources */,
+				A154F0C20E3C0F1F002973AE /* PFGradientView.m in Sources */,
+				A154F12E0E3C19E1002973AE /* PFOrder.m in Sources */,
+				A154F1470E3C1B70002973AE /* PFAddress.m in Sources */,
+				A154F2440E3C37AE002973AE /* PFLogging.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A103337B0E32D18D00230ABD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D1107260486CEB800E47090 /* TestApp */;
+			targetProxy = A103337A0E32D18D00230ABD /* PBXContainerItemProxy */;
+		};
+		A154EF7B0E3BE8C8002973AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A154EF740E3BE81F002973AE /* PotionStoreFront */;
+			targetProxy = A154EF7A0E3BE8C8002973AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD58150DA1D0A300B32029 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		A154F05F0E3BF42E002973AE /* Store.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A154F0600E3BF42E002973AE /* English */,
+			);
+			name = Store.xib;
+			sourceTree = "<group>";
+		};
+		A154F11C0E3C1678002973AE /* countries.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A154F11D0E3C1678002973AE /* English */,
+			);
+			name = countries.plist;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A10333690E32CEF800230ABD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Source/PotionStoreFront_Prefix.pch;
+				INFOPLIST_FILE = "Resources/Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Tests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		A103336A0E32CEF800230ABD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Source/PotionStoreFront_Prefix.pch;
+				INFOPLIST_FILE = "Resources/Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Tests;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		A154EF770E3BE81F002973AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Source/PotionStoreFront_Prefix.pch;
+				INFOPLIST_FILE = Resources/Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = PotionStoreFront;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A154EF780E3BE81F002973AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Source/PotionStoreFront_Prefix.pch;
+				INFOPLIST_FILE = Resources/Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = PotionStoreFront;
+				SKIP_INSTALL = YES;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Source/PotionStoreFront_Prefix.pch;
+				INFOPLIST_FILE = "Resources/TestApp-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = TestApp;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Source/PotionStoreFront_Prefix.pch;
+				INFOPLIST_FILE = "Resources/TestApp-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = TestApp;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A103336B0E32CEF800230ABD /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10333690E32CEF800230ABD /* Debug */,
+				A103336A0E32CEF800230ABD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A154EF790E3BE81F002973AE /* Build configuration list for PBXNativeTarget "PotionStoreFront" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A154EF770E3BE81F002973AE /* Debug */,
+				A154EF780E3BE81F002973AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "TestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PotionStoreFront" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
