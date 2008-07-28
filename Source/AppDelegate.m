@@ -12,17 +12,34 @@
 
 @implementation AppDelegate
 
++ (void)load
+{
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loaded:) name:NSBundleDidLoadNotification object:nil];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+//	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loaded:) name:NSBundleDidLoadNotification object:nil];
+}
+
++ (void)loaded:(NSNotification *)notification
+{
+	NSLog(@"loaded bundle: %@", [notification userInfo]);
 }
 
 - (IBAction)buy:(id)sender
 {
-	[NSApp beginSheet:[[PotionStoreFront sharedController] window]
-	   modalForWindow:mainWindow
-		modalDelegate:self 
-	   didEndSelector:nil
-		  contextInfo:NULL];
+	[[PotionStoreFront sharedStoreFront] setStoreURL:[NSURL URLWithString:@"http://localhost:3000/store"]];
+	[[PotionStoreFront sharedStoreFront] setDelegate:self];
+	[[PotionStoreFront sharedStoreFront] beginSheetModalForWindow:mainWindow];
+}
+
+- (IBAction)unload:(id)sender
+{
+	if ([[NSBundle bundleWithIdentifier:@"com.potionfactory.PotionStoreFront"] unload])
+		NSLog(@"unloaded");
+	else
+		NSLog(@"did not unload");
 }
 
 @end

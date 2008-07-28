@@ -6,14 +6,15 @@
 //  Copyright 2008 Potion Factory LLC. All rights reserved.
 //
 
-#import "PFGradientView.h"
+#import "PFBackgroundView.h"
 
 
-@implementation PFGradientView
+@implementation PFBackgroundView
 
 - (void)dealloc
 {
 	[image release];
+	[backgroundColor release];
 	[gradient release];
 	[minYBorderColor release];
 	[maxYBorderColor release];
@@ -37,19 +38,44 @@
 
 - (void)drawRect:(NSRect)rect
 {
-	if (rebuild) [self rebuildImage];
+	if (backgroundColor) {
+		[backgroundColor set];
+		NSRectFillUsingOperation(rect, NSCompositeSourceOver);
+		
+		BOOL drawMinYBorder = minYBorderColor != nil;
+		BOOL drawMaxYBorder = maxYBorderColor != nil;
 
-	NSRect bounds = [self bounds];
-	rect.origin.y = bounds.origin.y;
-	rect.size.height = bounds.size.height;
-	
-	NSRect srcRect = NSZeroRect;
-	srcRect.size = [image size];
-	[image setFlipped:NO];
-
-	[image drawInRect:rect fromRect:srcRect operation:NSCompositeCopy fraction:1.0];
-	
-	[super drawRect:rect];
+		// Draw the top border
+		if (drawMaxYBorder) {
+			NSRect lineRect = rect;
+			lineRect.origin.y = NSHeight(rect) - 2;
+			lineRect.size.height = 2;
+			[maxYBorderColor set];
+			NSRectFillUsingOperation(lineRect, NSCompositeSourceOver);
+		}
+		
+		// Draw the bottom border
+		if (drawMinYBorder) {
+			NSRect lineRect = rect;
+			lineRect.origin.y = 0;
+			lineRect.size.height = 1;
+			[minYBorderColor set];
+			NSRectFillUsingOperation(lineRect, NSCompositeSourceOver);
+		}
+	}
+	else {
+		if (rebuild) [self rebuildImage];
+		
+		NSRect bounds = [self bounds];
+		rect.origin.y = bounds.origin.y;
+		rect.size.height = bounds.size.height;
+		
+		NSRect srcRect = NSZeroRect;
+		srcRect.size = [image size];
+		[image setFlipped:NO];
+		
+		[image drawInRect:rect fromRect:srcRect operation:NSCompositeCopy fraction:1.0];
+	}
 }
 
 - (void)rebuildImage
@@ -61,7 +87,7 @@
 
 	NSRect rect = NSZeroRect;
 	rect.size = [self frame].size;
-
+	
 	// Build texture the first time
 	image = [[NSImage alloc] initWithSize:rect.size];
 	[image lockFocus];
@@ -105,12 +131,25 @@
 
 #pragma mark Accessors
 
+- (NSColor *)backgroundColor { return backgroundColor; }
+- (void)setBackgroundColor:(NSColor *)color
+{
+	if (backgroundColor != color) {
+		[backgroundColor release];
+		backgroundColor = [color retain];
+		[gradient release];
+		gradient = nil;
+	}
+}
+
 - (NSGradient *)gradient { return gradient; }
 - (void)setGradient:(NSGradient *)value
 {
 	if (value != gradient) {
 		[gradient release];
 		gradient = [value retain];
+		[backgroundColor release];
+		backgroundColor = nil;
 		rebuild = YES;
 	}
 }

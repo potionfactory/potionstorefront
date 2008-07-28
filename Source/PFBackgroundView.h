@@ -9,16 +9,18 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface PFGradientView : NSView
+@interface PFBackgroundView : NSView
 {
 	NSImage *image;
 	NSGradient *gradient;
+	NSColor *backgroundColor;
 	NSColor *minYBorderColor;
 	NSColor *maxYBorderColor;
 	BOOL rebuild;
 }
 
 @property(retain) NSGradient *gradient;
+@property(retain) NSColor *backgroundColor;
 @property(retain) NSColor *minYBorderColor;
 @property(retain) NSColor *maxYBorderColor;
 

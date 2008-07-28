@@ -13,10 +13,14 @@
 		A10333520E32CD1800230ABD /* PFLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333510E32CD1800230ABD /* PFLogging.m */; };
 		A10333550E32CD2200230ABD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333540E32CD2200230ABD /* AppDelegate.m */; };
 		A10333720E32D0CC00230ABD /* BasicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333710E32D0CC00230ABD /* BasicTests.m */; };
+		A11DC5020E3CD31A009DA8A8 /* NSInvocationAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A11DC5000E3CD31A009DA8A8 /* NSInvocationAdditions.h */; };
+		A11DC5030E3CD31A009DA8A8 /* NSInvocationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A11DC5010E3CD31A009DA8A8 /* NSInvocationAdditions.m */; };
+		A11DC72B0E3D23CD009DA8A8 /* PFProduct.h in Headers */ = {isa = PBXBuildFile; fileRef = A11DC7290E3D23CD009DA8A8 /* PFProduct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A11DC72C0E3D23CD009DA8A8 /* PFProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = A11DC72A0E3D23CD009DA8A8 /* PFProduct.m */; };
 		A154EF7E0E3BE8EA002973AE /* PotionStoreFront.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = A154EF750E3BE81F002973AE /* PotionStoreFront.framework */; };
 		A154EF840E3BE93C002973AE /* PotionStoreFront.h in Headers */ = {isa = PBXBuildFile; fileRef = A154EF820E3BE93C002973AE /* PotionStoreFront.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A154EF850E3BE93C002973AE /* PotionStoreFront.m in Sources */ = {isa = PBXBuildFile; fileRef = A154EF830E3BE93C002973AE /* PotionStoreFront.m */; };
-		A154EFC10E3BEC4A002973AE /* PFStoreWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = A154EFBF0E3BEC4A002973AE /* PFStoreWindowController.h */; };
+		A154EFC10E3BEC4A002973AE /* PFStoreWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = A154EFBF0E3BEC4A002973AE /* PFStoreWindowController.h */; settings = {ATTRIBUTES = (); }; };
 		A154EFC20E3BEC4A002973AE /* PFStoreWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A154EFC00E3BEC4A002973AE /* PFStoreWindowController.m */; };
 		A154EFD50E3BED02002973AE /* PotionStoreFront.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A154EF750E3BE81F002973AE /* PotionStoreFront.framework */; };
 		A154F0610E3BF42E002973AE /* Store.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154F05F0E3BF42E002973AE /* Store.xib */; };
@@ -26,17 +30,20 @@
 		A154F0910E3BFFBB002973AE /* visa.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F08D0E3BFFBB002973AE /* visa.png */; };
 		A154F0A00E3C02AB002973AE /* PFBox.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F09E0E3C02AB002973AE /* PFBox.h */; };
 		A154F0A10E3C02AB002973AE /* PFBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F09F0E3C02AB002973AE /* PFBox.m */; };
-		A154F0C10E3C0F1F002973AE /* PFGradientView.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F0BF0E3C0F1F002973AE /* PFGradientView.h */; };
-		A154F0C20E3C0F1F002973AE /* PFGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F0C00E3C0F1F002973AE /* PFGradientView.m */; };
-		A154F0FD0E3C1227002973AE /* cash.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F0FB0E3C1227002973AE /* cash.png */; };
+		A154F0C10E3C0F1F002973AE /* PFBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F0BF0E3C0F1F002973AE /* PFBackgroundView.h */; };
+		A154F0C20E3C0F1F002973AE /* PFBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F0C00E3C0F1F002973AE /* PFBackgroundView.m */; };
 		A154F0FE0E3C1227002973AE /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F0FC0E3C1227002973AE /* lock.png */; };
 		A154F11E0E3C1678002973AE /* countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A154F11C0E3C1678002973AE /* countries.plist */; };
-		A154F12D0E3C19E1002973AE /* PFOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F12B0E3C19E1002973AE /* PFOrder.h */; };
+		A154F12D0E3C19E1002973AE /* PFOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F12B0E3C19E1002973AE /* PFOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A154F12E0E3C19E1002973AE /* PFOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F12C0E3C19E1002973AE /* PFOrder.m */; };
-		A154F1460E3C1B70002973AE /* PFAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F1440E3C1B70002973AE /* PFAddress.h */; };
+		A154F1460E3C1B70002973AE /* PFAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F1440E3C1B70002973AE /* PFAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A154F1470E3C1B70002973AE /* PFAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F1450E3C1B70002973AE /* PFAddress.m */; };
 		A154F1690E3C1D6D002973AE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A154F1680E3C1D6D002973AE /* AddressBook.framework */; };
 		A154F2440E3C37AE002973AE /* PFLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333510E32CD1800230ABD /* PFLogging.m */; };
+		A16B8EDE0E3D415C00B1C248 /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16B8EDD0E3D415C00B1C248 /* JSON.framework */; };
+		A16B8F170E3D479400B1C248 /* JSON.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A16B8EDD0E3D415C00B1C248 /* JSON.framework */; };
+		A16B90340E3D787500B1C248 /* PFCollectionRowView.h in Headers */ = {isa = PBXBuildFile; fileRef = A16B90320E3D787500B1C248 /* PFCollectionRowView.h */; };
+		A16B90350E3D787500B1C248 /* PFCollectionRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A16B90330E3D787500B1C248 /* PFCollectionRowView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +75,17 @@
 			name = "Copy Framework";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A16B8F050E3D42CB00B1C248 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A16B8F170E3D479400B1C248 /* JSON.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +109,10 @@
 		A10333680E32CEF800230ABD /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		A10333700E32D0CC00230ABD /* BasicTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTests.h; sourceTree = "<group>"; };
 		A10333710E32D0CC00230ABD /* BasicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTests.m; sourceTree = "<group>"; };
+		A11DC5000E3CD31A009DA8A8 /* NSInvocationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSInvocationAdditions.h; path = ../../PFKit/NSInvocationAdditions.h; sourceTree = "<group>"; };
+		A11DC5010E3CD31A009DA8A8 /* NSInvocationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSInvocationAdditions.m; path = ../../PFKit/NSInvocationAdditions.m; sourceTree = "<group>"; };
+		A11DC7290E3D23CD009DA8A8 /* PFProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProduct.h; sourceTree = "<group>"; };
+		A11DC72A0E3D23CD009DA8A8 /* PFProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFProduct.m; sourceTree = "<group>"; };
 		A154EF750E3BE81F002973AE /* PotionStoreFront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PotionStoreFront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A154EF820E3BE93C002973AE /* PotionStoreFront.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotionStoreFront.h; sourceTree = "<group>"; };
 		A154EF830E3BE93C002973AE /* PotionStoreFront.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PotionStoreFront.m; sourceTree = "<group>"; };
@@ -102,11 +124,10 @@
 		A154F08B0E3BFFBB002973AE /* amex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amex.png; sourceTree = "<group>"; };
 		A154F08C0E3BFFBB002973AE /* discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover.png; sourceTree = "<group>"; };
 		A154F08D0E3BFFBB002973AE /* visa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visa.png; sourceTree = "<group>"; };
-		A154F09E0E3C02AB002973AE /* PFBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFBox.h; path = ../PFBox.h; sourceTree = "<group>"; };
-		A154F09F0E3C02AB002973AE /* PFBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFBox.m; path = ../PFBox.m; sourceTree = "<group>"; };
-		A154F0BF0E3C0F1F002973AE /* PFGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFGradientView.h; sourceTree = "<group>"; };
-		A154F0C00E3C0F1F002973AE /* PFGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFGradientView.m; sourceTree = "<group>"; };
-		A154F0FB0E3C1227002973AE /* cash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cash.png; sourceTree = "<group>"; };
+		A154F09E0E3C02AB002973AE /* PFBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFBox.h; sourceTree = "<group>"; };
+		A154F09F0E3C02AB002973AE /* PFBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFBox.m; sourceTree = "<group>"; };
+		A154F0BF0E3C0F1F002973AE /* PFBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFBackgroundView.h; sourceTree = "<group>"; };
+		A154F0C00E3C0F1F002973AE /* PFBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFBackgroundView.m; sourceTree = "<group>"; };
 		A154F0FC0E3C1227002973AE /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
 		A154F11D0E3C1678002973AE /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = English; path = English.lproj/countries.plist; sourceTree = "<group>"; };
 		A154F12B0E3C19E1002973AE /* PFOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFOrder.h; sourceTree = "<group>"; };
@@ -114,6 +135,9 @@
 		A154F1440E3C1B70002973AE /* PFAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAddress.h; sourceTree = "<group>"; };
 		A154F1450E3C1B70002973AE /* PFAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAddress.m; sourceTree = "<group>"; };
 		A154F1680E3C1D6D002973AE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = /System/Library/Frameworks/AddressBook.framework; sourceTree = "<absolute>"; };
+		A16B8EDD0E3D415C00B1C248 /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = ../3rdParty/JSON/build/Release/JSON.framework; sourceTree = SOURCE_ROOT; };
+		A16B90320E3D787500B1C248 /* PFCollectionRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCollectionRowView.h; sourceTree = "<group>"; };
+		A16B90330E3D787500B1C248 /* PFCollectionRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCollectionRowView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A154F1690E3C1D6D002973AE /* AddressBook.framework in Frameworks */,
+				A16B8EDE0E3D415C00B1C248 /* JSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +182,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A16B8EDD0E3D415C00B1C248 /* JSON.framework */,
 				A154F1680E3C1D6D002973AE /* AddressBook.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
@@ -201,6 +227,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A11DC5000E3CD31A009DA8A8 /* NSInvocationAdditions.h */,
+				A11DC5010E3CD31A009DA8A8 /* NSInvocationAdditions.m */,
 				32CA4F630368D1EE00C91783 /* PotionStoreFront_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -270,7 +298,6 @@
 		A154F0880E3BFFB3002973AE /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				A154F0FB0E3C1227002973AE /* cash.png */,
 				A154F0FC0E3C1227002973AE /* lock.png */,
 				A154F08A0E3BFFBB002973AE /* master.png */,
 				A154F08B0E3BFFBB002973AE /* amex.png */,
@@ -287,6 +314,8 @@
 				A154F12C0E3C19E1002973AE /* PFOrder.m */,
 				A154F1440E3C1B70002973AE /* PFAddress.h */,
 				A154F1450E3C1B70002973AE /* PFAddress.m */,
+				A11DC7290E3D23CD009DA8A8 /* PFProduct.h */,
+				A11DC72A0E3D23CD009DA8A8 /* PFProduct.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -297,8 +326,10 @@
 				A154F05F0E3BF42E002973AE /* Store.xib */,
 				A154F09E0E3C02AB002973AE /* PFBox.h */,
 				A154F09F0E3C02AB002973AE /* PFBox.m */,
-				A154F0BF0E3C0F1F002973AE /* PFGradientView.h */,
-				A154F0C00E3C0F1F002973AE /* PFGradientView.m */,
+				A154F0BF0E3C0F1F002973AE /* PFBackgroundView.h */,
+				A154F0C00E3C0F1F002973AE /* PFBackgroundView.m */,
+				A16B90320E3D787500B1C248 /* PFCollectionRowView.h */,
+				A16B90330E3D787500B1C248 /* PFCollectionRowView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -313,9 +344,12 @@
 				A154EF840E3BE93C002973AE /* PotionStoreFront.h in Headers */,
 				A154EFC10E3BEC4A002973AE /* PFStoreWindowController.h in Headers */,
 				A154F0A00E3C02AB002973AE /* PFBox.h in Headers */,
-				A154F0C10E3C0F1F002973AE /* PFGradientView.h in Headers */,
+				A154F0C10E3C0F1F002973AE /* PFBackgroundView.h in Headers */,
 				A154F12D0E3C19E1002973AE /* PFOrder.h in Headers */,
 				A154F1460E3C1B70002973AE /* PFAddress.h in Headers */,
+				A11DC5020E3CD31A009DA8A8 /* NSInvocationAdditions.h in Headers */,
+				A11DC72B0E3D23CD009DA8A8 /* PFProduct.h in Headers */,
+				A16B90340E3D787500B1C248 /* PFCollectionRowView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +403,7 @@
 				A154EF700E3BE81F002973AE /* Headers */,
 				A154EF710E3BE81F002973AE /* Resources */,
 				A154EF730E3BE81F002973AE /* Frameworks */,
+				A16B8F050E3D42CB00B1C248 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -423,7 +458,6 @@
 				A154F08F0E3BFFBB002973AE /* amex.png in Resources */,
 				A154F0900E3BFFBB002973AE /* discover.png in Resources */,
 				A154F0910E3BFFBB002973AE /* visa.png in Resources */,
-				A154F0FD0E3C1227002973AE /* cash.png in Resources */,
 				A154F0FE0E3C1227002973AE /* lock.png in Resources */,
 				A154F11E0E3C1678002973AE /* countries.plist in Resources */,
 			);
@@ -473,10 +507,13 @@
 				A154EF850E3BE93C002973AE /* PotionStoreFront.m in Sources */,
 				A154EFC20E3BEC4A002973AE /* PFStoreWindowController.m in Sources */,
 				A154F0A10E3C02AB002973AE /* PFBox.m in Sources */,
-				A154F0C20E3C0F1F002973AE /* PFGradientView.m in Sources */,
+				A154F0C20E3C0F1F002973AE /* PFBackgroundView.m in Sources */,
 				A154F12E0E3C19E1002973AE /* PFOrder.m in Sources */,
 				A154F1470E3C1B70002973AE /* PFAddress.m in Sources */,
 				A154F2440E3C37AE002973AE /* PFLogging.m in Sources */,
+				A11DC5030E3CD31A009DA8A8 /* NSInvocationAdditions.m in Sources */,
+				A11DC72C0E3D23CD009DA8A8 /* PFProduct.m in Sources */,
+				A16B90350E3D787500B1C248 /* PFCollectionRowView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +629,10 @@
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../3rdParty/JSON/build/Release\"",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -621,6 +662,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../3rdParty/JSON/build/Release\"",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;

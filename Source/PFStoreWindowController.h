@@ -8,16 +8,33 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class PFGradientView;
 @class PFOrder;
 @class PFAddress;
+@class PFBackgroundView;
 
 @interface PFStoreWindowController : NSWindowController
 {
-	IBOutlet PFGradientView *headerView;
-	IBOutlet PFGradientView *mainContentView;
-	IBOutlet NSView *addressSelectionContainerView;
+	IBOutlet PFBackgroundView *headerView;
+	IBOutlet PFBackgroundView *mainContentView;
 	
+	IBOutlet NSTextField *headerTitleField;
+	IBOutlet NSTextField *headerStepsField;
+	IBOutlet NSButton *primaryButton;
+	IBOutlet NSButton *secondaryButton;
+	IBOutlet NSProgressIndicator *progressSpinner;
+	
+	// -----
+	// STUFF FOR PRICING VIEW
+	IBOutlet NSView *pricingView;
+	IBOutlet NSCollectionView *productCollectionView;
+	IBOutlet NSTextField *orderTotalField;
+
+	// -----
+	// STUFF FOR BILLING VIEW
+	IBOutlet NSView *billingView;
+
+	IBOutlet NSView *addressSelectionContainerView;
+
 	// Labels
 	IBOutlet NSTextField *firstNameLabel;
 	IBOutlet NSTextField *lastNameLabel;
@@ -40,15 +57,34 @@
 	IBOutlet NSPopUpButton *addressPopUpButton;
 	
 	IBOutlet NSArrayController *countriesArrayController;
-	
-	PFOrder *order;
+
+	PFBackgroundView *overlayView;
 	PFAddress *customAddress;
+
+	// -----
+	// STUFF FOR THANK YOU VIEW
+	IBOutlet NSView *thankYouView;
+
+	id delegate;
+
+	NSURL *storeURL;
+	PFOrder *order;
 }
 
 + (id)sharedController;
 
-- (PFOrder *)order;
+- (id)delegate;
+- (void)setDelegate:(id)object;
 
+- (PFOrder *)order;
+- (NSURL *)storeURL;
+- (void)setStoreURL:(NSURL *)URL;
+
+- (IBAction)showPricing:(id)sender;
+- (IBAction)showBillingInformation:(id)sender;
+- (IBAction)showThankYou:(id)sender;
+
+- (IBAction)updateOrderLineItems:(id)sender;
 - (IBAction)purchase:(id)sender;
 - (IBAction)goBack:(id)sender;
 - (IBAction)selectAddress:(id)sender;
@@ -58,6 +94,8 @@
 - (NSInteger)p_countOfAddresses;
 - (void)p_setupAddressPopUpButton;
 - (void)p_setEnabled:(BOOL)enabled toAllControlsInView:(NSView *)view;
+- (void)p_setContentView:(NSView *)view;
+- (void)p_setHeaderTitle:(NSString *)title;
 - (BOOL)p_validateOrder;
 
 @end

@@ -20,18 +20,37 @@ typedef enum {
 
 @interface PFOrder : NSObject
 {
+	id delegate;
+
 	PFAddress *billingAddress;
+	NSArray *lineItems;
 	
 	NSString *creditCardNumber;
 	NSString *creditCardSecurityCode;
 	NSNumber *creditCardExpirationMonth;
 	NSNumber *creditCardExpirationYear;
+	
+	NSURL *submitURL;
 }
+
+- (void)submitInBackground;
 
 - (NSString *)cleanedCreditCardNumber;
 - (PFCreditCardType)creditCardType;
+- (NSString *)creditCardTypeString;
 
 // Simple accessors
+
+@property(copy) NSArray *lineItems;
+
+- (id)delegate;
+- (void)setDelegate:(id)object;
+
+- (CGFloat)totalAmount;
+
+- (NSURL *)submitURL;
+- (void)setSubmitURL:(NSURL *)value;
+
 - (PFAddress *)billingAddress;
 - (void)setBillingAddress:(PFAddress *)value;
 
@@ -42,15 +61,23 @@ typedef enum {
 - (void)setCreditCardSecurityCode:(NSString *)value;
 
 - (NSNumber *)creditCardExpirationMonth;
-- (void)setCreditCardExpirationMonth:(NSNumber *)value;
+- (void)setCreditCardExpirationMonth:(id)value;
 
 - (NSNumber *)creditCardExpirationYear;
-- (void)setCreditCardExpirationYear:(NSNumber *)value;
+- (void)setCreditCardExpirationYear:(id)value;
 
 // Validation
 - (BOOL)validateCreditCardExpiration:(NSError **)outError;
 
 // Private
 - (NSString *)p_cleanCreditCardNumber:(NSString *)value;
+
+@end
+
+
+@interface NSObject (PFOrderDelegate)
+
+- (void)orderDidFinishSubmitting:(PFOrder *)order;
+- (void)order:(PFOrder *)order failedWithError:(NSError *)error;
 
 @end

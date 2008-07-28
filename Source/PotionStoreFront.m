@@ -11,14 +11,48 @@
 
 @implementation PotionStoreFront
 
-+ (void)load
+//+ (void)load
+//{
+//	NSLog(@"Loading Potion Store Front framework");
+//}
+
+static PotionStoreFront *gStoreFront = nil;
+
++ (PotionStoreFront *)sharedStoreFront
 {
-	NSLog(@"Loading Potion Store Front framework");
+	if (gStoreFront == nil) {
+		gStoreFront = [[PotionStoreFront alloc] init];
+	}
+	return gStoreFront;
 }
 
-+ (NSWindowController *)sharedController
+- (id)delegate
 {
-	return [PFStoreWindowController sharedController];
+	return [[PFStoreWindowController sharedController] delegate];
 }
+
+- (void)setDelegate:(id)delegate
+{
+	[[PFStoreWindowController sharedController] setDelegate:delegate];
+}
+
+- (NSURL *)storeURL
+{
+	return [[PFStoreWindowController sharedController] storeURL];
+}
+
+- (void)setStoreURL:(NSURL *)URL
+{
+	[[PFStoreWindowController sharedController] setStoreURL:URL];
+}
+
+- (void)beginSheetModalForWindow:(NSWindow *)window
+{
+	[NSApp beginSheet:[[PFStoreWindowController sharedController] window]
+	   modalForWindow:window
+		modalDelegate:self 
+	   didEndSelector:nil
+		  contextInfo:NULL];
+}	
 
 @end

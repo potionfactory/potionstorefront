@@ -15,5 +15,5 @@
 }
 
 - (IBAction)buy:(id)sender;
-
+- (IBAction)unload:(id)sender;
 @end
