@@ -44,6 +44,9 @@
 		A16B8F170E3D479400B1C248 /* JSON.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A16B8EDD0E3D415C00B1C248 /* JSON.framework */; };
 		A16B90340E3D787500B1C248 /* PFCollectionRow.h in Headers */ = {isa = PBXBuildFile; fileRef = A16B90320E3D787500B1C248 /* PFCollectionRow.h */; };
 		A16B90350E3D787500B1C248 /* PFCollectionRow.m in Sources */ = {isa = PBXBuildFile; fileRef = A16B90330E3D787500B1C248 /* PFCollectionRow.m */; };
+		A1A11E7D0E3EE5D700F0C6E4 /* PFLockImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = A1A11E7B0E3EE5D700F0C6E4 /* PFLockImageView.h */; };
+		A1A11E7E0E3EE5D700F0C6E4 /* PFLockImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A11E7C0E3EE5D700F0C6E4 /* PFLockImageView.m */; };
+		A1A11EB80E3EF7E700F0C6E4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A11EB70E3EF7E700F0C6E4 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +141,9 @@
 		A16B8EDD0E3D415C00B1C248 /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = ../3rdParty/JSON/build/Release/JSON.framework; sourceTree = SOURCE_ROOT; };
 		A16B90320E3D787500B1C248 /* PFCollectionRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCollectionRow.h; sourceTree = "<group>"; };
 		A16B90330E3D787500B1C248 /* PFCollectionRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCollectionRow.m; sourceTree = "<group>"; };
+		A1A11E7B0E3EE5D700F0C6E4 /* PFLockImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFLockImageView.h; sourceTree = "<group>"; };
+		A1A11E7C0E3EE5D700F0C6E4 /* PFLockImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFLockImageView.m; sourceTree = "<group>"; };
+		A1A11EB70E3EF7E700F0C6E4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,7 @@
 			files = (
 				A154F1690E3C1D6D002973AE /* AddressBook.framework in Frameworks */,
 				A16B8EDE0E3D415C00B1C248 /* JSON.framework in Frameworks */,
+				A1A11EB80E3EF7E700F0C6E4 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +189,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1A11EB70E3EF7E700F0C6E4 /* QuartzCore.framework */,
 				A16B8EDD0E3D415C00B1C248 /* JSON.framework */,
 				A154F1680E3C1D6D002973AE /* AddressBook.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
@@ -329,6 +337,8 @@
 				A154F09F0E3C02AB002973AE /* PFLineBox.m */,
 				A154F0BF0E3C0F1F002973AE /* PFBackgroundView.h */,
 				A154F0C00E3C0F1F002973AE /* PFBackgroundView.m */,
+				A1A11E7B0E3EE5D700F0C6E4 /* PFLockImageView.h */,
+				A1A11E7C0E3EE5D700F0C6E4 /* PFLockImageView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -358,6 +368,7 @@
 				A11DC5020E3CD31A009DA8A8 /* NSInvocationAdditions.h in Headers */,
 				A11DC72B0E3D23CD009DA8A8 /* PFProduct.h in Headers */,
 				A16B90340E3D787500B1C248 /* PFCollectionRow.h in Headers */,
+				A1A11E7D0E3EE5D700F0C6E4 /* PFLockImageView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +533,7 @@
 				A11DC5030E3CD31A009DA8A8 /* NSInvocationAdditions.m in Sources */,
 				A11DC72C0E3D23CD009DA8A8 /* PFProduct.m in Sources */,
 				A16B90350E3D787500B1C248 /* PFCollectionRow.m in Sources */,
+				A1A11E7E0E3EE5D700F0C6E4 /* PFLockImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,6 +21,7 @@ static PFStoreWindowController *gController = nil;
 {
 	if (gController == nil) {
 		gController = [[PFStoreWindowController alloc] init];
+		[gController window]; // Load the whole nib immediately
 	}
 
 	return gController;
@@ -118,12 +119,6 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 
 - (IBAction)showPricing:(id)sender
 {
-	// Grab products from server
-	if ([[productCollectionView content] count] == 0) {
-		[productFetchProgressSpinner startAnimation:self];
-		[PFProduct beginFetchingProductsFromURL:productsPlistURL delegate:self];
-	}
-
 	[self p_setContentView:pricingView];
 	[self p_setHeaderTitle:NSLocalizedString(@"Purchase", nil)];
 	[headerStepsField setStringValue:NSLocalizedString(@"Step 1 / 2", nil)];
@@ -374,10 +369,30 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 - (PFOrder *)order { return order; }
 
 - (NSURL *)storeURL { return storeURL; }
-- (void)setStoreURL:(NSURL *)value { if (storeURL != value) { [storeURL release]; storeURL = [value copy]; } }
+- (void)setStoreURL:(NSURL *)value
+{
+	if (storeURL != value) {
+		[storeURL release]; storeURL = [value copy];
+		if ([[storeURL scheme] isEqualToString:@"https"] == NO) {
+			// Don't show lock if it's not really secure
+			[lockImageView removeFromSuperview];
+			lockImageView = nil;
+		}
+	}
+}
 
 - (NSURL *)productsPlistURL { return productsPlistURL; }
-- (void)setProductsPlistURL:(NSURL *)value { if (productsPlistURL != value) { [productsPlistURL release]; productsPlistURL = [value copy]; } }
+- (void)setProductsPlistURL:(NSURL *)value
+{
+	if (productsPlistURL != value) {
+		[productsPlistURL release];
+		productsPlistURL = [value copy];
+
+		// Grab products from server
+		[productFetchProgressSpinner startAnimation:self];
+		[PFProduct beginFetchingProductsFromURL:productsPlistURL delegate:self];
+	}
+}
 
 #pragma mark -
 #pragma mark Private

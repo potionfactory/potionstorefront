@@ -11,7 +11,7 @@
 #import "PFAddress.h"
 #import "PFProduct.h"
 
-#define DEBUG_POTION_STORE_FRONT 1
+#define DEBUG_POTION_STORE_FRONT 0
 
 @interface PotionStoreFront : NSObject
 {
