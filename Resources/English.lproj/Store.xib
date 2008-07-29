@@ -8,8 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">352.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1" id="9"/>
-			<integer value="411"/>
+			<integer value="2" id="10"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -50,7 +49,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="332649680">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">272760832</int>
-								<string key="NSContents">Your credit card information is sent securely using SSL encryption.</string>
+								<string key="NSContents">Your credit card information is securely sent using SSL encryption.</string>
 								<object class="NSFont" key="NSSupport">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">1.100000e+01</double>
@@ -314,7 +313,7 @@
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
 			<object class="NSCustomView" id="691983328">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -398,7 +397,6 @@ dHRlciBjb3B5IGhlcmUuLi4</string>
 								</object>
 								<string key="NSFrame">{{1, 1}, {466, 267}}</string>
 								<reference key="NSSuperview" ref="173779016"/>
-								<reference key="NSNextKeyView" ref="1066357762"/>
 								<reference key="NSDocView" ref="1066357762"/>
 								<reference key="NSBGColor" ref="548228222"/>
 								<int key="NScvFlags">4</int>
@@ -426,7 +424,6 @@ dHRlciBjb3B5IGhlcmUuLi4</string>
 						</object>
 						<string key="NSFrame">{{20, 61}, {468, 269}}</string>
 						<reference key="NSSuperview" ref="691983328"/>
-						<reference key="NSNextKeyView" ref="672865758"/>
 						<int key="NSsFlags">530</int>
 						<reference key="NSVScroller" ref="97312657"/>
 						<reference key="NSHScroller" ref="38298650"/>
@@ -460,10 +457,10 @@ dHRlciBjb3B5IGhlcmUuLi4</string>
 									</object>
 									<object class="NSMutableArray" key="dict.values">
 										<bool key="EncodedWithXMLCoder">YES</bool>
-										<reference ref="9"/>
+										<integer value="1" id="9"/>
 										<reference ref="9"/>
 										<integer value="1040"/>
-										<integer value="2"/>
+										<reference ref="10"/>
 										<string type="base64-UTF8">VG90YWw6IMKkIywjIzAuMDA</string>
 									</object>
 								</object>
@@ -527,7 +524,6 @@ dHRlciBjb3B5IGhlcmUuLi4</string>
 					</object>
 				</object>
 				<string key="NSFrameSize">{508, 414}</string>
-				<reference key="NSSuperview"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSCustomView" id="867003023">

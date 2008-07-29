@@ -351,8 +351,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 		if ([ccnum length] != 0) {
 			NSError *error = nil;
 			if (![order validateValue:&ccnum forKey:@"creditCardNumber" error:&error]) {
-				NSAlert *alert = [NSAlert alertWithError:error];
-				[alert beginSheetModalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:NULL];
+				[NSApp presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:NULL];
 				return NO;
 			}
 		}
@@ -558,8 +557,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 		success = NO;
 
 		if (error) {
-			NSAlert *alert = [NSAlert alertWithError:error];
-			[alert beginSheetModalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:NULL];
+			[NSApp presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:NULL];
 		}
 	}
 
