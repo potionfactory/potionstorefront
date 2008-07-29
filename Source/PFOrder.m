@@ -407,13 +407,14 @@ fail:
 	NSDate *firstDayOfCurrentMonth = [cal dateFromComponents:comps];
 
 	if ([firstDayOfCurrentMonth compare:expirationDate] != NSOrderedAscending) {
-		*outError = [NSError errorWithDomain:@"PotionStorefrontErrorDomain" code:1 // whatever, it's never used anyway
-									userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
-											  NSLocalizedString(@"Your credit card is expired", nil),
-											  NSLocalizedDescriptionKey,
-											  NSLocalizedString(@"Please make sure that your credit card is not expired and that you typed in the expiration date correctly.", nil),
-											  NSLocalizedRecoverySuggestionErrorKey,
-											  nil]];
+		if (outError)
+			*outError = [NSError errorWithDomain:@"PotionStorefrontErrorDomain" code:1 // whatever, it's never used anyway
+										userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+												  NSLocalizedString(@"Your credit card is expired", nil),
+												  NSLocalizedDescriptionKey,
+												  NSLocalizedString(@"Please make sure that your credit card is not expired and that you typed in the expiration date correctly.", nil),
+												  NSLocalizedRecoverySuggestionErrorKey,
+												  nil]];
 		return NO;
 	}
 	else {
