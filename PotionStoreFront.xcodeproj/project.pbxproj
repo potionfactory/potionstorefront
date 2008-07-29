@@ -17,12 +17,12 @@
 		A11DC5030E3CD31A009DA8A8 /* NSInvocationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A11DC5010E3CD31A009DA8A8 /* NSInvocationAdditions.m */; };
 		A11DC72B0E3D23CD009DA8A8 /* PFProduct.h in Headers */ = {isa = PBXBuildFile; fileRef = A11DC7290E3D23CD009DA8A8 /* PFProduct.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A11DC72C0E3D23CD009DA8A8 /* PFProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = A11DC72A0E3D23CD009DA8A8 /* PFProduct.m */; };
-		A154EF7E0E3BE8EA002973AE /* PotionStoreFront.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = A154EF750E3BE81F002973AE /* PotionStoreFront.framework */; };
+		A154EF7E0E3BE8EA002973AE /* PotionStorefront.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = A154EF750E3BE81F002973AE /* PotionStorefront.framework */; };
 		A154EF840E3BE93C002973AE /* PotionStoreFront.h in Headers */ = {isa = PBXBuildFile; fileRef = A154EF820E3BE93C002973AE /* PotionStoreFront.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A154EF850E3BE93C002973AE /* PotionStoreFront.m in Sources */ = {isa = PBXBuildFile; fileRef = A154EF830E3BE93C002973AE /* PotionStoreFront.m */; };
 		A154EFC10E3BEC4A002973AE /* PFStoreWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = A154EFBF0E3BEC4A002973AE /* PFStoreWindowController.h */; settings = {ATTRIBUTES = (); }; };
 		A154EFC20E3BEC4A002973AE /* PFStoreWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A154EFC00E3BEC4A002973AE /* PFStoreWindowController.m */; };
-		A154EFD50E3BED02002973AE /* PotionStoreFront.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A154EF750E3BE81F002973AE /* PotionStoreFront.framework */; };
+		A154EFD50E3BED02002973AE /* PotionStorefront.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A154EF750E3BE81F002973AE /* PotionStorefront.framework */; };
 		A154F0610E3BF42E002973AE /* Store.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154F05F0E3BF42E002973AE /* Store.xib */; };
 		A154F08E0E3BFFBB002973AE /* master.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F08A0E3BFFBB002973AE /* master.png */; };
 		A154F08F0E3BFFBB002973AE /* amex.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F08B0E3BFFBB002973AE /* amex.png */; };
@@ -73,7 +73,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A154EF7E0E3BE8EA002973AE /* PotionStoreFront.framework in Copy Framework */,
+				A154EF7E0E3BE8EA002973AE /* PotionStorefront.framework in Copy Framework */,
 			);
 			name = "Copy Framework";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,7 +99,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32CA4F630368D1EE00C91783 /* PotionStoreFront_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotionStoreFront_Prefix.pch; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* PotionStorefront_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotionStorefront_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TestApp-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A103334E0E32CD1800230ABD /* PFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFKit.h; path = Sources/PFKit.h; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 		A11DC5010E3CD31A009DA8A8 /* NSInvocationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSInvocationAdditions.m; path = ../../PFKit/Sources/NSInvocationAdditions.m; sourceTree = "<group>"; };
 		A11DC7290E3D23CD009DA8A8 /* PFProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProduct.h; sourceTree = "<group>"; };
 		A11DC72A0E3D23CD009DA8A8 /* PFProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFProduct.m; sourceTree = "<group>"; };
-		A154EF750E3BE81F002973AE /* PotionStoreFront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PotionStoreFront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A154EF750E3BE81F002973AE /* PotionStorefront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PotionStorefront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A154EF820E3BE93C002973AE /* PotionStoreFront.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotionStoreFront.h; sourceTree = "<group>"; };
 		A154EF830E3BE93C002973AE /* PotionStoreFront.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PotionStoreFront.m; sourceTree = "<group>"; };
 		A154EF920E3BE9B8002973AE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				A154EFD50E3BED02002973AE /* PotionStoreFront.framework in Frameworks */,
+				A154EFD50E3BED02002973AE /* PotionStorefront.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +210,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A154EF750E3BE81F002973AE /* PotionStoreFront.framework */,
+				A154EF750E3BE81F002973AE /* PotionStorefront.framework */,
 				8D1107320486CEB800E47090 /* TestApp.app */,
 				A10333670E32CEF800230ABD /* Tests.octest */,
 			);
@@ -236,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A11E390E3EDB7E00F0C6E4 /* Additions */,
-				32CA4F630368D1EE00C91783 /* PotionStoreFront_Prefix.pch */,
+				32CA4F630368D1EE00C91783 /* PotionStorefront_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -414,9 +414,9 @@
 			productReference = A10333670E32CEF800230ABD /* Tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		A154EF740E3BE81F002973AE /* PotionStoreFront */ = {
+		A154EF740E3BE81F002973AE /* PotionStorefront */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A154EF790E3BE81F002973AE /* Build configuration list for PBXNativeTarget "PotionStoreFront" */;
+			buildConfigurationList = A154EF790E3BE81F002973AE /* Build configuration list for PBXNativeTarget "PotionStorefront" */;
 			buildPhases = (
 				A154EF720E3BE81F002973AE /* Sources */,
 				A154EF700E3BE81F002973AE /* Headers */,
@@ -428,9 +428,9 @@
 			);
 			dependencies = (
 			);
-			name = PotionStoreFront;
+			name = PotionStorefront;
 			productName = PotionStoreFront;
-			productReference = A154EF750E3BE81F002973AE /* PotionStoreFront.framework */;
+			productReference = A154EF750E3BE81F002973AE /* PotionStorefront.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -438,14 +438,14 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PotionStoreFront" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PotionStorefront" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* PotionStoreFront */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A154EF740E3BE81F002973AE /* PotionStoreFront */,
+				A154EF740E3BE81F002973AE /* PotionStorefront */,
 				8D1107260486CEB800E47090 /* TestApp */,
 				A10333660E32CEF800230ABD /* Tests */,
 			);
@@ -547,7 +547,7 @@
 		};
 		A154EF7B0E3BE8C8002973AE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A154EF740E3BE81F002973AE /* PotionStoreFront */;
+			target = A154EF740E3BE81F002973AE /* PotionStorefront */;
 			targetProxy = A154EF7A0E3BE8C8002973AE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -690,7 +690,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Source/PotionStoreFront_Prefix.pch;
+				GCC_PREFIX_HEADER = Source/PotionStorefront_Prefix.pch;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				OTHER_LDFLAGS = (
@@ -700,7 +700,7 @@
 					AppKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = PotionStoreFront;
+				PRODUCT_NAME = PotionStorefront;
 				SKIP_INSTALL = YES;
 				ZERO_LINK = NO;
 			};
@@ -777,7 +777,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A154EF790E3BE81F002973AE /* Build configuration list for PBXNativeTarget "PotionStoreFront" */ = {
+		A154EF790E3BE81F002973AE /* Build configuration list for PBXNativeTarget "PotionStorefront" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A154EF770E3BE81F002973AE /* Debug */,
@@ -795,7 +795,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PotionStoreFront" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PotionStorefront" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

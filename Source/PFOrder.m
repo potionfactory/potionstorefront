@@ -367,13 +367,14 @@ done:
 	}
 
 fail:
-	*outError = [NSError errorWithDomain:@"PotionStoreFrontErrorDomain"	code:0 // whatever, it's never used anyway
-								userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
-										  NSLocalizedString(@"Invalid credit card number", nil),
-										  NSLocalizedDescriptionKey,
-										  NSLocalizedString(@"Please make sure you typed in the credit card number correctly.", nil),
-										  NSLocalizedRecoverySuggestionErrorKey,
-										  nil]];
+	if (outError)
+		*outError = [NSError errorWithDomain:@"PotionStoreFrontErrorDomain"	code:0 // whatever, it's never used anyway
+									userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+											  NSLocalizedString(@"Invalid credit card number", nil),
+											  NSLocalizedDescriptionKey,
+											  NSLocalizedString(@"Please make sure you typed in the credit card number correctly.", nil),
+											  NSLocalizedRecoverySuggestionErrorKey,
+											  nil]];
 	return NO;
 }
 
