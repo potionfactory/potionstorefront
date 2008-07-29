@@ -29,7 +29,8 @@
 
 - (IBAction)buy:(id)sender
 {
-	[[PotionStoreFront sharedStoreFront] setStoreURL:[NSURL URLWithString:@"http://localhost:3000/store"]];
+	[[PotionStoreFront sharedStoreFront] setPotionStoreURL:[NSURL URLWithString:@"http://localhost:3000/store"]];
+	[[PotionStoreFront sharedStoreFront] setProductsPlistURL:[NSURL URLWithString:@"http://www.potionfactory.com/files/thehitlist/store_products.plist"]];
 	[[PotionStoreFront sharedStoreFront] setDelegate:self];
 	[[PotionStoreFront sharedStoreFront] beginSheetModalForWindow:mainWindow];
 }

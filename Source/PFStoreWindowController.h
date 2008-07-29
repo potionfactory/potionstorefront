@@ -16,23 +16,25 @@
 {
 	IBOutlet PFBackgroundView *headerView;
 	IBOutlet PFBackgroundView *mainContentView;
-	
+
 	IBOutlet NSTextField *headerTitleField;
 	IBOutlet NSTextField *headerStepsField;
 	IBOutlet NSButton *primaryButton;
 	IBOutlet NSButton *secondaryButton;
+	IBOutlet NSButton *tertiaryButton;
+	IBOutlet NSImageView *lockImageView;
 	IBOutlet NSProgressIndicator *progressSpinner;
-	
+
 	// -----
 	// STUFF FOR PRICING VIEW
 	IBOutlet NSView *pricingView;
 	IBOutlet NSCollectionView *productCollectionView;
 	IBOutlet NSTextField *orderTotalField;
+	IBOutlet NSProgressIndicator *productFetchProgressSpinner;
 
 	// -----
 	// STUFF FOR BILLING VIEW
 	IBOutlet NSView *billingView;
-
 	IBOutlet NSView *addressSelectionContainerView;
 
 	// Labels
@@ -48,26 +50,31 @@
 	IBOutlet NSTextField *creditCardExpirationLabel;
 
 	// Input Fields
+	IBOutlet NSTextField *firstNameField;
+	IBOutlet NSTextField *address1Field;
+	IBOutlet NSTextField *emailField;
 	IBOutlet NSTextField *creditCardNumberField;
 	IBOutlet NSTextField *creditCardExpirationMonthField;
 	IBOutlet NSTextField *creditCardExpirationYearField;
-	
+
 	// Pop up buttons
 	IBOutlet NSPopUpButton *countryPopUpButton;
 	IBOutlet NSPopUpButton *addressPopUpButton;
-	
+
 	IBOutlet NSArrayController *countriesArrayController;
 
-	PFBackgroundView *overlayView;
 	PFAddress *customAddress;
 
 	// -----
 	// STUFF FOR THANK YOU VIEW
 	IBOutlet NSView *thankYouView;
 
+	// -----
+	// OTHER STUFF
 	id delegate;
 
 	NSURL *storeURL;
+	NSURL *productsPlistURL;
 	PFOrder *order;
 }
 
@@ -84,7 +91,7 @@
 - (IBAction)showBillingInformation:(id)sender;
 - (IBAction)showThankYou:(id)sender;
 
-- (IBAction)updateOrderLineItems:(id)sender;
+- (IBAction)updatedOrderLineItems:(id)sender;
 - (IBAction)purchase:(id)sender;
 - (IBAction)goBack:(id)sender;
 - (IBAction)selectAddress:(id)sender;

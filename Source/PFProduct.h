@@ -10,21 +10,23 @@
 
 // In PotionStoreFront this class serves as both a product and a line item
 
-@interface PFProduct : NSObject <NSCopying>
+@interface PFProduct : NSObject //<NSCopying>
 {
 	NSNumber *identifierNumber;
 	NSNumber *price;
 	NSString *name;
+	NSString *byline;
 	NSImage *iconImage;
 	NSString *licenseKey;
 	NSNumber *quantity;
-	
+
 	// Checked products get placed into the order
+	NSString *radioGroupName;
 	BOOL checked;
 }
 
-+ (NSArray *)fetchedProductsFromURL:(NSURL *)URL error:(NSError **)outError;
-+ (PFProduct *)productWithDictionaryFromPotionStore:(NSDictionary *)dictionary;
++ (void)beginFetchingProductsFromURL:(NSURL *)URL delegate:(id)object;
++ (PFProduct *)productWithDictionary:(NSDictionary *)dictionary;
 
 - (NSArray *)children;
 
@@ -40,6 +42,9 @@
 - (NSString *)name;
 - (void)setName:(NSString *)value;
 
+- (NSString *)byline;
+- (void)setByline:(NSString *)value;
+
 - (NSImage *)iconImage;
 - (void)setIconImage:(NSImage *)value;
 
@@ -49,4 +54,12 @@
 - (NSNumber *)quantity;
 - (void)setQuantity:(NSNumber *)value;
 
+- (NSString *)radioGroupName;
+- (void)setRadioGroupName:(NSString *)value;
+
+@end
+
+
+@interface NSObject (PFProductDelegate)
+- (void)didFinishFetchingProducts:(NSArray *)products error:(NSError *)error;
 @end

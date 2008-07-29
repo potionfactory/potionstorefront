@@ -28,8 +28,8 @@
 		A154F08F0E3BFFBB002973AE /* amex.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F08B0E3BFFBB002973AE /* amex.png */; };
 		A154F0900E3BFFBB002973AE /* discover.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F08C0E3BFFBB002973AE /* discover.png */; };
 		A154F0910E3BFFBB002973AE /* visa.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F08D0E3BFFBB002973AE /* visa.png */; };
-		A154F0A00E3C02AB002973AE /* PFBox.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F09E0E3C02AB002973AE /* PFBox.h */; };
-		A154F0A10E3C02AB002973AE /* PFBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F09F0E3C02AB002973AE /* PFBox.m */; };
+		A154F0A00E3C02AB002973AE /* PFLineBox.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F09E0E3C02AB002973AE /* PFLineBox.h */; };
+		A154F0A10E3C02AB002973AE /* PFLineBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F09F0E3C02AB002973AE /* PFLineBox.m */; };
 		A154F0C10E3C0F1F002973AE /* PFBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F0BF0E3C0F1F002973AE /* PFBackgroundView.h */; };
 		A154F0C20E3C0F1F002973AE /* PFBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F0C00E3C0F1F002973AE /* PFBackgroundView.m */; };
 		A154F0FE0E3C1227002973AE /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F0FC0E3C1227002973AE /* lock.png */; };
@@ -42,8 +42,8 @@
 		A154F2440E3C37AE002973AE /* PFLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333510E32CD1800230ABD /* PFLogging.m */; };
 		A16B8EDE0E3D415C00B1C248 /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16B8EDD0E3D415C00B1C248 /* JSON.framework */; };
 		A16B8F170E3D479400B1C248 /* JSON.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A16B8EDD0E3D415C00B1C248 /* JSON.framework */; };
-		A16B90340E3D787500B1C248 /* PFCollectionRowView.h in Headers */ = {isa = PBXBuildFile; fileRef = A16B90320E3D787500B1C248 /* PFCollectionRowView.h */; };
-		A16B90350E3D787500B1C248 /* PFCollectionRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A16B90330E3D787500B1C248 /* PFCollectionRowView.m */; };
+		A16B90340E3D787500B1C248 /* PFCollectionRow.h in Headers */ = {isa = PBXBuildFile; fileRef = A16B90320E3D787500B1C248 /* PFCollectionRow.h */; };
+		A16B90350E3D787500B1C248 /* PFCollectionRow.m in Sources */ = {isa = PBXBuildFile; fileRef = A16B90330E3D787500B1C248 /* PFCollectionRow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,8 +109,8 @@
 		A10333680E32CEF800230ABD /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		A10333700E32D0CC00230ABD /* BasicTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTests.h; sourceTree = "<group>"; };
 		A10333710E32D0CC00230ABD /* BasicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTests.m; sourceTree = "<group>"; };
-		A11DC5000E3CD31A009DA8A8 /* NSInvocationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSInvocationAdditions.h; path = ../../PFKit/NSInvocationAdditions.h; sourceTree = "<group>"; };
-		A11DC5010E3CD31A009DA8A8 /* NSInvocationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSInvocationAdditions.m; path = ../../PFKit/NSInvocationAdditions.m; sourceTree = "<group>"; };
+		A11DC5000E3CD31A009DA8A8 /* NSInvocationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSInvocationAdditions.h; path = ../../PFKit/Sources/NSInvocationAdditions.h; sourceTree = "<group>"; };
+		A11DC5010E3CD31A009DA8A8 /* NSInvocationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSInvocationAdditions.m; path = ../../PFKit/Sources/NSInvocationAdditions.m; sourceTree = "<group>"; };
 		A11DC7290E3D23CD009DA8A8 /* PFProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProduct.h; sourceTree = "<group>"; };
 		A11DC72A0E3D23CD009DA8A8 /* PFProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFProduct.m; sourceTree = "<group>"; };
 		A154EF750E3BE81F002973AE /* PotionStoreFront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PotionStoreFront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,8 +124,8 @@
 		A154F08B0E3BFFBB002973AE /* amex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amex.png; sourceTree = "<group>"; };
 		A154F08C0E3BFFBB002973AE /* discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover.png; sourceTree = "<group>"; };
 		A154F08D0E3BFFBB002973AE /* visa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visa.png; sourceTree = "<group>"; };
-		A154F09E0E3C02AB002973AE /* PFBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFBox.h; sourceTree = "<group>"; };
-		A154F09F0E3C02AB002973AE /* PFBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFBox.m; sourceTree = "<group>"; };
+		A154F09E0E3C02AB002973AE /* PFLineBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFLineBox.h; sourceTree = "<group>"; };
+		A154F09F0E3C02AB002973AE /* PFLineBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFLineBox.m; sourceTree = "<group>"; };
 		A154F0BF0E3C0F1F002973AE /* PFBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFBackgroundView.h; sourceTree = "<group>"; };
 		A154F0C00E3C0F1F002973AE /* PFBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFBackgroundView.m; sourceTree = "<group>"; };
 		A154F0FC0E3C1227002973AE /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
@@ -136,8 +136,8 @@
 		A154F1450E3C1B70002973AE /* PFAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAddress.m; sourceTree = "<group>"; };
 		A154F1680E3C1D6D002973AE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = /System/Library/Frameworks/AddressBook.framework; sourceTree = "<absolute>"; };
 		A16B8EDD0E3D415C00B1C248 /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = ../3rdParty/JSON/build/Release/JSON.framework; sourceTree = SOURCE_ROOT; };
-		A16B90320E3D787500B1C248 /* PFCollectionRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCollectionRowView.h; sourceTree = "<group>"; };
-		A16B90330E3D787500B1C248 /* PFCollectionRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCollectionRowView.m; sourceTree = "<group>"; };
+		A16B90320E3D787500B1C248 /* PFCollectionRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCollectionRow.h; sourceTree = "<group>"; };
+		A16B90330E3D787500B1C248 /* PFCollectionRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCollectionRow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,8 +227,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				A11DC5000E3CD31A009DA8A8 /* NSInvocationAdditions.h */,
-				A11DC5010E3CD31A009DA8A8 /* NSInvocationAdditions.m */,
+				A1A11E390E3EDB7E00F0C6E4 /* Additions */,
 				32CA4F630368D1EE00C91783 /* PotionStoreFront_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -324,14 +323,23 @@
 			isa = PBXGroup;
 			children = (
 				A154F05F0E3BF42E002973AE /* Store.xib */,
-				A154F09E0E3C02AB002973AE /* PFBox.h */,
-				A154F09F0E3C02AB002973AE /* PFBox.m */,
+				A16B90320E3D787500B1C248 /* PFCollectionRow.h */,
+				A16B90330E3D787500B1C248 /* PFCollectionRow.m */,
+				A154F09E0E3C02AB002973AE /* PFLineBox.h */,
+				A154F09F0E3C02AB002973AE /* PFLineBox.m */,
 				A154F0BF0E3C0F1F002973AE /* PFBackgroundView.h */,
 				A154F0C00E3C0F1F002973AE /* PFBackgroundView.m */,
-				A16B90320E3D787500B1C248 /* PFCollectionRowView.h */,
-				A16B90330E3D787500B1C248 /* PFCollectionRowView.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		A1A11E390E3EDB7E00F0C6E4 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				A11DC5000E3CD31A009DA8A8 /* NSInvocationAdditions.h */,
+				A11DC5010E3CD31A009DA8A8 /* NSInvocationAdditions.m */,
+			);
+			name = Additions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,13 +351,13 @@
 			files = (
 				A154EF840E3BE93C002973AE /* PotionStoreFront.h in Headers */,
 				A154EFC10E3BEC4A002973AE /* PFStoreWindowController.h in Headers */,
-				A154F0A00E3C02AB002973AE /* PFBox.h in Headers */,
+				A154F0A00E3C02AB002973AE /* PFLineBox.h in Headers */,
 				A154F0C10E3C0F1F002973AE /* PFBackgroundView.h in Headers */,
 				A154F12D0E3C19E1002973AE /* PFOrder.h in Headers */,
 				A154F1460E3C1B70002973AE /* PFAddress.h in Headers */,
 				A11DC5020E3CD31A009DA8A8 /* NSInvocationAdditions.h in Headers */,
 				A11DC72B0E3D23CD009DA8A8 /* PFProduct.h in Headers */,
-				A16B90340E3D787500B1C248 /* PFCollectionRowView.h in Headers */,
+				A16B90340E3D787500B1C248 /* PFCollectionRow.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,14 +514,14 @@
 			files = (
 				A154EF850E3BE93C002973AE /* PotionStoreFront.m in Sources */,
 				A154EFC20E3BEC4A002973AE /* PFStoreWindowController.m in Sources */,
-				A154F0A10E3C02AB002973AE /* PFBox.m in Sources */,
+				A154F0A10E3C02AB002973AE /* PFLineBox.m in Sources */,
 				A154F0C20E3C0F1F002973AE /* PFBackgroundView.m in Sources */,
 				A154F12E0E3C19E1002973AE /* PFOrder.m in Sources */,
 				A154F1470E3C1B70002973AE /* PFAddress.m in Sources */,
 				A154F2440E3C37AE002973AE /* PFLogging.m in Sources */,
 				A11DC5030E3CD31A009DA8A8 /* NSInvocationAdditions.m in Sources */,
 				A11DC72C0E3D23CD009DA8A8 /* PFProduct.m in Sources */,
-				A16B90350E3D787500B1C248 /* PFCollectionRowView.m in Sources */,
+				A16B90350E3D787500B1C248 /* PFCollectionRow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

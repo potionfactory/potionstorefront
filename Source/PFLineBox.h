@@ -1,5 +1,5 @@
 //
-//  PFBox.h
+//  PFLineBox.h
 //  TheHitList
 //
 //  Created by Andy Kim on 7/19/08.
@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface PFBox : NSBox
+@interface PFLineBox : NSBox
 {
 }
 

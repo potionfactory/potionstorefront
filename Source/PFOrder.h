@@ -24,12 +24,12 @@ typedef enum {
 
 	PFAddress *billingAddress;
 	NSArray *lineItems;
-	
+
 	NSString *creditCardNumber;
 	NSString *creditCardSecurityCode;
 	NSNumber *creditCardExpirationMonth;
 	NSNumber *creditCardExpirationYear;
-	
+
 	NSURL *submitURL;
 }
 
@@ -76,8 +76,5 @@ typedef enum {
 
 
 @interface NSObject (PFOrderDelegate)
-
-- (void)orderDidFinishSubmitting:(PFOrder *)order;
-- (void)order:(PFOrder *)order failedWithError:(NSError *)error;
-
+- (void)orderDidFinishSubmitting:(PFOrder *)anOrder error:(NSError *)error;
 @end

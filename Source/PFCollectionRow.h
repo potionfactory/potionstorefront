@@ -1,5 +1,5 @@
 //
-//  PFProductView.h
+//  PFCollectionRow.h
 //  PotionStoreFront
 //
 //  Created by Andy Kim on 7/27/08.
@@ -22,6 +22,9 @@
 @interface PFCollectionViewItem : NSCollectionViewItem
 {
 }
+
+- (IBAction)toggleItem:(id)sender;
+
 @end
 
 

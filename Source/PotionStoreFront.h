@@ -22,8 +22,11 @@
 - (id)delegate;
 - (void)setDelegate:(id)delegate;
 
-- (NSURL *)storeURL;
-- (void)setStoreURL:(NSURL *)URL;
+- (NSURL *)potionStoreURL;
+- (void)setPotionStoreURL:(NSURL *)URL;
+
+- (NSURL *)productsPlistURL;
+- (void)setProductsPlistURL:(NSURL *)URL;
 
 - (void)beginSheetModalForWindow:(NSWindow *)window;
 

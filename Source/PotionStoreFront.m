@@ -36,23 +36,33 @@ static PotionStoreFront *gStoreFront = nil;
 	[[PFStoreWindowController sharedController] setDelegate:delegate];
 }
 
-- (NSURL *)storeURL
+- (NSURL *)potionStoreURL
 {
 	return [[PFStoreWindowController sharedController] storeURL];
 }
 
-- (void)setStoreURL:(NSURL *)URL
+- (void)setPotionStoreURL:(NSURL *)URL
 {
 	[[PFStoreWindowController sharedController] setStoreURL:URL];
+}
+
+- (NSURL *)productsPlistURL
+{
+	return [[PFStoreWindowController sharedController] productsPlistURL];
+}
+
+- (void)setProductsPlistURL:(NSURL *)URL
+{
+	[[PFStoreWindowController sharedController] setProductsPlistURL:URL];
 }
 
 - (void)beginSheetModalForWindow:(NSWindow *)window
 {
 	[NSApp beginSheet:[[PFStoreWindowController sharedController] window]
 	   modalForWindow:window
-		modalDelegate:self 
+		modalDelegate:self
 	   didEndSelector:nil
 		  contextInfo:NULL];
-}	
+}
 
 @end

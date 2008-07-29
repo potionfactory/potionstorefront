@@ -7,9 +7,9 @@
 //
 
 #import "PFStoreWindowController.h"
-#import "PFBackgroundView.h"
-
 #import "PotionStoreFront.h"
+#import "PFBackgroundView.h"
+#import "PFCollectionRow.h"
 
 #import <AddressBook/AddressBook.h>
 
@@ -22,7 +22,7 @@ static PFStoreWindowController *gController = nil;
 	if (gController == nil) {
 		gController = [[PFStoreWindowController alloc] init];
 	}
-	
+
 	return gController;
 }
 
@@ -38,6 +38,7 @@ static PFStoreWindowController *gController = nil;
 - (void)dealloc
 {
 	[storeURL release];
+	[productsPlistURL release];
 	[customAddress release];
 	[order release];
 	[super dealloc];
@@ -49,12 +50,12 @@ static PFStoreWindowController *gController = nil;
 
 	[headerTitleField setTextColor:[NSColor colorWithCalibratedRed:201/255.0 green:220/255.0 blue:255/255.0 alpha:1.0]];
 	[headerStepsField setTextColor:[NSColor colorWithCalibratedRed:201/255.0 green:220/255.0 blue:255/255.0 alpha:1.0]];
-	
+
 	// Default kerning on Helvetica Neue UltraLight is too small
 	NSMutableAttributedString *as = [[[headerTitleField attributedStringValue] mutableCopy] autorelease];
 	[as addAttribute:NSKernAttributeName value:[NSNumber numberWithFloat:1.2] range:NSMakeRange(0, [as length])];
 	[headerTitleField setAttributedStringValue:as];
-	
+
 	[mainContentView setBackgroundColor:[NSColor colorWithCalibratedWhite:0.95 alpha:1.0]];
 
 	[headerView setGradient:
@@ -63,12 +64,50 @@ static PFStoreWindowController *gController = nil;
 
 	NSArray *countries = [NSArray arrayWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"countries" ofType:@"plist"]];
 	[countriesArrayController setContent:countries];
-	
+
 	[self showPricing:nil];
+}
+
+static void PFUnbindEverythingInViewTree(NSView *view)
+{
+	if (view == nil) return; // just in case
+
+	for (NSView *subview in view.subviews) {
+		PFUnbindEverythingInViewTree(subview);
+	}
+
+	NSMutableArray *objectsToRemoveBindingsFrom = [NSMutableArray arrayWithObject:view];
+
+	if ([view respondsToSelector:@selector(cell)]) {
+		NSCell *cell = [(NSControl *)view cell];
+		if (cell)
+			[objectsToRemoveBindingsFrom addObject:cell];
+	}
+	if ([view respondsToSelector:@selector(cells)]) {
+		NSArray *cells = [(id)view cells];
+		if (cells)
+			[objectsToRemoveBindingsFrom addObjectsFromArray:cells];
+	}
+
+	for (id obj in objectsToRemoveBindingsFrom) {
+		if ([obj respondsToSelector:@selector(exposedBindings)]) {
+			for (NSString *binding in [obj exposedBindings]) {
+				NSDictionary *info = [obj infoForBinding:binding];
+				if (info) {
+					[obj unbind:binding];
+				}
+			}
+		}
+	}
 }
 
 - (void)close
 {
+	// Unbind everything so that circular retain cycles are released and everything can get deallocated
+	PFUnbindEverythingInViewTree([[self window] contentView]);
+	PFUnbindEverythingInViewTree(pricingView);
+	PFUnbindEverythingInViewTree(billingView);
+	PFUnbindEverythingInViewTree(thankYouView);
 	[super close];
 	[self autorelease];
 	gController = nil;
@@ -80,23 +119,25 @@ static PFStoreWindowController *gController = nil;
 - (IBAction)showPricing:(id)sender
 {
 	// Grab products from server
-	NSURL *productsURL = [NSURL URLWithString:[[storeURL absoluteString] stringByAppendingPathComponent:@"products.json"]];
 	if ([[productCollectionView content] count] == 0) {
-		[productCollectionView setContent:[PFProduct fetchedProductsFromURL:productsURL error:nil]];
+		[productFetchProgressSpinner startAnimation:self];
+		[PFProduct beginFetchingProductsFromURL:productsPlistURL delegate:self];
 	}
 
 	[self p_setContentView:pricingView];
 	[self p_setHeaderTitle:NSLocalizedString(@"Purchase", nil)];
 	[headerStepsField setStringValue:NSLocalizedString(@"Step 1 / 2", nil)];
-	
+
 	[primaryButton setTitle:NSLocalizedString(@"Next", nil)];
 	[primaryButton setAction:@selector(showBillingInformation:)];
 
 	[secondaryButton setTitle:NSLocalizedString(@"Cancel", nil)];
 	[secondaryButton setAction:@selector(done:)];
-	
-//	[[self window] makeFirstResponder:primaryButton];
-//	[[self window] makeFirstResponder:[[productCollectionView subviews] objectAtIndex:0]];
+
+	[tertiaryButton setHidden:NO];
+
+	[lockImageView setHidden:YES];
+
 	[[self window] recalculateKeyViewLoop];
 }
 
@@ -111,13 +152,17 @@ static PFStoreWindowController *gController = nil;
 	[self p_setContentView:billingView];
 	[self p_setHeaderTitle:NSLocalizedString(@"Billing Information", nil)];
 	[headerStepsField setStringValue:NSLocalizedString(@"Step 2 / 2", nil)];
-	
+
 	[primaryButton setTitle:NSLocalizedString(@"Purchase", nil)];
 	[primaryButton setAction:@selector(purchase:)];
-	
+
 	[secondaryButton setTitle:NSLocalizedString(@"Go Back", nil)];
 	[secondaryButton setAction:@selector(showPricing:)];
-	
+
+	[tertiaryButton setHidden:YES];
+
+	[lockImageView setHidden:NO];
+
 	// If there's one or less addresses in address book, hide the address selection dropdown
 	if ([self p_countOfAddresses] <= 1) {
 		NSRect wframe = [[self window] frame];
@@ -132,6 +177,19 @@ static PFStoreWindowController *gController = nil;
 	else {
 		[self p_setupAddressPopUpButton];
 	}
+
+	// If name is blank, put focus there
+	if ([[firstNameField stringValue] length] == 0)
+		[[self window] makeFirstResponder:firstNameField];
+	// otherwise, if address is blank, put focus there
+	else if ([[address1Field stringValue] length] == 0)
+		[[self window] makeFirstResponder:address1Field];
+	// otherwise, if email is blank, put focus there
+	else if ([[emailField stringValue] length] == 0)
+		[[self window] makeFirstResponder:emailField];
+	// otherwise put focus in credit card number field
+	else
+		[[self window] makeFirstResponder:creditCardNumberField];
 }
 
 - (IBAction)showThankYou:(id)sender
@@ -142,13 +200,16 @@ static PFStoreWindowController *gController = nil;
 
 	[primaryButton setTitle:NSLocalizedString(@"Done", nil)];
 	[primaryButton setAction:@selector(done:)];
+
 	[secondaryButton setHidden:YES];
+
+	[lockImageView setHidden:YES];
 }
 
-- (IBAction)updateOrderLineItems:(id)sender
+- (IBAction)updatedOrderLineItems:(id)sender
 {
+	// Reset to regular text color in case the error color got set
 	[orderTotalField setTextColor:[NSColor controlTextColor]];
-	[order setLineItems:[[productCollectionView content] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"checked = YES"]]];
 }
 
 - (IBAction)purchase:(id)sender
@@ -156,14 +217,9 @@ static PFStoreWindowController *gController = nil;
 	if ([self p_validateOrder]) {
 		[[self window] makeFirstResponder:[[self window] initialFirstResponder]];
 		[self p_setEnabled:NO toAllControlsInView:[[self window] contentView]];
-		
-//		overlayView = [[PFBackgroundView alloc] initWithFrame:[mainContentView bounds]];
-//		[overlayView setBackgroundColor:[NSColor colorWithCalibratedWhite:0.0 alpha:0.2]];
-//		[mainContentView addSubview:overlayView];
-//		[overlayView release];
 
 		[progressSpinner startAnimation:self];
-		
+
 		[order setDelegate:self];
 		[order setSubmitURL:[NSURL URLWithString:[[storeURL absoluteString] stringByAppendingPathComponent:@"order.json"]]];
 		[order submitInBackground];
@@ -188,7 +244,7 @@ static PFStoreWindowController *gController = nil;
 - (IBAction)selectAddress:(id)sender
 {
 	NSInteger index = [sender indexOfItem:[sender selectedItem]];
-	
+
 	if (index < [self p_countOfAddresses]) {
 		NSString *label = [[[[ABAddressBook sharedAddressBook] me] valueForProperty:kABAddressProperty] labelAtIndex:index];
 		PFAddress *address = [[[order billingAddress] copy] autorelease];
@@ -208,34 +264,45 @@ static PFStoreWindowController *gController = nil;
 #pragma mark -
 #pragma mark Delegate
 
-- (void)orderDidFinishSubmitting:(PFOrder *)anOrder
+- (void)didFinishFetchingProducts:(NSArray *)products error:(NSError *)error
 {
-	[progressSpinner stopAnimation:self];
-	[self p_setEnabled:YES toAllControlsInView:[[self window] contentView]];
-	
-	// Wipe the credit card information before notifying the delegate
-	[anOrder setCreditCardNumber:nil];
-	[anOrder setCreditCardSecurityCode:nil];
-	[anOrder setCreditCardExpirationMonth:nil];
-	[anOrder setCreditCardExpirationYear:nil];
-	
-	if ([[self delegate] respondsToSelector:@selector(orderDidFinishCharging:)]) {
-		[[self delegate] orderDidFinishCharging:anOrder];
+	[productFetchProgressSpinner stopAnimation:self];
+	[productFetchProgressSpinner removeFromSuperview];
+
+	if (error) {
+		[NSApp presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:NULL];
 	}
-	
-	[self showThankYou:self];
+	else {
+		[productCollectionView setContent:products];
+		[order setLineItems:[products filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"checked = YES"]]];
+	}
 }
 
-- (void)order:(PFOrder *)anOrder failedWithError:(NSError *)error
+- (void)orderDidFinishSubmitting:(PFOrder *)anOrder error:(NSError *)error
 {
 	[progressSpinner stopAnimation:self];
-	
-	NSAlert *alert = [NSAlert alertWithError:error];
-	SEL didEndSelector = @selector(alertDidEnd:returnCode:contextInfo:);
-	[alert beginSheetModalForWindow:[self window] modalDelegate:self didEndSelector:didEndSelector contextInfo:NULL];
+
+	if (error == nil) {
+		[self p_setEnabled:YES toAllControlsInView:[[self window] contentView]];
+
+		// Wipe the credit card information before notifying the delegate
+		[anOrder setCreditCardNumber:nil];
+		[anOrder setCreditCardSecurityCode:nil];
+		[anOrder setCreditCardExpirationMonth:nil];
+		[anOrder setCreditCardExpirationYear:nil];
+
+		if ([[self delegate] respondsToSelector:@selector(orderDidFinishCharging:)]) {
+			[[self delegate] orderDidFinishCharging:anOrder];
+		}
+
+		[self showThankYou:self];
+	}
+	else {
+		[NSApp presentError:error modalForWindow:[self window] delegate:self didPresentSelector:@selector(didPresentOrderSubmitError:) contextInfo:NULL];
+	}
 }
 
-- (void)alertDidEnd:(NSAlert *)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo
+- (void)didPresentOrderSubmitError:(BOOL)didRecover
 {
 	[self p_setEnabled:YES toAllControlsInView:[[self window] contentView]];
 
@@ -243,9 +310,6 @@ static PFStoreWindowController *gController = nil;
 	// enable state set correctly again
 	[order willChangeValueForKey:@"creditCardNumber"];
 	[order didChangeValueForKey:@"creditCardNumber"];
-	
-//	[overlayView removeFromSuperview];
-//	overlayView = nil;
 }
 
 - (void)controlTextDidChange:(NSNotification *)aNotification
@@ -260,7 +324,7 @@ static PFStoreWindowController *gController = nil;
 	if (customAddress == nil) {
 		[addressPopUpButton addItemWithTitle:NSLocalizedString(@"other", nil)];
 		[addressPopUpButton selectItemAtIndex:[addressPopUpButton numberOfItems] - 1];
-		
+
 		customAddress = [[order billingAddress] copy];
 		[order setBillingAddress:customAddress];
 	}
@@ -310,7 +374,10 @@ static PFStoreWindowController *gController = nil;
 - (PFOrder *)order { return order; }
 
 - (NSURL *)storeURL { return storeURL; }
-- (void)setStoreURL:(NSURL *)URL { if (storeURL != URL) { [storeURL release]; storeURL = [URL copy]; } }
+- (void)setStoreURL:(NSURL *)value { if (storeURL != value) { [storeURL release]; storeURL = [value copy]; } }
+
+- (NSURL *)productsPlistURL { return productsPlistURL; }
+- (void)setProductsPlistURL:(NSURL *)value { if (productsPlistURL != value) { [productsPlistURL release]; productsPlistURL = [value copy]; } }
 
 #pragma mark -
 #pragma mark Private
@@ -324,7 +391,7 @@ static PFStoreWindowController *gController = nil;
 - (void)p_setupAddressPopUpButton
 {
 	ABMultiValue *addresses = [[[ABAddressBook sharedAddressBook] me] valueForProperty:kABAddressProperty];
-	
+
 	[addressPopUpButton removeAllItems];
 
 	for (NSUInteger i = 0; i < [addresses count]; i++) {
@@ -337,7 +404,7 @@ static PFStoreWindowController *gController = nil;
 
 		[addressPopUpButton addItemWithTitle:label];
 	}
-	
+
 	[addressPopUpButton setTarget:self];
 	[addressPopUpButton setAction:@selector(selectAddress:)];
 }
@@ -381,7 +448,7 @@ static PFStoreWindowController *gController = nil;
 
 	NSColor *good = [NSColor controlTextColor];
 	NSColor *bad = [[NSColor redColor] shadowWithLevel:0.15];
-	
+
 	[firstNameLabel setTextColor:good];
 	[lastNameLabel setTextColor:good];
 	[address1Label setTextColor:good];
@@ -445,7 +512,7 @@ static PFStoreWindowController *gController = nil;
 	if (![order validateCreditCardExpiration:&error]) {
 		[creditCardExpirationLabel setTextColor:bad];
 		success = NO;
-		
+
 		if (error) {
 			NSAlert *alert = [NSAlert alertWithError:error];
 			[alert beginSheetModalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:NULL];

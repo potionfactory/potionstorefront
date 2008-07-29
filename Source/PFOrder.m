@@ -42,9 +42,9 @@
 	[creditCardSecurityCode release];
 	[creditCardExpirationMonth release];
 	[creditCardExpirationYear release];
-	
+
 	[submitURL release];
-	
+
 	[super dealloc];
 }
 
@@ -75,7 +75,7 @@
 		[orderDict setObject:[self creditCardSecurityCode]		forKey:@"cc_code"];
 		[orderDict setObject:[[self creditCardExpirationMonth] stringValue]	forKey:@"cc_month"];
 		[orderDict setObject:[[self creditCardExpirationYear] stringValue] forKey:@"cc_year"];
-		
+
 		NSMutableDictionary *itemsDict = [NSMutableDictionary dictionaryWithCapacity:[lineItems count]];
 		for (PFProduct *item in lineItems) {
 			// Items dictionary uses the product_id as the key and the quantity as the value
@@ -105,7 +105,7 @@ static NSError *ErrorWithObject(id object)
 	else {
 		message = [object description];
 	}
-	
+
 	return [NSError errorWithDomain:@"PotionStoreFrontErrorDomain"
 							   code:0
 						   userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
@@ -164,11 +164,11 @@ fail:
 		[postRequest setValue:@"PotionStoreFront" forHTTPHeaderField:@"User-Agent"];
 		[postRequest setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
 		[postRequest setTimeoutInterval:10.0];
-		
+
 		NSData *responseData = [NSURLConnection sendSynchronousRequest:postRequest returningResponse:&response error:&error];
 		if (error != nil) {
 			error = ErrorWithObject(error);
-			goto error;
+			goto done;
 		}
 
 		NSString *responseBody = [[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] autorelease];
@@ -182,11 +182,11 @@ fail:
 		if (statusCode == 200) {
 			NSDictionary *responseOrder = [responseBody JSONValue];
 			if (DEBUG_POTION_STORE_FRONT) {
-				debug(@"RESPONSE ORDER: %@", responseOrder);
+				NSLog(@"RESPONSE ORDER: %@", responseOrder);
 			}
-			
+
 			NSInteger licensedCount = 0;
-			
+
 			// Update license key from returned order
 			for (PFProduct *myitem in lineItems) {
 				for (NSDictionary *dict in [responseOrder objectForKey:@"line_items"]) {
@@ -197,35 +197,26 @@ fail:
 					}
 				}
 			}
-			
+
 			PFAssert(licensedCount >= 1, @"There should be at least one licensed product when an order is successful");
-			
-			if ([[self delegate] respondsToSelector:@selector(orderDidFinishSubmitting:)]) {
-				[[self delegate] performSelectorOnMainThread:@selector(orderDidFinishSubmitting:) withObject:self waitUntilDone:YES];
-			}
 		}
 		else {
 			error = ErrorWithJSONResponse(responseBody);
-			goto error;
 		}
 	}
 	@catch (NSException *e) {
 		NSLog(@"ERROR -- Exception while submitting order: %@", e);
 		error = ErrorWithObject(e);
-		goto error;
 	}
 
-	[pool release];
-	return;
-
-error:
-	if ([[self delegate] respondsToSelector:@selector(order:failedWithError:)]) {
-		NSInvocation *invocation = [NSInvocation invocationWithTarget:[self delegate] selector:@selector(order:failedWithError:)];
+done:
+	if ([[self delegate] respondsToSelector:@selector(orderDidFinishSubmitting:error:)]) {
+		NSInvocation *invocation = [NSInvocation invocationWithTarget:[self delegate] selector:@selector(orderDidFinishSubmitting:error:)];
 		[invocation setArgument:&self atIndex:2];
 		[invocation setArgument:&error atIndex:3];
 		[invocation invokeOnMainThreadWaitUntilDone:YES];
 	}
-		
+
 	[pool release];
 }
 
@@ -259,7 +250,7 @@ error:
 	else if ([ccnum hasPrefix:@"6"]) {
 		return PFDiscoverType;
 	}
-	
+
 	return PFUnknownType;
 }
 
@@ -284,7 +275,7 @@ error:
 - (BOOL)isMasterCard { return [self creditCardType] == PFMasterCardType; }
 - (BOOL)isAmexCard { return [self creditCardType] == PFAmexType; }
 - (BOOL)isDiscoverCard { return [self creditCardType] == PFDiscoverType; }
-	
+
 #pragma mark -
 #pragma mark Accessors
 
@@ -297,7 +288,7 @@ error:
 	for (PFProduct *product in lineItems) {
 		total += [[product price] floatValue];
 	}
-	
+
 	return total;
 }
 
@@ -330,7 +321,7 @@ error:
 - (NSNumber *)creditCardExpirationYear { return creditCardExpirationYear; }
 - (void)setCreditCardExpirationYear:(id)value
 {
-	if (creditCardExpirationYear != value) { 
+	if (creditCardExpirationYear != value) {
 		[creditCardExpirationYear release];
 		if ([value isKindOfClass:[NSNumber class]])
 			creditCardExpirationYear = [value copy];
@@ -352,19 +343,19 @@ error:
 	// 2. If their sum isn't divisible by 10, it's a bad card number
 
 	NSString *ccnum = [self p_cleanCreditCardNumber:*value];
-	
+
 	// American Express is 15 digits and everything else is at least 16
 	if ([ccnum length] < 15 || [ccnum length] > 16) goto fail;
-	
+
 	NSInteger sum = 0;
 	BOOL alt = NO;
-	
+
 	for(NSInteger i = [ccnum length] - 1; i >= 0; i--) {
 		NSInteger thedigit = [[ccnum substringWithRange:NSMakeRange(i, 1)] integerValue];
 		if (alt) {
 			thedigit = 2 * thedigit;
 			if (thedigit > 9) {
-				thedigit -= 9; 
+				thedigit -= 9;
 			}
 		}
 		sum += thedigit;
@@ -374,7 +365,7 @@ error:
 		if (outError) *outError = nil;
 		return YES;
 	}
-	
+
 fail:
 	*outError = [NSError errorWithDomain:@"PotionStoreFrontErrorDomain"	code:0 // whatever, it's never used anyway
 								userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
@@ -408,10 +399,10 @@ fail:
 	[comps setYear:year + 2000];
 	[comps setDay:2];
 	NSDate *expirationDate = [cal dateFromComponents:comps];
-	
+
 	comps = [cal components:NSYearCalendarUnit|NSMonthCalendarUnit fromDate:[NSDate date]];
 	[comps setDay:1];
-	
+
 	NSDate *firstDayOfCurrentMonth = [cal dateFromComponents:comps];
 
 	if ([firstDayOfCurrentMonth compare:expirationDate] != NSOrderedAscending) {
@@ -435,7 +426,7 @@ fail:
 - (NSString *)p_cleanCreditCardNumber:(NSString *)value
 {
 	NSCharacterSet *digitCharacterSet = [NSCharacterSet decimalDigitCharacterSet];
-	
+
 	// Construct credit card number string using only numbers
 	NSMutableString *ccnum = [NSMutableString stringWithCapacity:32];
 	for (NSUInteger i = 0; i < [value length]; i++) {
@@ -443,7 +434,7 @@ fail:
 			[ccnum appendString:[value substringWithRange:NSMakeRange(i, 1)]];
 		}
 	}
-	
+
 	return ccnum;
 }
 
