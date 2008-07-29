@@ -63,14 +63,22 @@ static PotionStoreFront *gStoreFront = nil;
 
 - (void)beginSheetModalForWindow:(NSWindow *)window
 {
-	[NSApp beginSheet:[[PFStoreWindowController sharedController] window]
+	NSWindow *storeWindow = [[PFStoreWindowController sharedController] window];
+
+	// Don't open twice
+	if ([storeWindow isVisible]) {
+		[storeWindow makeKeyAndOrderFront:self];
+		return;
+	}
+
+	[NSApp beginSheet:storeWindow
 	   modalForWindow:window
 		modalDelegate:self
 	   didEndSelector:nil
 		  contextInfo:NULL];
 
 	// Clear the first responder. By default it's getting set to the web store button, and that looks quite fugly
-	[[[PFStoreWindowController sharedController] window] makeFirstResponder:nil];
+	[storeWindow makeFirstResponder:nil];
 }
 
 @end

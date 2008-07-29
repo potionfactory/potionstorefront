@@ -395,9 +395,11 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 		[productsPlistURL release];
 		productsPlistURL = [value copy];
 
-		// Grab products from server
-		[productFetchProgressSpinner startAnimation:self];
-		[PFProduct beginFetchingProductsFromURL:productsPlistURL delegate:self];
+		// Grab products from server if we haven't yet
+		if ([[productCollectionView content] count] == 0) {
+			[productFetchProgressSpinner startAnimation:self];
+			[PFProduct beginFetchingProductsFromURL:productsPlistURL delegate:self];
+		}
 	}
 }
 
