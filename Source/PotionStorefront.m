@@ -16,14 +16,14 @@
 //	NSLog(@"Loading Potion Store Front framework");
 //}
 
-static PotionStorefront *gStoreFront = nil;
+static PotionStorefront *gStorefront = nil;
 
-+ (PotionStorefront *)sharedStoreFront
++ (PotionStorefront *)sharedStorefront
 {
-	if (gStoreFront == nil) {
-		gStoreFront = [[PotionStorefront alloc] init];
+	if (gStorefront == nil) {
+		gStorefront = [[PotionStorefront alloc] init];
 	}
-	return gStoreFront;
+	return gStorefront;
 }
 
 - (id)delegate

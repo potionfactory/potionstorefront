@@ -17,7 +17,7 @@
 {
 }
 
-+ (PotionStorefront *)sharedStoreFront;
++ (PotionStorefront *)sharedStorefront;
 
 - (id)delegate;
 - (void)setDelegate:(id)delegate;
