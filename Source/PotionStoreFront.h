@@ -28,6 +28,8 @@
 - (NSURL *)productsPlistURL;
 - (void)setProductsPlistURL:(NSURL *)URL;
 
+- (void)setWebStoreSupportsPayPal:(BOOL)flag1 googleCheckout:(BOOL)flag2;
+
 - (void)beginSheetModalForWindow:(NSWindow *)window;
 
 @end

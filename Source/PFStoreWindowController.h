@@ -31,6 +31,7 @@
 	IBOutlet NSCollectionView *productCollectionView;
 	IBOutlet NSTextField *orderTotalField;
 	IBOutlet NSProgressIndicator *productFetchProgressSpinner;
+	IBOutlet NSButton *openWebStoreButton;
 
 	// -----
 	// STUFF FOR BILLING VIEW
@@ -83,10 +84,15 @@
 - (id)delegate;
 - (void)setDelegate:(id)object;
 
+// Accessors
 - (PFOrder *)order;
 - (NSURL *)storeURL;
 - (void)setStoreURL:(NSURL *)URL;
+- (NSURL *)productsPlistURL;
+- (void)setProductsPlistURL:(NSURL *)value;
+- (void)setWebStoreSupportsPayPal:(BOOL)flag1 googleCheckout:(BOOL)flag2;
 
+// Actions
 - (IBAction)showPricing:(id)sender;
 - (IBAction)showBillingInformation:(id)sender;
 - (IBAction)showThankYou:(id)sender;
@@ -96,6 +102,7 @@
 - (IBAction)goBack:(id)sender;
 - (IBAction)selectAddress:(id)sender;
 - (IBAction)selectCountry:(id)sender;
+- (IBAction)openWebStore:(id)sender;
 
 // Private
 - (NSInteger)p_countOfAddresses;

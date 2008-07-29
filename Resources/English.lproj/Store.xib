@@ -8,7 +8,8 @@
 		<string key="IBDocument.HIToolboxVersion">352.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="2" id="10"/>
+			<integer value="1" id="9"/>
+			<integer value="411"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -30,7 +31,7 @@
 				<int key="NSWindowStyleMask">7</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{247, 756}, {508, 625}}</string>
-				<int key="NSWTFlags">603979776</int>
+				<int key="NSWTFlags">603981824</int>
 				<string key="NSWindowTitle">Purchase Software</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
@@ -123,13 +124,13 @@
 						<object class="NSButton" id="694526885">
 							<reference key="NSNextResponder" ref="424248594"/>
 							<int key="NSvFlags">289</int>
-							<string key="NSFrame">{{14, 12}, {130, 32}}</string>
+							<string key="NSFrame">{{14, 12}, {163, 32}}</string>
 							<reference key="NSSuperview" ref="424248594"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="537382918">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">134217728</int>
-								<string key="NSContents">Input License...</string>
+								<string key="NSContents">Input License Key...</string>
 								<reference key="NSSupport" ref="139637021"/>
 								<reference key="NSControlView" ref="694526885"/>
 								<int key="NSButtonFlags">-2038284033</int>
@@ -313,7 +314,7 @@
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
 			<object class="NSCustomView" id="691983328">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -439,8 +440,8 @@ dHRlciBjb3B5IGhlcmUuLi4</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="956362335">
 							<int key="NSCellFlags">68288064</int>
-							<int key="NSCellFlags2">-2076179456</int>
-							<string key="NSContents">Total: $45.95</string>
+							<int key="NSCellFlags2">71304192</int>
+							<real value="4.595000e+01" key="NSContents"/>
 							<object class="NSFont" key="NSSupport">
 								<string key="NSName">HelveticaNeue</string>
 								<double key="NSSize">1.600000e+01</double>
@@ -459,10 +460,10 @@ dHRlciBjb3B5IGhlcmUuLi4</string>
 									</object>
 									<object class="NSMutableArray" key="dict.values">
 										<bool key="EncodedWithXMLCoder">YES</bool>
-										<integer value="1" id="9"/>
+										<reference ref="9"/>
 										<reference ref="9"/>
 										<integer value="1040"/>
-										<reference ref="10"/>
+										<integer value="2"/>
 										<string type="base64-UTF8">VG90YWw6IMKkIywjIzAuMDA</string>
 									</object>
 								</object>
@@ -526,6 +527,7 @@ dHRlciBjb3B5IGhlcmUuLi4</string>
 					</object>
 				</object>
 				<string key="NSFrameSize">{508, 414}</string>
+				<reference key="NSSuperview"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSCustomView" id="867003023">
@@ -2588,6 +2590,22 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 					</object>
 					<int key="connectionID">528</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">openWebStoreButton</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="18378957"/>
+					</object>
+					<int key="connectionID">529</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">openWebStore:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="18378957"/>
+					</object>
+					<int key="connectionID">530</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -2638,9 +2656,9 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 							<reference ref="1037566945"/>
 							<reference ref="212372928"/>
 							<reference ref="484422849"/>
-							<reference ref="694526885"/>
 							<reference ref="617243374"/>
 							<reference ref="717523397"/>
+							<reference ref="694526885"/>
 						</object>
 						<reference key="parent" ref="565575407"/>
 					</object>
@@ -3992,7 +4010,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">528</int>
+			<int key="maxID">533</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4071,7 +4089,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 						<string key="NS.key.0">securityExplanationField</string>
 						<string key="NS.object.0">PFSecurityExplanationTextField</string>
 					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="857610782">
+					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="142319304">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Source/PFLockImageView.h</string>
 					</object>
@@ -4087,7 +4105,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 				<object class="IBPartialClassDescription">
 					<string key="className">PFSecurityExplanationTextField</string>
 					<string key="superclassName">NSTextField</string>
-					<reference key="sourceIdentifier" ref="857610782"/>
+					<reference key="sourceIdentifier" ref="142319304"/>
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">PFStoreWindowController</string>
@@ -4097,6 +4115,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>goBack:</string>
+							<string>openWebStore:</string>
 							<string>purchase:</string>
 							<string>selectAddress:</string>
 							<string>selectCountry:</string>
@@ -4107,6 +4126,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -4146,6 +4166,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 							<string>lastNameLabel</string>
 							<string>lockImageView</string>
 							<string>mainContentView</string>
+							<string>openWebStoreButton</string>
 							<string>orderTotalField</string>
 							<string>pricingView</string>
 							<string>primaryButton</string>
@@ -4185,6 +4206,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 							<string>NSTextField</string>
 							<string>NSImageView</string>
 							<string>PFBackgroundView</string>
+							<string>NSButton</string>
 							<string>NSTextField</string>
 							<string>NSView</string>
 							<string>NSButton</string>

@@ -31,6 +31,7 @@
 {
 	[[PotionStoreFront sharedStoreFront] setPotionStoreURL:[NSURL URLWithString:@"https://localhost:3000/store"]];
 	[[PotionStoreFront sharedStoreFront] setProductsPlistURL:[NSURL URLWithString:@"http://www.potionfactory.com/files/thehitlist/store_products.plist"]];
+	[[PotionStoreFront sharedStoreFront] setWebStoreSupportsPayPal:YES googleCheckout:YES];
 	[[PotionStoreFront sharedStoreFront] setDelegate:self];
 	[[PotionStoreFront sharedStoreFront] beginSheetModalForWindow:mainWindow];
 }

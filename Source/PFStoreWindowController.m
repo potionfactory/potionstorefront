@@ -119,7 +119,6 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 
 - (IBAction)showPricing:(id)sender
 {
-	[self p_setContentView:pricingView];
 	[self p_setHeaderTitle:NSLocalizedString(@"Purchase", nil)];
 	[headerStepsField setStringValue:NSLocalizedString(@"Step 1 / 2", nil)];
 
@@ -133,7 +132,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 
 	[lockImageView setHidden:YES];
 
-	[[self window] recalculateKeyViewLoop];
+	[self p_setContentView:pricingView];
 }
 
 - (IBAction)showBillingInformation:(id)sender
@@ -144,7 +143,6 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 		return;
 	}
 
-	[self p_setContentView:billingView];
 	[self p_setHeaderTitle:NSLocalizedString(@"Billing Information", nil)];
 	[headerStepsField setStringValue:NSLocalizedString(@"Step 2 / 2", nil)];
 
@@ -173,6 +171,8 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 		[self p_setupAddressPopUpButton];
 	}
 
+	[self p_setContentView:billingView];
+
 	// If name is blank, put focus there
 	if ([[firstNameField stringValue] length] == 0)
 		[[self window] makeFirstResponder:firstNameField];
@@ -189,7 +189,6 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 
 - (IBAction)showThankYou:(id)sender
 {
-	[self p_setContentView:thankYouView];
 	[self p_setHeaderTitle:NSLocalizedString(@"Thank You", nil)];
 	[headerStepsField setStringValue:@""];
 
@@ -199,6 +198,8 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	[secondaryButton setHidden:YES];
 
 	[lockImageView setHidden:YES];
+
+	[self p_setContentView:thankYouView];
 }
 
 - (IBAction)updatedOrderLineItems:(id)sender
@@ -210,7 +211,9 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 - (IBAction)purchase:(id)sender
 {
 	if ([self p_validateOrder]) {
-		[[self window] makeFirstResponder:[[self window] initialFirstResponder]];
+		// Make the editing field commit
+		[[self window] makeFirstResponder:nil];
+
 		[self p_setEnabled:NO toAllControlsInView:[[self window] contentView]];
 
 		[progressSpinner startAnimation:self];
@@ -254,6 +257,11 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 - (IBAction)selectCountry:(id)sender
 {
 	[self controlTextDidChange:nil];
+}
+
+- (IBAction)openWebStore:(id)sender
+{
+	[[NSWorkspace sharedWorkspace] openURL:storeURL];
 }
 
 #pragma mark -
@@ -363,10 +371,10 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 #pragma mark -
 #pragma mark Accessors
 
+- (PFOrder *)order { return order; }
+
 - (id)delegate { return delegate; }
 - (void)setDelegate:(id)object { delegate = object; }
-
-- (PFOrder *)order { return order; }
 
 - (NSURL *)storeURL { return storeURL; }
 - (void)setStoreURL:(NSURL *)value
@@ -392,6 +400,25 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 		[productFetchProgressSpinner startAnimation:self];
 		[PFProduct beginFetchingProductsFromURL:productsPlistURL delegate:self];
 	}
+}
+
+- (void)setWebStoreSupportsPayPal:(BOOL)paypal googleCheckout:(BOOL)gc
+{
+	if (paypal && gc) {
+		[openWebStoreButton setTitle:NSLocalizedString(@"Pay with PayPal or Google Checkout...", nil)];
+	}
+	else if (paypal) {
+		[openWebStoreButton setTitle:NSLocalizedString(@"Pay with PayPal...", nil)];
+	}
+	else if (gc) {
+		[openWebStoreButton setTitle:NSLocalizedString(@"Pay with Google Checkout...", nil)];
+	}
+	else {
+		[openWebStoreButton setHidden:YES];
+	}
+
+	// Size the button
+	[openWebStoreButton sizeToFit];
 }
 
 #pragma mark -
@@ -447,6 +474,8 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	[[self window] setFrame:wframe display:YES animate:YES];
 	[view setFrame:[mainContentView bounds]];
 	[mainContentView addSubview:view positioned:NSWindowBelow relativeTo:nil];
+
+	// This is necessary even when window is set to auto-recalculate key view loop
 	[[self window] recalculateKeyViewLoop];
 }
 

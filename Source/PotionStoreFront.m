@@ -56,6 +56,11 @@ static PotionStoreFront *gStoreFront = nil;
 	[[PFStoreWindowController sharedController] setProductsPlistURL:URL];
 }
 
+- (void)setWebStoreSupportsPayPal:(BOOL)flag1 googleCheckout:(BOOL)flag2
+{
+	[[PFStoreWindowController sharedController] setWebStoreSupportsPayPal:flag1 googleCheckout:flag2];
+}
+
 - (void)beginSheetModalForWindow:(NSWindow *)window
 {
 	[NSApp beginSheet:[[PFStoreWindowController sharedController] window]
@@ -63,6 +68,9 @@ static PotionStoreFront *gStoreFront = nil;
 		modalDelegate:self
 	   didEndSelector:nil
 		  contextInfo:NULL];
+
+	// Clear the first responder. By default it's getting set to the web store button, and that looks quite fugly
+	[[[PFStoreWindowController sharedController] window] makeFirstResponder:nil];
 }
 
 @end
