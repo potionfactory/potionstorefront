@@ -1,27 +1,27 @@
 //
-//  PotionStoreFront.m
-//  PotionStoreFront
+//  PotionStorefront.m
+//  PotionStorefront
 //
 //  Created by Andy Kim on 7/26/08.
 //  Copyright 2008 Potion Factory LLC. All rights reserved.
 //
 
-#import "PotionStoreFront.h"
+#import "PotionStorefront.h"
 #import "PFStoreWindowController.h"
 
-@implementation PotionStoreFront
+@implementation PotionStorefront
 
 //+ (void)load
 //{
 //	NSLog(@"Loading Potion Store Front framework");
 //}
 
-static PotionStoreFront *gStoreFront = nil;
+static PotionStorefront *gStoreFront = nil;
 
-+ (PotionStoreFront *)sharedStoreFront
++ (PotionStorefront *)sharedStoreFront
 {
 	if (gStoreFront == nil) {
-		gStoreFront = [[PotionStoreFront alloc] init];
+		gStoreFront = [[PotionStorefront alloc] init];
 	}
 	return gStoreFront;
 }

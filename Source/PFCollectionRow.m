@@ -1,6 +1,6 @@
 //
 //  PFCollectionRow.m
-//  PotionStoreFront
+//  PotionStorefront
 //
 //  Created by Andy Kim on 7/27/08.
 //  Copyright 2008 Potion Factory LLC. All rights reserved.

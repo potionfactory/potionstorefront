@@ -1,6 +1,6 @@
 //
 //  PFOrder.m
-//  PotionStoreFront
+//  PotionStorefront
 //
 //  Created by Andy Kim on 7/26/08.
 //  Copyright 2008 Potion Factory LLC. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "PFOrder.h"
 #import "PFAddress.h"
-#import "PotionStoreFront.h"
+#import "PotionStorefront.h"
 
 #import <JSON/JSON.h>
 
@@ -106,7 +106,7 @@ static NSError *ErrorWithObject(id object)
 		message = [object description];
 	}
 
-	return [NSError errorWithDomain:@"PotionStoreFrontErrorDomain"
+	return [NSError errorWithDomain:@"PotionStorefrontErrorDomain"
 							   code:0
 						   userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
 									 NSLocalizedString(@"Could not process order", nil), NSLocalizedDescriptionKey,
@@ -161,7 +161,7 @@ fail:
 
 		[postRequest setHTTPMethod:@"POST"];
 		[postRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-		[postRequest setValue:@"PotionStoreFront" forHTTPHeaderField:@"User-Agent"];
+		[postRequest setValue:@"PotionStorefront" forHTTPHeaderField:@"User-Agent"];
 		[postRequest setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
 		[postRequest setTimeoutInterval:10.0];
 
@@ -368,7 +368,7 @@ done:
 
 fail:
 	if (outError)
-		*outError = [NSError errorWithDomain:@"PotionStoreFrontErrorDomain"	code:0 // whatever, it's never used anyway
+		*outError = [NSError errorWithDomain:@"PotionStorefrontErrorDomain"	code:0 // whatever, it's never used anyway
 									userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
 											  NSLocalizedString(@"Invalid credit card number", nil),
 											  NSLocalizedDescriptionKey,
@@ -407,7 +407,7 @@ fail:
 	NSDate *firstDayOfCurrentMonth = [cal dateFromComponents:comps];
 
 	if ([firstDayOfCurrentMonth compare:expirationDate] != NSOrderedAscending) {
-		*outError = [NSError errorWithDomain:@"PotionStoreFrontErrorDomain" code:1 // whatever, it's never used anyway
+		*outError = [NSError errorWithDomain:@"PotionStorefrontErrorDomain" code:1 // whatever, it's never used anyway
 									userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
 											  NSLocalizedString(@"Your credit card is expired", nil),
 											  NSLocalizedDescriptionKey,

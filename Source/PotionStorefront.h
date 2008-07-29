@@ -1,6 +1,6 @@
 //
-//  PotionStoreFront.h
-//  PotionStoreFront
+//  PotionStorefront.h
+//  PotionStorefront
 //
 //  Created by Andy Kim on 7/26/08.
 //  Copyright 2008 Potion Factory LLC. All rights reserved.
@@ -13,11 +13,11 @@
 
 #define DEBUG_POTION_STORE_FRONT 0
 
-@interface PotionStoreFront : NSObject
+@interface PotionStorefront : NSObject
 {
 }
 
-+ (PotionStoreFront *)sharedStoreFront;
++ (PotionStorefront *)sharedStoreFront;
 
 - (id)delegate;
 - (void)setDelegate:(id)delegate;
@@ -36,6 +36,6 @@
 
 
 
-@interface NSObject (PotionStoreFrontDelegate)
+@interface NSObject (PotionStorefrontDelegate)
 - (void)orderDidFinishCharging:(PFOrder *)order;
 @end

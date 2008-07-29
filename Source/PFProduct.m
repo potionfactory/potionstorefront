@@ -1,13 +1,13 @@
 //
 //  PFProduct.m
-//  PotionStoreFront
+//  PotionStorefront
 //
 //  Created by Andy Kim on 7/27/08.
 //  Copyright 2008 Potion Factory LLC. All rights reserved.
 //
 
 #import "PFProduct.h"
-#import "PotionStoreFront.h"
+#import "PotionStorefront.h"
 
 #import "NSInvocationAdditions.h"
 #import <JSON/JSON.h>
@@ -53,7 +53,7 @@ static NSError *ErrorWithObject(id object)
 	else
 		message = [object description];
 
-	return [NSError errorWithDomain:@"PotionStoreFrontErrorDomain"	code:2 // whatever, it's never used anyway
+	return [NSError errorWithDomain:@"PotionStorefrontErrorDomain"	code:2 // whatever, it's never used anyway
 						   userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
 									 NSLocalizedString(@"Could not get the list of products", nil), NSLocalizedDescriptionKey,
 									 message, NSLocalizedRecoverySuggestionErrorKey,

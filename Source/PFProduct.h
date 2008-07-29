@@ -1,6 +1,6 @@
 //
 //  PFProduct.h
-//  PotionStoreFront
+//  PotionStorefront
 //
 //  Created by Andy Kim on 7/27/08.
 //  Copyright 2008 Potion Factory LLC. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-// In PotionStoreFront this class serves as both a product and a line item
+// In PotionStorefront this class serves as both a product and a line item
 
 @interface PFProduct : NSObject //<NSCopying>
 {

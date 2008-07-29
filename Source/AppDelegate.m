@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import <PotionStoreFront/PotionStoreFront.h>
+#import <PotionStorefront/PotionStorefront.h>
 
 @implementation AppDelegate
 
@@ -29,16 +29,16 @@
 
 - (IBAction)buy:(id)sender
 {
-	[[PotionStoreFront sharedStoreFront] setPotionStoreURL:[NSURL URLWithString:@"https://localhost:3000/store"]];
-	[[PotionStoreFront sharedStoreFront] setProductsPlistURL:[NSURL URLWithString:@"http://www.potionfactory.com/files/thehitlist/store_products.plist"]];
-	[[PotionStoreFront sharedStoreFront] setWebStoreSupportsPayPal:YES googleCheckout:YES];
-	[[PotionStoreFront sharedStoreFront] setDelegate:self];
-	[[PotionStoreFront sharedStoreFront] beginSheetModalForWindow:mainWindow];
+	[[PotionStorefront sharedStorefront] setPotionStoreURL:[NSURL URLWithString:@"https://localhost:3000/store"]];
+	[[PotionStorefront sharedStorefront] setProductsPlistURL:[NSURL URLWithString:@"http://www.potionfactory.com/files/thehitlist/store_products.plist"]];
+	[[PotionStorefront sharedStorefront] setWebStoreSupportsPayPal:YES googleCheckout:YES];
+	[[PotionStorefront sharedStorefront] setDelegate:self];
+	[[PotionStorefront sharedStorefront] beginSheetModalForWindow:mainWindow];
 }
 
 - (IBAction)unload:(id)sender
 {
-	if ([[NSBundle bundleWithIdentifier:@"com.potionfactory.PotionStoreFront"] unload])
+	if ([[NSBundle bundleWithIdentifier:@"com.potionfactory.PotionStorefront"] unload])
 		NSLog(@"unloaded");
 	else
 		NSLog(@"did not unload");
