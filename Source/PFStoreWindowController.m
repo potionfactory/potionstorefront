@@ -163,14 +163,15 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	[lockImageView setHidden:NO];
 
 	// If there's one or less addresses in address book, hide the address selection dropdown
-	if ([self p_countOfAddresses] <= 1) {
-		NSRect wframe = [[self window] frame];
+	if (addressSelectionContainerView != nil && [self p_countOfAddresses] <= 1) {
+		NSRect vframe = [billingView frame];
 		CGFloat diff = NSHeight([addressSelectionContainerView frame]);
-		wframe.size.height -= diff;
-		wframe.origin.y += diff;
+		vframe.size.height -= diff;
+		vframe.origin.y += diff;
 		[addressSelectionContainerView removeFromSuperview];
-		[[self window] setFrame:wframe display:YES];
+		[billingView setFrame:vframe];
 		addressPopUpButton = nil;
+		addressSelectionContainerView = nil;
 	}
 	// Otherwise, populate the dropdown
 	else {
