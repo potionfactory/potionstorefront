@@ -120,7 +120,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 - (IBAction)showPricing:(id)sender
 {
 	// Don't validate email and credit card number right away when going from billing information to pricing
-	validateFieldsImmediately = YES;
+	validateFieldsImmediately = NO;
 
 	[self p_setHeaderTitle:NSLocalizedString(@"Purchase", nil)];
 	[headerStepsField setStringValue:NSLocalizedString(@"Step 1 / 2", nil)];
