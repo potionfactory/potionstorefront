@@ -8,6 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">352.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="398"/>
 			<integer value="2" id="10"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -397,6 +398,7 @@ dHRlciBjb3B5IGhlcmUuLi4</string>
 								</object>
 								<string key="NSFrame">{{1, 1}, {466, 267}}</string>
 								<reference key="NSSuperview" ref="173779016"/>
+								<reference key="NSNextKeyView" ref="1066357762"/>
 								<reference key="NSDocView" ref="1066357762"/>
 								<reference key="NSBGColor" ref="548228222"/>
 								<int key="NScvFlags">4</int>
@@ -424,6 +426,7 @@ dHRlciBjb3B5IGhlcmUuLi4</string>
 						</object>
 						<string key="NSFrame">{{20, 61}, {468, 269}}</string>
 						<reference key="NSSuperview" ref="691983328"/>
+						<reference key="NSNextKeyView" ref="672865758"/>
 						<int key="NSsFlags">530</int>
 						<reference key="NSVScroller" ref="97312657"/>
 						<reference key="NSHScroller" ref="38298650"/>
@@ -527,7 +530,7 @@ dHRlciBjb3B5IGhlcmUuLi4</string>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSCustomView" id="867003023">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">282</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1271,6 +1274,7 @@ dHRlciBjb3B5IGhlcmUuLi4</string>
 					</object>
 				</object>
 				<string key="NSFrameSize">{508, 507}</string>
+				<reference key="NSSuperview"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSCustomView" id="419176098">
@@ -2602,6 +2606,14 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 					</object>
 					<int key="connectionID">530</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="543460543"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">534</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -3761,10 +3773,10 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilderKit</string>
 					<string>com.apple.InterfaceBuilderKit</string>
-					<string>{{1332, 147}, {508, 625}}</string>
+					<string>{{1712, 147}, {508, 625}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="0" id="6"/>
-					<string>{{1332, 147}, {508, 625}}</string>
+					<string>{{1712, 147}, {508, 625}}</string>
 					<reference ref="6"/>
 					<string>{3.40282e+38, 3.40282e+38}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3941,7 +3953,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{1304, 346}, {508, 507}}</string>
+					<string>{{1712, 346}, {508, 507}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4006,7 +4018,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">533</int>
+			<int key="maxID">534</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4029,7 +4041,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 					<string key="className">NSObject</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Source/PotionStoreFront.h</string>
+						<string key="minorKey">Source/PotionStorefront.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -4224,7 +4236,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 			</object>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
-		<string key="IBDocument.LastKnownRelativeProjectPath">../../PotionStoreFront.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../../PotionStorefront.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 	</data>
 </archive>

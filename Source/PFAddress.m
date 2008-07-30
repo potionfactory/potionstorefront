@@ -171,8 +171,28 @@
 
 - (BOOL)validateEmail:(id *)value error:(NSError **)outError
 {
+	// Very basic validation of an email address
+	// Passes validation when value is a string, at least 5 letters long, and has a '@' and a '.'
 	if (outError) *outError = nil;
-	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] != 0;
+	if ([*value isKindOfClass:[NSString class]] == NO) return NO;
+	NSString *string = [*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+	BOOL isEmail = (([string length] >= 5) &&
+					([string rangeOfString:@"@"].location != NSNotFound) &&
+					([string rangeOfString:@"."].location != NSNotFound));
+	if (isEmail) {
+		return YES;
+	}
+	else {
+		if (outError)
+			*outError = [NSError errorWithDomain:@"PotionStorefrontErrorDomain"	code:0 // whatever, it's never used anyway
+										userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+												  NSLocalizedString(@"Invalid email address", nil),
+												  NSLocalizedDescriptionKey,
+												  NSLocalizedString(@"Please make sure you typed in your email address correctly.", nil),
+												  NSLocalizedRecoverySuggestionErrorKey,
+												  nil]];
+		return NO;
+	}
 }
 
 @end

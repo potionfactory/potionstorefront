@@ -273,7 +273,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	[productFetchProgressSpinner removeFromSuperview];
 
 	if (error) {
-		[NSApp presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:NULL];
+		[[self window] presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:NULL];
 	}
 	else {
 		[productCollectionView setContent:products];
@@ -301,7 +301,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 		[self showThankYou:self];
 	}
 	else {
-		[NSApp presentError:error modalForWindow:[self window] delegate:self didPresentSelector:@selector(didPresentOrderSubmitError:) contextInfo:NULL];
+		[[self window] presentError:error modalForWindow:[self window] delegate:self didPresentSelector:@selector(didPresentOrderSubmitError:) contextInfo:NULL];
 	}
 }
 
@@ -320,6 +320,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	if ([aNotification object] == creditCardNumberField) return;
 	if ([aNotification object] == creditCardExpirationMonthField) return;
 	if ([aNotification object] == creditCardExpirationYearField) return;
+	if ([aNotification object] == emailField) return;
 
 	// Should get here iff address is edited
 
@@ -351,7 +352,17 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 		if ([ccnum length] != 0) {
 			NSError *error = nil;
 			if (![order validateValue:&ccnum forKey:@"creditCardNumber" error:&error]) {
-				[NSApp presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:NULL];
+				[[self window] presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:NULL];
+				return NO;
+			}
+		}
+	}
+	else if (control == emailField) {
+		NSString *email = [emailField stringValue];
+		if ([email length] != 0) {
+			NSError *error = nil;
+			if (![[order billingAddress] validateValue:&email forKey:@"email" error:&error]) {
+				[[self window] presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:NULL];
 				return NO;
 			}
 		}
@@ -559,7 +570,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 		success = NO;
 
 		if (error) {
-			[NSApp presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:NULL];
+			[[self window] presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:NULL];
 		}
 	}
 
