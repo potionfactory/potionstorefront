@@ -77,6 +77,7 @@
 	NSURL *storeURL;
 	NSURL *productsPlistURL;
 	PFOrder *order;
+	BOOL validateFieldsImmediately;
 }
 
 + (id)sharedController;
@@ -99,7 +100,6 @@
 
 - (IBAction)updatedOrderLineItems:(id)sender;
 - (IBAction)purchase:(id)sender;
-- (IBAction)goBack:(id)sender;
 - (IBAction)selectAddress:(id)sender;
 - (IBAction)selectCountry:(id)sender;
 - (IBAction)openWebStore:(id)sender;

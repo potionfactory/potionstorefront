@@ -1644,14 +1644,6 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">goBack:</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="128721044"/>
-					</object>
-					<int key="connectionID">286</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">purchase:</string>
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="318429277"/>
@@ -4122,7 +4114,6 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>goBack:</string>
 							<string>openWebStore:</string>
 							<string>purchase:</string>
 							<string>selectAddress:</string>
@@ -4134,7 +4125,6 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>

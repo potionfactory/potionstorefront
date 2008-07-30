@@ -119,6 +119,9 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 
 - (IBAction)showPricing:(id)sender
 {
+	// Don't validate email and credit card number right away when going from billing information to pricing
+	validateFieldsImmediately = YES;
+
 	[self p_setHeaderTitle:NSLocalizedString(@"Purchase", nil)];
 	[headerStepsField setStringValue:NSLocalizedString(@"Step 1 / 2", nil)];
 
@@ -137,6 +140,9 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 
 - (IBAction)showBillingInformation:(id)sender
 {
+	// We want to validate fields right when the editor tries to commit the editing for some fields
+	validateFieldsImmediately = YES;
+
 	if ([order totalAmount] == 0) {
 		[orderTotalField setTextColor:[[NSColor redColor] shadowWithLevel:0.15]];
 		NSBeep();
@@ -228,12 +234,6 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 }
 
 - (IBAction)done:(id)sender
-{
-	[self close];
-	[NSApp endSheet:[self window] returnCode:NSCancelButton];
-}
-
-- (IBAction)goBack:(id)sender
 {
 	[self close];
 	[NSApp endSheet:[self window] returnCode:NSCancelButton];
@@ -343,6 +343,8 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 
 - (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor
 {
+	if (!validateFieldsImmediately) return YES;
+
 	// It would be nice to validate in control:isValidObject:, but I can't figure out how to customize
 	// the error message there
 
@@ -520,37 +522,37 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	NSError *error = nil;
 	PFAddress *billingAddress = [order billingAddress];
 
-	if (!(value = [billingAddress firstName]) && ![billingAddress validateValue:&value forKey:@"firstName" error:nil]) {
+	if (!(value = [billingAddress firstName]) || ![billingAddress validateValue:&value forKey:@"firstName" error:nil]) {
 		[firstNameLabel setTextColor:bad];
 		success = NO;
 	}
 
-	if (!(value = [billingAddress lastName]) && ![billingAddress validateValue:&value forKey:@"lastName" error:nil]) {
+	if (!(value = [billingAddress lastName]) || ![billingAddress validateValue:&value forKey:@"lastName" error:nil]) {
 		[lastNameLabel setTextColor:bad];
 		success = NO;
 	}
 
-	if (!(value = [billingAddress address1]) && ![billingAddress validateValue:&value forKey:@"address1" error:nil]) {
+	if (!(value = [billingAddress address1]) || ![billingAddress validateValue:&value forKey:@"address1" error:nil]) {
 		[address1Label setTextColor:bad];
 		success = NO;
 	}
 
-	if (!(value = [billingAddress city]) && ![billingAddress validateValue:&value forKey:@"city" error:nil]) {
+	if (!(value = [billingAddress city]) || ![billingAddress validateValue:&value forKey:@"city" error:nil]) {
 		[cityLabel setTextColor:bad];
 		success = NO;
 	}
 
-	if (!(value = [billingAddress state]) && ![billingAddress validateValue:&value forKey:@"state" error:nil]) {
+	if (!(value = [billingAddress state]) || ![billingAddress validateValue:&value forKey:@"state" error:nil]) {
 		[stateLabel setTextColor:bad];
 		success = NO;
 	}
 
-	if (!(value = [billingAddress zipcode]) && ![billingAddress validateValue:&value forKey:@"zipcode" error:nil]) {
+	if (!(value = [billingAddress zipcode]) || ![billingAddress validateValue:&value forKey:@"zipcode" error:nil]) {
 		[zipcodeLabel setTextColor:bad];
 		success = NO;
 	}
 
-	if (!(value = [billingAddress email]) && ![billingAddress validateValue:&value forKey:@"email" error:nil]) {
+	if (!(value = [billingAddress email]) || ![billingAddress validateValue:&value forKey:@"email" error:&error]) {
 		[emailLabel setTextColor:bad];
 		success = NO;
 	}
@@ -560,7 +562,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 		success = NO;
 	}
 
-	if (!(value = [order creditCardSecurityCode]) && ![order validateValue:&value forKey:@"creditCardSecurityCode" error:nil]) {
+	if (!(value = [order creditCardSecurityCode]) || ![order validateValue:&value forKey:@"creditCardSecurityCode" error:nil]) {
 		[creditCardSecurityCodeLabel setTextColor:bad];
 		success = NO;
 	}
@@ -568,10 +570,10 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	if (![order validateCreditCardExpiration:&error]) {
 		[creditCardExpirationLabel setTextColor:bad];
 		success = NO;
+	}
 
-		if (error) {
-			[[self window] presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:NULL];
-		}
+	if (error) {
+		[[self window] presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:NULL];
 	}
 
 	return success;
