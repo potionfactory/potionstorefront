@@ -21,5 +21,6 @@
 @interface PFLockImageView : NSImageView
 {
 	IBOutlet PFSecurityExplanationTextField *securityExplanationField;
+	NSTimer *orderOutTimer;
 }
 @end

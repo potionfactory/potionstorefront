@@ -27,6 +27,13 @@
 
 - (void)mouseExited:(NSEvent *)theEvent
 {
+	[orderOutTimer invalidate];
+	orderOutTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(orderOutTimerFired:) userInfo:nil repeats:NO];
+}
+
+- (void)orderOutTimerFired:(NSTimer *)timer
+{
+	orderOutTimer = nil;
 	[securityExplanationField orderOut];
 }
 
@@ -64,16 +71,17 @@
 
 - (void)orderIn
 {
-	[self setAnimations:[NSDictionary dictionaryWithObject:[self orderInAnimation] forKey:@"frameOrigin"]];
 	NSPoint newOrigin = initialFrame.origin;
+	[self setAnimations:[NSDictionary dictionaryWithObject:[self orderInAnimation] forKey:@"frameOrigin"]];
 	[[self animator] setFrameOrigin:newOrigin];
 }
 
 - (void)orderOut
 {
-	[self setAnimations:[NSDictionary dictionaryWithObject:[self orderOutAnimation] forKey:@"frameOrigin"]];
 	NSPoint newOrigin = initialFrame.origin;
 	newOrigin.x -= NSWidth(initialFrame);
+	if (self.frame.origin.x == newOrigin.x) return;
+	[self setAnimations:[NSDictionary dictionaryWithObject:[self orderOutAnimation] forKey:@"frameOrigin"]];
 	[[self animator] setFrameOrigin:newOrigin];
 }
 
