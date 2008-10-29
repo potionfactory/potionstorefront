@@ -103,6 +103,7 @@
 - (IBAction)selectAddress:(id)sender;
 - (IBAction)selectCountry:(id)sender;
 - (IBAction)openWebStore:(id)sender;
+- (IBAction)showRegistrationWindow:(id)sender;
 
 // Private
 - (NSInteger)p_countOfAddresses;

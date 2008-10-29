@@ -37,5 +37,9 @@
 
 
 @interface NSObject (PotionStorefrontDelegate)
+// Required
 - (void)orderDidFinishCharging:(PFOrder *)order;
+
+// Optional -- If you implement this you get the "Unlock with License Key..." button
+- (void)showRegistrationWindow:(id)sender;
 @end

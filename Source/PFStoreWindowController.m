@@ -47,7 +47,7 @@ static PFStoreWindowController *gController = nil;
 
 - (void)awakeFromNib
 {
-	[self window];
+	[[self window] setDelegate:self];
 
 	[headerTitleField setTextColor:[NSColor colorWithCalibratedRed:201/255.0 green:220/255.0 blue:255/255.0 alpha:1.0]];
 	[headerStepsField setTextColor:[NSColor colorWithCalibratedRed:201/255.0 green:220/255.0 blue:255/255.0 alpha:1.0]];
@@ -65,8 +65,6 @@ static PFStoreWindowController *gController = nil;
 
 	NSArray *countries = [NSArray arrayWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"countries" ofType:@"plist"]];
 	[countriesArrayController setContent:countries];
-
-	[self showPricing:nil];
 }
 
 static void PFUnbindEverythingInViewTree(NSView *view)
@@ -129,9 +127,17 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	[primaryButton setAction:@selector(showBillingInformation:)];
 
 	[secondaryButton setTitle:NSLocalizedString(@"Cancel", nil)];
-	[secondaryButton setAction:@selector(done:)];
+	[secondaryButton setAction:@selector(close:)];
 
-	[tertiaryButton setHidden:NO];
+	if ([[self delegate] respondsToSelector:@selector(showRegistrationWindow:)]) {
+		[tertiaryButton setTitle:NSLocalizedString(@"Unlock with License Key...", nil)];
+		[tertiaryButton setAction:@selector(showRegistrationWindow:)];
+		[tertiaryButton setTarget:self];
+		[tertiaryButton setHidden:NO];
+	}
+	else {
+		[tertiaryButton setHidden:YES];
+	}
 
 	[lockImageView setHidden:YES];
 
@@ -200,7 +206,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	[headerStepsField setStringValue:@""];
 
 	[primaryButton setTitle:NSLocalizedString(@"Done", nil)];
-	[primaryButton setAction:@selector(done:)];
+	[primaryButton setAction:@selector(close:)];
 
 	[secondaryButton setHidden:YES];
 
@@ -234,7 +240,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	}
 }
 
-- (IBAction)done:(id)sender
+- (IBAction)close:(id)sender
 {
 	[self close];
 	[NSApp endSheet:[self window] returnCode:NSCancelButton];
@@ -263,6 +269,14 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 - (IBAction)openWebStore:(id)sender
 {
 	[[NSWorkspace sharedWorkspace] openURL:storeURL];
+}
+
+- (IBAction)showRegistrationWindow:(id)sender
+{
+	if ([[self delegate] respondsToSelector:@selector(showRegistrationWindow:)]) {
+		[self close:nil];
+		[[self delegate] showRegistrationWindow:sender];
+	}
 }
 
 #pragma mark -

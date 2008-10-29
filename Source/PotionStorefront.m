@@ -11,11 +11,6 @@
 
 @implementation PotionStorefront
 
-//+ (void)load
-//{
-//	NSLog(@"Loading Potion Store Front framework");
-//}
-
 static PotionStorefront *gStorefront = nil;
 
 + (PotionStorefront *)sharedStorefront
@@ -70,6 +65,9 @@ static PotionStorefront *gStorefront = nil;
 		[storeWindow makeKeyAndOrderFront:self];
 		return;
 	}
+
+	// Call the showPricing: action here because by now the delegate should be set
+	[[PFStoreWindowController sharedController] showPricing:nil];
 
 	[NSApp beginSheet:storeWindow
 	   modalForWindow:window
