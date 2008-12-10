@@ -55,7 +55,7 @@ static NSError *ErrorWithObject(id object)
 
 	return [NSError errorWithDomain:@"PotionStorefrontErrorDomain"	code:2 // whatever, it's never used anyway
 						   userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
-									 NSLocalizedString(@"Could not get the list of products", nil), NSLocalizedDescriptionKey,
+									 NSLocalizedString(@"Could not get pricing information through the Internet", nil), NSLocalizedDescriptionKey,
 									 message, NSLocalizedRecoverySuggestionErrorKey,
 									 nil]];
 }

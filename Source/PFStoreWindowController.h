@@ -8,6 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+enum {
+	PFCreditCardPaymentMethod,
+	PFWebStorePaymentMethod
+};
+
 @class PFOrder;
 @class PFAddress;
 @class PFBackgroundView;
@@ -31,7 +36,8 @@
 	IBOutlet NSCollectionView *productCollectionView;
 	IBOutlet NSTextField *orderTotalField;
 	IBOutlet NSProgressIndicator *productFetchProgressSpinner;
-	IBOutlet NSButton *openWebStoreButton;
+	IBOutlet NSButton *creditCardButton;
+	IBOutlet NSButton *paypalOrGoogleCheckoutButton;
 
 	// -----
 	// STUFF FOR BILLING VIEW
@@ -77,6 +83,7 @@
 	NSURL *storeURL;
 	NSURL *productsPlistURL;
 	PFOrder *order;
+	NSInteger paymentMethod;
 	BOOL validateFieldsImmediately;
 }
 
@@ -98,6 +105,7 @@
 - (IBAction)showBillingInformation:(id)sender;
 - (IBAction)showThankYou:(id)sender;
 
+- (IBAction)selectPaymentMethod:(id)sender;
 - (IBAction)updatedOrderLineItems:(id)sender;
 - (IBAction)purchase:(id)sender;
 - (IBAction)selectAddress:(id)sender;

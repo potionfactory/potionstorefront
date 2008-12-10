@@ -146,6 +146,12 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 
 - (IBAction)showBillingInformation:(id)sender
 {
+	if (paymentMethod != PFCreditCardPaymentMethod) {
+		// TODO: build URL to preset quantity at the web store
+		[self openWebStore:nil];
+		return;
+	}
+
 	// We want to validate fields right when the editor tries to commit the editing for some fields
 	validateFieldsImmediately = YES;
 
@@ -213,6 +219,18 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	[lockImageView setHidden:YES];
 
 	[self p_setContentView:thankYouView];
+}
+
+- (IBAction)selectPaymentMethod:(id)sender
+{
+	if (sender == creditCardButton) {
+		paymentMethod = PFCreditCardPaymentMethod;
+		[paypalOrGoogleCheckoutButton setState:NSOffState];
+	}
+	else {
+		paymentMethod = PFWebStorePaymentMethod;
+		[creditCardButton setState:NSOffState];
+	}
 }
 
 - (IBAction)updatedOrderLineItems:(id)sender
@@ -434,20 +452,21 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 - (void)setWebStoreSupportsPayPal:(BOOL)paypal googleCheckout:(BOOL)gc
 {
 	if (paypal && gc) {
-		[openWebStoreButton setTitle:NSLocalizedString(@"Pay with PayPal or Google Checkout...", nil)];
+		[paypalOrGoogleCheckoutButton setTitle:NSLocalizedString(@"PayPal or Google Checkout", nil)];
 	}
 	else if (paypal) {
-		[openWebStoreButton setTitle:NSLocalizedString(@"Pay with PayPal...", nil)];
+		[paypalOrGoogleCheckoutButton setTitle:NSLocalizedString(@"PayPal", nil)];
 	}
 	else if (gc) {
-		[openWebStoreButton setTitle:NSLocalizedString(@"Pay with Google Checkout...", nil)];
+		[paypalOrGoogleCheckoutButton setTitle:NSLocalizedString(@"Google Checkout", nil)];
 	}
 	else {
-		[openWebStoreButton setHidden:YES];
+		[creditCardButton setHidden:YES];
+		[paypalOrGoogleCheckoutButton setHidden:YES];
 	}
 
 	// Size the button
-	[openWebStoreButton sizeToFit];
+	[paypalOrGoogleCheckoutButton sizeToFit];
 }
 
 #pragma mark -
