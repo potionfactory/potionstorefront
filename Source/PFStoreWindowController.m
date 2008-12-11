@@ -309,8 +309,11 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 		[[self window] presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:NULL];
 	}
 	else {
-		[productCollectionView setContent:products];
+		// Default to USD for now
+		[products setValue:@"USD" forKey:@"currencyCode"];
 		[order setLineItems:[products filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"checked = YES"]]];
+		[productCollectionView setContent:products];
+		[orderTotalField setHidden:NO];
 	}
 }
 

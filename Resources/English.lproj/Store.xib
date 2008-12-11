@@ -9,6 +9,7 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="411"/>
+			<integer value="447"/>
 			<integer value="136"/>
 			<integer value="398"/>
 		</object>
@@ -397,81 +398,18 @@
 					</object>
 					<object class="NSTextField" id="280468815">
 						<reference key="NSNextResponder" ref="691983328"/>
-						<int key="NSvFlags">265</int>
-						<string key="NSFrame">{{305, 20}, {182, 23}}</string>
+						<int key="NSvFlags">-2147483383</int>
+						<string key="NSFrame">{{330, 20}, {157, 23}}</string>
 						<reference key="NSSuperview" ref="691983328"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="956362335">
 							<int key="NSCellFlags">68288064</int>
 							<int key="NSCellFlags2">71304192</int>
-							<real value="4.595000e+01" key="NSContents"/>
+							<string key="NSContents">Total: $45.95</string>
 							<object class="NSFont" key="NSSupport">
 								<string key="NSName">HelveticaNeue</string>
 								<double key="NSSize">1.600000e+01</double>
 								<int key="NSfFlags">16</int>
-							</object>
-							<object class="NSNumberFormatter" key="NSFormatter" id="872807177">
-								<object class="NSMutableDictionary" key="NS.attributes">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<object class="NSMutableArray" key="dict.sortedKeys">
-										<bool key="EncodedWithXMLCoder">YES</bool>
-										<string>allowsFloats</string>
-										<string>alwaysShowsDecimalSeparator</string>
-										<string>formatterBehavior</string>
-										<string>numberStyle</string>
-										<string>positiveFormat</string>
-									</object>
-									<object class="NSMutableArray" key="dict.values">
-										<bool key="EncodedWithXMLCoder">YES</bool>
-										<integer value="1" id="9"/>
-										<reference ref="9"/>
-										<integer value="1040"/>
-										<integer value="2"/>
-										<string type="base64-UTF8">VG90YWw6IMKkIywjIzAuMDA</string>
-									</object>
-								</object>
-								<string type="base64-UTF8" key="NS.positiveformat">VG90YWw6IMKkIywjIzAuMDA</string>
-								<string type="base64-UTF8" key="NS.negativeformat">VG90YWw6IMKkIywjIzAuMDA</string>
-								<nil key="NS.positiveattrs"/>
-								<nil key="NS.negativeattrs"/>
-								<object class="NSAttributedString" key="NS.zero">
-									<nil key="NSString"/>
-								</object>
-								<object class="NSAttributedString" key="NS.nil">
-									<nil key="NSString"/>
-								</object>
-								<object class="NSAttributedString" key="NS.nan">
-									<string key="NSString">NaN</string>
-									<object class="NSDictionary" key="NSAttributes">
-										<bool key="EncodedWithXMLCoder">YES</bool>
-										<object class="NSArray" key="dict.sortedKeys">
-											<bool key="EncodedWithXMLCoder">YES</bool>
-										</object>
-										<object class="NSMutableArray" key="dict.values">
-											<bool key="EncodedWithXMLCoder">YES</bool>
-										</object>
-									</object>
-								</object>
-								<object class="NSDecimalNumberPlaceholder" key="NS.min" id="303790406">
-									<int key="NS.exponent">0</int>
-									<int key="NS.length">0</int>
-									<bool key="NS.negative">YES</bool>
-									<bool key="NS.compact">NO</bool>
-									<int key="NS.mantissa.bo">1</int>
-									<bytes key="NS.mantissa">AAAAAAAAAAAAAAAAAAAAAA</bytes>
-								</object>
-								<reference key="NS.max" ref="303790406"/>
-								<object class="NSDecimalNumberHandler" key="NS.rounding">
-									<int key="NS.roundingmode">3</int>
-									<bool key="NS.raise.overflow">YES</bool>
-									<bool key="NS.raise.underflow">YES</bool>
-									<bool key="NS.raise.dividebyzero">YES</bool>
-								</object>
-								<string key="NS.decimal">.</string>
-								<string key="NS.thousand">,</string>
-								<bool key="NS.hasthousands">YES</bool>
-								<bool key="NS.localized">YES</bool>
-								<bool key="NS.allowsfloats">YES</bool>
 							</object>
 							<reference key="NSControlView" ref="280468815"/>
 							<reference key="NSBackgroundColor" ref="548228222"/>
@@ -1335,7 +1273,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 			</object>
 			<object class="NSCollectionViewItem" id="859495775"/>
 			<object class="NSView" id="689829480">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">258</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1458,6 +1396,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 					</object>
 				</object>
 				<string key="NSFrameSize">{464, 78}</string>
+				<reference key="NSSuperview"/>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -1839,7 +1778,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 							<string key="NSKeyPath">order.billingAddress.city</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<reference key="NS.object.0" ref="9"/>
+								<integer value="1" key="NS.object.0" id="9"/>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
@@ -2419,26 +2358,6 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 					<int key="connectionID">453</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">displayPatternValue1: representedObject.price</string>
-						<reference key="source" ref="542354691"/>
-						<reference key="destination" ref="859495775"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="542354691"/>
-							<reference key="NSDestination" ref="859495775"/>
-							<string key="NSLabel">displayPatternValue1: representedObject.price</string>
-							<string key="NSBinding">displayPatternValue1</string>
-							<string key="NSKeyPath">representedObject.price</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSDisplayPattern</string>
-								<string key="NS.object.0">$%{value1}@</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">457</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">productCollectionView</string>
 						<reference key="source" ref="1001"/>
@@ -2461,22 +2380,6 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 						<reference key="destination" ref="9174854"/>
 					</object>
 					<int key="connectionID">474</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: order.totalAmount</string>
-						<reference key="source" ref="280468815"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="280468815"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: order.totalAmount</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">order.totalAmount</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">483</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -2653,6 +2556,42 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 						<reference key="destination" ref="989783362"/>
 					</object>
 					<int key="connectionID">555</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">displayPatternValue1: order.totalAmountString</string>
+						<reference key="source" ref="280468815"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="280468815"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">displayPatternValue1: order.totalAmountString</string>
+							<string key="NSBinding">displayPatternValue1</string>
+							<string key="NSKeyPath">order.totalAmountString</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSDisplayPattern</string>
+								<string key="NS.object.0">Total: %{value1}@</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">565</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: representedObject.priceString</string>
+						<reference key="source" ref="542354691"/>
+						<reference key="destination" ref="859495775"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="542354691"/>
+							<reference key="NSDestination" ref="859495775"/>
+							<string key="NSLabel">value: representedObject.priceString</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">representedObject.priceString</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">571</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3554,14 +3493,8 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 						<reference key="object" ref="956362335"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="872807177"/>
 						</object>
 						<reference key="parent" ref="280468815"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">482</int>
-						<reference key="object" ref="872807177"/>
-						<reference key="parent" ref="956362335"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">487</int>
@@ -3808,7 +3741,6 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 					<string>461.IBPluginDependency</string>
 					<string>466.IBPluginDependency</string>
 					<string>467.IBPluginDependency</string>
-					<string>482.IBPluginDependency</string>
 					<string>487.CustomClassName</string>
 					<string>487.IBPluginDependency</string>
 					<string>488.IBPluginDependency</string>
@@ -4039,7 +3971,6 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>PFClickThroughImageView</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4077,7 +4008,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">555</int>
+			<int key="maxID">571</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

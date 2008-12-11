@@ -17,6 +17,7 @@
 @implementation PFOrder
 
 @synthesize lineItems;
+@synthesize currencyCode;
 
 + (void)initialize
 {
@@ -31,19 +32,25 @@
 {
 	billingAddress = [[PFAddress alloc] init];
 	[billingAddress fillUsingAddressBook];
+
+	// Default to USD for now
+	[self setCurrencyCode:@"USD"];
+
 	return self;
 }
 
 - (void)dealloc
 {
-	[billingAddress release];
+	[lineItems release]; lineItems = nil;
+	[currencyCode release]; currencyCode = nil;
+	[billingAddress release]; billingAddress = nil;
 
-	[creditCardNumber release];
-	[creditCardSecurityCode release];
-	[creditCardExpirationMonth release];
-	[creditCardExpirationYear release];
+	[creditCardNumber release]; creditCardNumber = nil;
+	[creditCardSecurityCode release]; creditCardSecurityCode = nil;
+	[creditCardExpirationMonth release]; creditCardExpirationMonth = nil;
+	[creditCardExpirationYear release]; creditCardExpirationYear = nil;
 
-	[submitURL release];
+	[submitURL release]; submitURL = nil;
 
 	[super dealloc];
 }
@@ -282,14 +289,49 @@ done:
 - (id)delegate { return delegate; }
 - (void)setDelegate:(id)object { delegate = object; }
 
++ (NSSet *)keyPathsForValuesAffectingCurrencySymbol
+{
+	return [NSSet setWithObject:@"currencyCode"];
+}
+
++ (NSString *)currencySymbolForCode:(NSString *)code
+{
+	// Just a few of the most common currency symbols
+	if ([code isEqualToString:@"USD"])
+		return @"$";
+	else if ([code isEqualToString:@"EUR"])
+		return @"€";
+	else if ([code isEqualToString:@"JPY"])
+		return @"¥";
+	else if ([code isEqualToString:@"GBP"])
+		return @"£";
+	else
+		return @"$";
+}
+
++ (NSSet *)keyPathsForValuesAffectingTotalAmount
+{
+	return [NSSet setWithObjects:@"lineItems", nil];
+}
+
 - (CGFloat)totalAmount
 {
 	CGFloat total = 0;
 	for (PFProduct *product in lineItems) {
-		total += [[product price] floatValue];
+		total += [[product price] floatValue] * [[product quantity] floatValue];
 	}
 
 	return total;
+}
+
++ (NSSet *)keyPathsForValuesAffectingTotalAmountString
+{
+	return [NSSet setWithObjects:@"currencyCode", @"totalAmount", nil];
+}
+
+- (NSString *)totalAmountString
+{
+	return [NSString stringWithFormat:@"%@%.2lf", [PFOrder currencySymbolForCode:[self currencyCode]], [self totalAmount]];
 }
 
 - (NSURL *)submitURL { return submitURL; }

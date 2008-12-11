@@ -10,9 +10,12 @@
 
 // In PotionStorefront this class serves as both a product and a line item
 
+@class PFOrder;
+
 @interface PFProduct : NSObject //<NSCopying>
 {
 	NSNumber *identifierNumber;
+	NSString *currencyCode;
 	NSNumber *price;
 	NSString *name;
 	NSString *byline;
@@ -30,7 +33,8 @@
 
 - (NSArray *)children;
 
-@property(assign) BOOL checked;
+@property (copy) NSString *currencyCode;
+@property (assign) BOOL checked;
 
 // Accessors
 - (NSNumber *)identifierNumber;
@@ -38,6 +42,8 @@
 
 - (NSNumber *)price;
 - (void)setPrice:(NSNumber *)value;
+
+- (NSString *)priceString;
 
 - (NSString *)name;
 - (void)setName:(NSString *)value;

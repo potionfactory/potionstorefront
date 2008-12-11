@@ -22,8 +22,9 @@ typedef enum {
 {
 	id delegate;
 
-	PFAddress *billingAddress;
 	NSArray *lineItems;
+	NSString *currencyCode;
+	PFAddress *billingAddress;
 
 	NSString *creditCardNumber;
 	NSString *creditCardSecurityCode;
@@ -41,12 +42,16 @@ typedef enum {
 
 // Simple accessors
 
-@property(copy) NSArray *lineItems;
+@property (copy) NSArray *lineItems;
+@property (copy) NSString *currencyCode;
+
++ (NSString *)currencySymbolForCode:(NSString *)code;
 
 - (id)delegate;
 - (void)setDelegate:(id)object;
 
 - (CGFloat)totalAmount;
+- (NSString *)totalAmountString;
 
 - (NSURL *)submitURL;
 - (void)setSubmitURL:(NSURL *)value;

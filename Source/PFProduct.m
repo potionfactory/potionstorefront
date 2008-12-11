@@ -14,6 +14,7 @@
 
 @implementation PFProduct
 
+@synthesize currencyCode;
 @synthesize checked;
 
 //- (id)copyWithZone:(NSZone *)zone
@@ -29,6 +30,12 @@
 //	[copy
 //	return copy;
 //}
+
+- (id)init
+{
+	[self setQuantity:[NSNumber numberWithInteger:1]];
+	return self;
+}
 
 - (void)dealloc
 {
@@ -155,6 +162,13 @@ static NSError *ErrorWithObject(id object)
 
 - (NSNumber *)price { return price; }
 - (void)setPrice:(NSNumber *)value { if (price != value) { [price release]; price = [value copy]; } }
+
++ (NSSet *)keyPathsForValuesAffectingPriceString
+{
+	return [NSSet setWithObjects:@"price", @"currencyCode", nil];
+}
+
+- (NSString *)priceString { return [NSString stringWithFormat:@"%@%.2lf", [PFOrder currencySymbolForCode:[self currencyCode]], [[self price] floatValue]]; }
 
 - (NSString *)name { return name; }
 - (void)setName:(NSString *)value { if (name != value) { [name release]; name = [value copy]; } }
