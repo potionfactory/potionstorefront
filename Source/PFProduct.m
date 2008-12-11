@@ -39,14 +39,15 @@
 
 - (void)dealloc
 {
-	[identifierNumber release];
-	[price release];
-	[name release];
-	[byline release];
-	[iconImage release];
-	[licenseKey release];
-	[quantity release];
-	[radioGroupName release];
+	[identifierNumber release]; identifierNumber = nil;
+	[currencyCode release]; currencyCode = nil;
+	[price release]; price = nil;
+	[name release]; name = nil;
+	[byline release]; byline = nil;
+	[iconImage release]; iconImage = nil;
+	[licenseKey release]; licenseKey = nil;
+	[quantity release]; quantity = nil;
+	[radioGroupName release]; radioGroupName = nil;
 
 	[super dealloc];
 }
