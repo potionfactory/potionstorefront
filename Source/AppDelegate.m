@@ -30,7 +30,7 @@
 - (IBAction)buy:(id)sender
 {
 	[[PotionStorefront sharedStorefront] setDelegate:self];
-	[[PotionStorefront sharedStorefront] setPotionStoreURL:[NSURL URLWithString:@"https://localhost:3000/store"]];
+	[[PotionStorefront sharedStorefront] setPotionStoreURL:[NSURL URLWithString:@"http://localhost:3000/store"]];
 	[[PotionStorefront sharedStorefront] setProductsPlistURL:[NSURL URLWithString:@"http://www.potionfactory.com/files/thehitlist/store_products.plist"]];
 	[[PotionStorefront sharedStorefront] setWebStoreSupportsPayPal:YES googleCheckout:YES];
 	[[PotionStorefront sharedStorefront] beginSheetModalForWindow:mainWindow];

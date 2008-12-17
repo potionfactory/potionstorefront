@@ -2,16 +2,17 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">1050</int>
-		<string key="IBDocument.SystemVersion">9F33</string>
+		<string key="IBDocument.SystemVersion">9G55</string>
 		<string key="IBDocument.InterfaceBuilderVersion">677</string>
-		<string key="IBDocument.AppKitVersion">949.34</string>
-		<string key="IBDocument.HIToolboxVersion">352.00</string>
+		<string key="IBDocument.AppKitVersion">949.43</string>
+		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="136"/>
 			<integer value="411"/>
 			<integer value="447"/>
-			<integer value="136"/>
 			<integer value="398"/>
+			<integer value="407"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1245,22 +1246,22 @@
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSCustomView" id="419176098">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="NSTextField" id="874537490">
 						<reference key="NSNextResponder" ref="419176098"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{17, 49}, {474, 101}}</string>
+						<string key="NSFrame">{{17, 20}, {474, 68}}</string>
 						<reference key="NSSuperview" ref="419176098"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="732743258">
 							<int key="NSCellFlags">67239424</int>
 							<int key="NSCellFlags2">272629760</int>
-							<string type="base64-UTF8" key="NSContents">VGhhdCdzIGl0ISBZb3VyIHNvZnR3YXJlIGlzIG5vdyBmdWxseSBmdW5jdGlvbmFsIGFuZCBhbGwgZGVt
-byBsaW1pdGF0aW9ucyBoYXZlIGJlZW4gcmVtb3ZlZC4KCllvdXIgcHVyY2hhc2UgcmVjZWlwdCB3aWxs
-IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
+							<string type="base64-UTF8" key="NSContents">VGhhdCdzIGl0ISBZb3VyIHNvZnR3YXJlIGlzIG5vdyBmdWxseSBmdW5jdGlvbmFsIGFuZCBhbGwgdHJp
+YWwgbGltaXRhdGlvbnMgaGF2ZSBiZWVuIHJlbW92ZWQuCgpZb3VyIHB1cmNoYXNlIHJlY2VpcHQgd2ls
+bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 							<reference key="NSSupport" ref="139637021"/>
 							<reference key="NSControlView" ref="874537490"/>
 							<reference key="NSBackgroundColor" ref="548228222"/>
@@ -1268,7 +1269,8 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 						</object>
 					</object>
 				</object>
-				<string key="NSFrameSize">{508, 170}</string>
+				<string key="NSFrameSize">{508, 108}</string>
+				<reference key="NSSuperview"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSCollectionViewItem" id="859495775"/>
@@ -3946,7 +3948,7 @@ IGJlIGFycml2aW5nIGJ5IGVtYWlsIHNob3J0bHkuA</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{1200, 1063}, {508, 170}}</string>
+					<string>{{1200, 1125}, {508, 108}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>

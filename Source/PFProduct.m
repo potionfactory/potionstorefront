@@ -169,7 +169,10 @@ static NSError *ErrorWithObject(id object)
 	return [NSSet setWithObjects:@"price", @"currencyCode", nil];
 }
 
-- (NSString *)priceString { return [NSString stringWithFormat:@"%@%.2lf", [PFOrder currencySymbolForCode:[self currencyCode]], [[self price] floatValue]]; }
+- (NSString *)priceString
+{
+	return [NSString stringWithFormat:@"%@%.2lf", [PFOrder currencySymbolForCode:[self currencyCode]], [[self price] floatValue]];
+}
 
 - (NSString *)name { return name; }
 - (void)setName:(NSString *)value { if (name != value) { [name release]; name = [value copy]; } }
