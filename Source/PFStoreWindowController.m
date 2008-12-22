@@ -149,6 +149,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	if (paymentMethod != PFCreditCardPaymentMethod) {
 		// TODO: build URL to preset quantity at the web store
 		[self openWebStore:nil];
+		[self close:nil];
 		return;
 	}
 

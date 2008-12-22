@@ -108,6 +108,7 @@ enum {
 - (IBAction)selectPaymentMethod:(id)sender;
 - (IBAction)updatedOrderLineItems:(id)sender;
 - (IBAction)purchase:(id)sender;
+- (IBAction)close:(id)sender;
 - (IBAction)selectAddress:(id)sender;
 - (IBAction)selectCountry:(id)sender;
 - (IBAction)openWebStore:(id)sender;
