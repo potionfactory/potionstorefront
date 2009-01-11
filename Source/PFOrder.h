@@ -56,6 +56,8 @@ typedef enum {
 - (NSURL *)submitURL;
 - (void)setSubmitURL:(NSURL *)value;
 
+- (NSString *)licenseeName;
+
 - (PFAddress *)billingAddress;
 - (void)setBillingAddress:(PFAddress *)value;
 

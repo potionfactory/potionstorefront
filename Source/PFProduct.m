@@ -80,6 +80,9 @@ static NSError *ErrorWithObject(id object)
 
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
+	// Retain the delegate during the call
+	[delegate retain];
+
 	NSError *error = nil;
 	NSMutableArray *products = nil;
 
@@ -111,6 +114,8 @@ static NSError *ErrorWithObject(id object)
 		[invocation setArgument:&error atIndex:3];
 		[invocation invokeOnMainThreadWaitUntilDone:YES];
 	}
+
+	[delegate release];
 
 	[pool drain];
 }

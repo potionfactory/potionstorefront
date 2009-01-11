@@ -46,7 +46,7 @@
 - (void)fillUsingAddressBookAddressWithLabel:(NSString *)label
 {
 	ABPerson *me = [[ABAddressBook sharedAddressBook] me];
-	
+
 	if (firstName == nil) [self setFirstName:[me valueForProperty:kABFirstNameProperty]];
 	if (lastName == nil) [self setLastName:[me valueForProperty:kABLastNameProperty]];
 	if (company == nil) [self setCompany:[me valueForProperty:kABOrganizationProperty]];
@@ -90,45 +90,45 @@
 - (void)fillUsingAddressBook
 {
 	ABPerson *me = [[ABAddressBook sharedAddressBook] me];
-	
+
 	ABMultiValue *addresses = [me valueForProperty:kABAddressProperty];
 	NSString *defaultLabel = [addresses labelAtIndex:[addresses indexForIdentifier:[addresses primaryIdentifier]]];
 
 	[self fillUsingAddressBookAddressWithLabel:defaultLabel];
-}	
+}
 
 #pragma mark -
 #pragma mark Accessors
 
 - (NSString *)firstName { return firstName; }
-- (void)setFirstName:(NSString *)value { if (firstName != value) { [firstName release]; firstName = [value copy]; } }
+- (void)setFirstName:(NSString *)value { if (firstName != value) { [firstName release]; firstName = [[value stringByTrimming] copy]; } }
 
 - (NSString *)lastName { return lastName; }
-- (void)setLastName:(NSString *)value { if (lastName != value) { [lastName release]; lastName = [value copy]; } }
+- (void)setLastName:(NSString *)value { if (lastName != value) { [lastName release]; lastName = [[value stringByTrimming] copy]; } }
 
 - (NSString *)company { return company; }
-- (void)setCompany:(NSString *)value { if (company != value) { [company release]; company = [value copy]; } }
+- (void)setCompany:(NSString *)value { if (company != value) { [company release]; company = [[value stringByTrimming] copy]; } }
 
 - (NSString *)address1 { return address1; }
-- (void)setAddress1:(NSString *)value { if (address1 != value) { [address1 release]; address1 = [value copy]; } }
+- (void)setAddress1:(NSString *)value { if (address1 != value) { [address1 release]; address1 = [[value stringByTrimming] copy]; } }
 
 - (NSString *)address2 { return address2; }
-- (void)setAddress2:(NSString *)value { if (address2 != value) { [address2 release]; address2 = [value copy]; } }
+- (void)setAddress2:(NSString *)value { if (address2 != value) { [address2 release]; address2 = [[value stringByTrimming] copy]; } }
 
 - (NSString *)city { return city; }
-- (void)setCity:(NSString *)value { if (city != value) { [city release]; city = [value copy]; } }
+- (void)setCity:(NSString *)value { if (city != value) { [city release]; city = [[value stringByTrimming] copy]; } }
 
 - (NSString *)state { return state; }
-- (void)setState:(NSString *)value { if (state != value) { [state release]; state = [value copy]; } }
+- (void)setState:(NSString *)value { if (state != value) { [state release]; state = [[value stringByTrimming] copy]; } }
 
 - (NSString *)zipcode { return zipcode; }
-- (void)setZipcode:(NSString *)value { if (zipcode != value) { [zipcode release]; zipcode = [value copy]; } }
+- (void)setZipcode:(NSString *)value { if (zipcode != value) { [zipcode release]; zipcode = [[value stringByTrimming] copy]; } }
 
 - (NSString *)countryCode { return countryCode; }
 - (void)setCountryCode:(NSString *)value { if (countryCode != value) { [countryCode release]; countryCode = [value copy]; } }
 
 - (NSString *)email { return email; }
-- (void)setEmail:(NSString *)value { if (email != value) { [email release]; email = [value copy]; } }
+- (void)setEmail:(NSString *)value { if (email != value) { [email release]; email = [[value stringByTrimming] copy]; } }
 
 #pragma mark -
 #pragma mark Validation

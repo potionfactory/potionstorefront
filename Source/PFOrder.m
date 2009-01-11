@@ -68,7 +68,7 @@
 		// should be validated already. Putting it inside @try just in case though.
 		[orderDict setObject:[a firstName]	forKey:@"first_name"];
 		[orderDict setObject:[a lastName]	forKey:@"last_name"];
-		[orderDict setObject:[NSString stringWithFormat:@"%@ %@", [a firstName], [a lastName]] forKey:@"licensee_name"];
+		[orderDict setObject:[self licenseeName] forKey:@"licensee_name"];
 		if ([a company]) [orderDict setObject:[a company]	forKey:@"company"];
 		[orderDict setObject:[a address1]	forKey:@"address1"];
 		if ([a address2]) [orderDict setObject:[a address2]	forKey:@"address2"];
@@ -205,7 +205,8 @@ fail:
 				}
 			}
 
-			PFAssert(licensedCount >= 1, @"There should be at least one licensed product when an order is successful");
+			if (licensedCount == 0)
+				error = ErrorWithObject(NSLocalizedString(@"The order was charged, but a license key was not received. Please contact support.", nil));
 		}
 		else {
 			error = ErrorWithJSONResponse(responseBody);
@@ -336,6 +337,9 @@ done:
 
 - (NSURL *)submitURL { return submitURL; }
 - (void)setSubmitURL:(NSURL *)value { if (submitURL != value) { [submitURL release]; submitURL = [value copy]; } }
+
+// Just return the name from the address
+- (NSString *)licenseeName { return [NSString stringWithFormat:@"%@ %@", [[self billingAddress] firstName], [[self billingAddress] lastName]]; }
 
 - (PFAddress *)billingAddress { return billingAddress; }
 - (void)setBillingAddress:(PFAddress *)value { if (billingAddress != value) { [billingAddress release]; billingAddress = [value retain]; } }
