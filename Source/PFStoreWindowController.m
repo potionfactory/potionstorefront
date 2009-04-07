@@ -315,6 +315,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 		[order setLineItems:[products filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"checked = YES"]]];
 		[productCollectionView setContent:products];
 		[orderTotalField setHidden:NO];
+		[primaryButton setEnabled:YES];
 	}
 }
 

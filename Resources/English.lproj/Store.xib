@@ -8,11 +8,11 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="136"/>
-			<integer value="411"/>
+			<integer value="2"/>
 			<integer value="447"/>
-			<integer value="398"/>
+			<integer value="411"/>
 			<integer value="407"/>
+			<integer value="398"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -96,7 +96,7 @@
 							<reference key="NSSuperview" ref="424248594"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="12436131">
-								<int key="NSCellFlags">67239424</int>
+								<int key="NSCellFlags">604110336</int>
 								<int key="NSCellFlags2">134217728</int>
 								<string key="NSContents">Purchase</string>
 								<object class="NSFont" key="NSSupport" id="139637021">
@@ -3952,7 +3952,7 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{649, 510}, {508, 346}}</string>
+					<string>{{616, 510}, {508, 346}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3961,7 +3961,7 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>PFCollectionViewItem</string>
 					<string>PFCollectionRowView</string>
-					<string>{{1201, 911}, {464, 78}}</string>
+					<string>{{1201, 971}, {464, 78}}</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4118,6 +4118,7 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>close:</string>
 							<string>openWebStore:</string>
 							<string>purchase:</string>
 							<string>selectAddress:</string>
@@ -4131,6 +4132,7 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
