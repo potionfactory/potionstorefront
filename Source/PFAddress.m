@@ -101,34 +101,34 @@
 #pragma mark Accessors
 
 - (NSString *)firstName { return firstName; }
-- (void)setFirstName:(NSString *)value { if (firstName != value) { [firstName release]; firstName = [[value stringByTrimming] copy]; } }
+- (void)setFirstName:(NSString *)value { if (firstName != value) { [firstName release]; firstName = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
 
 - (NSString *)lastName { return lastName; }
-- (void)setLastName:(NSString *)value { if (lastName != value) { [lastName release]; lastName = [[value stringByTrimming] copy]; } }
+- (void)setLastName:(NSString *)value { if (lastName != value) { [lastName release]; lastName = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
 
 - (NSString *)company { return company; }
-- (void)setCompany:(NSString *)value { if (company != value) { [company release]; company = [[value stringByTrimming] copy]; } }
+- (void)setCompany:(NSString *)value { if (company != value) { [company release]; company = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
 
 - (NSString *)address1 { return address1; }
-- (void)setAddress1:(NSString *)value { if (address1 != value) { [address1 release]; address1 = [[value stringByTrimming] copy]; } }
+- (void)setAddress1:(NSString *)value { if (address1 != value) { [address1 release]; address1 = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
 
 - (NSString *)address2 { return address2; }
-- (void)setAddress2:(NSString *)value { if (address2 != value) { [address2 release]; address2 = [[value stringByTrimming] copy]; } }
+- (void)setAddress2:(NSString *)value { if (address2 != value) { [address2 release]; address2 = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
 
 - (NSString *)city { return city; }
-- (void)setCity:(NSString *)value { if (city != value) { [city release]; city = [[value stringByTrimming] copy]; } }
+- (void)setCity:(NSString *)value { if (city != value) { [city release]; city = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
 
 - (NSString *)state { return state; }
-- (void)setState:(NSString *)value { if (state != value) { [state release]; state = [[value stringByTrimming] copy]; } }
+- (void)setState:(NSString *)value { if (state != value) { [state release]; state = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
 
 - (NSString *)zipcode { return zipcode; }
-- (void)setZipcode:(NSString *)value { if (zipcode != value) { [zipcode release]; zipcode = [[value stringByTrimming] copy]; } }
+- (void)setZipcode:(NSString *)value { if (zipcode != value) { [zipcode release]; zipcode = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
 
 - (NSString *)countryCode { return countryCode; }
 - (void)setCountryCode:(NSString *)value { if (countryCode != value) { [countryCode release]; countryCode = [value copy]; } }
 
 - (NSString *)email { return email; }
-- (void)setEmail:(NSString *)value { if (email != value) { [email release]; email = [[value stringByTrimming] copy]; } }
+- (void)setEmail:(NSString *)value { if (email != value) { [email release]; email = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
 
 #pragma mark -
 #pragma mark Validation
@@ -136,37 +136,37 @@
 - (BOOL)validateFirstName:(id *)value error:(NSError **)outError
 {
 	if (outError) *outError = nil;
-	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] != 0;
+	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
 }
 
 - (BOOL)validateLastName:(id *)value error:(NSError **)outError
 {
 	if (outError) *outError = nil;
-	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] != 0;
+	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
 }
 
 - (BOOL)validateAddress1:(id *)value error:(NSError **)outError
 {
 	if (outError) *outError = nil;
-	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] != 0;
+	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
 }
 
 - (BOOL)validateCity:(id *)value error:(NSError **)outError
 {
 	if (outError) *outError = nil;
-	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] != 0;
+	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
 }
 
 - (BOOL)validateState:(id *)value error:(NSError **)outError
 {
 	if (outError) *outError = nil;
-	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] != 0;
+	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
 }
 
 - (BOOL)validateZipcode:(id *)value error:(NSError **)outError
 {
 	if (outError) *outError = nil;
-	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] != 0;
+	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
 }
 
 - (BOOL)validateEmail:(id *)value error:(NSError **)outError
@@ -175,7 +175,7 @@
 	// Passes validation when value is a string, at least 5 letters long, and has a '@' and a '.'
 	if (outError) *outError = nil;
 	if ([*value isKindOfClass:[NSString class]] == NO) return NO;
-	NSString *string = [*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+	NSString *string = [*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	BOOL isEmail = (([string length] >= 5) &&
 					([string rangeOfString:@"@"].location != NSNotFound) &&
 					([string rangeOfString:@"."].location != NSNotFound));

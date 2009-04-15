@@ -198,7 +198,7 @@ fail:
 			for (PFProduct *myitem in lineItems) {
 				for (NSDictionary *dict in [responseOrder objectForKey:@"line_items"]) {
 					if ([[dict objectForKey:@"product_id"] isEqual:[myitem identifierNumber]]) {
-						PFAssert([myitem checked], @"Only purchased items should be getting license keys");
+						NSAssert([myitem checked], @"Only purchased items should be getting license keys");
 						[myitem setLicenseKey:[dict objectForKey:@"license_key"]];
 						licensedCount += 1;
 					}
@@ -427,7 +427,7 @@ fail:
 - (BOOL)validateCreditCardSecurityCode:(id *)value error:(NSError **)outError
 {
 	if (outError) *outError = nil;
-	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] != 0;
+	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
 }
 
 - (BOOL)validateCreditCardExpiration:(NSError **)outError

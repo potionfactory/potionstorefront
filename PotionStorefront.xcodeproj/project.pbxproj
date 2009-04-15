@@ -10,11 +10,10 @@
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		A10333520E32CD1800230ABD /* PFLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333510E32CD1800230ABD /* PFLogging.m */; };
 		A10333550E32CD2200230ABD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333540E32CD2200230ABD /* AppDelegate.m */; };
 		A10333720E32D0CC00230ABD /* BasicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333710E32D0CC00230ABD /* BasicTests.m */; };
-		A11DC5020E3CD31A009DA8A8 /* NSInvocationAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A11DC5000E3CD31A009DA8A8 /* NSInvocationAdditions.h */; };
-		A11DC5030E3CD31A009DA8A8 /* NSInvocationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A11DC5010E3CD31A009DA8A8 /* NSInvocationAdditions.m */; };
+		A10769A30F8D5B1900BA3DAE /* NSInvocationAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A10769A10F8D5B1900BA3DAE /* NSInvocationAdditions.h */; };
+		A10769A40F8D5B1900BA3DAE /* NSInvocationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A10769A20F8D5B1900BA3DAE /* NSInvocationAdditions.m */; };
 		A11DC72B0E3D23CD009DA8A8 /* PFProduct.h in Headers */ = {isa = PBXBuildFile; fileRef = A11DC7290E3D23CD009DA8A8 /* PFProduct.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A11DC72C0E3D23CD009DA8A8 /* PFProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = A11DC72A0E3D23CD009DA8A8 /* PFProduct.m */; };
 		A154EF7E0E3BE8EA002973AE /* PotionStorefront.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = A154EF750E3BE81F002973AE /* PotionStorefront.framework */; };
@@ -39,9 +38,9 @@
 		A154F1460E3C1B70002973AE /* PFAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F1440E3C1B70002973AE /* PFAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A154F1470E3C1B70002973AE /* PFAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F1450E3C1B70002973AE /* PFAddress.m */; };
 		A154F1690E3C1D6D002973AE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A154F1680E3C1D6D002973AE /* AddressBook.framework */; };
-		A154F2440E3C37AE002973AE /* PFLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333510E32CD1800230ABD /* PFLogging.m */; };
-		A16B8EDE0E3D415C00B1C248 /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16B8EDD0E3D415C00B1C248 /* JSON.framework */; };
-		A16B8F170E3D479400B1C248 /* JSON.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A16B8EDD0E3D415C00B1C248 /* JSON.framework */; };
+		A157E86A0F942DE800FD0CD7 /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A157E8690F942DE800FD0CD7 /* JSON.framework */; };
+		A157E8840F942E6000FD0CD7 /* JSON.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A157E8690F942DE800FD0CD7 /* JSON.framework */; };
+		A15EC4FD0F9592AD0074DCFC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A15EC4FC0F9592AD0074DCFC /* LICENSE */; };
 		A16B90340E3D787500B1C248 /* PFCollectionRow.h in Headers */ = {isa = PBXBuildFile; fileRef = A16B90320E3D787500B1C248 /* PFCollectionRow.h */; };
 		A16B90350E3D787500B1C248 /* PFCollectionRow.m in Sources */ = {isa = PBXBuildFile; fileRef = A16B90330E3D787500B1C248 /* PFCollectionRow.m */; };
 		A1A11E7D0E3EE5D700F0C6E4 /* PFLockImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = A1A11E7B0E3EE5D700F0C6E4 /* PFLockImageView.h */; };
@@ -84,7 +83,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A16B8F170E3D479400B1C248 /* JSON.framework in Copy Frameworks */,
+				A157E8840F942E6000FD0CD7 /* JSON.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,18 +101,14 @@
 		32CA4F630368D1EE00C91783 /* PotionStorefront_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotionStorefront_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TestApp-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A103334E0E32CD1800230ABD /* PFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFKit.h; path = Sources/PFKit.h; sourceTree = "<group>"; };
-		A103334F0E32CD1800230ABD /* PFMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMacros.h; path = Sources/PFMacros.h; sourceTree = "<group>"; };
-		A10333500E32CD1800230ABD /* PFLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFLogging.h; path = Sources/PFLogging.h; sourceTree = "<group>"; };
-		A10333510E32CD1800230ABD /* PFLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFLogging.m; path = Sources/PFLogging.m; sourceTree = "<group>"; };
 		A10333530E32CD2200230ABD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A10333540E32CD2200230ABD /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A10333670E32CEF800230ABD /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10333680E32CEF800230ABD /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		A10333700E32D0CC00230ABD /* BasicTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTests.h; sourceTree = "<group>"; };
 		A10333710E32D0CC00230ABD /* BasicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTests.m; sourceTree = "<group>"; };
-		A11DC5000E3CD31A009DA8A8 /* NSInvocationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSInvocationAdditions.h; path = ../../PFKit/Sources/NSInvocationAdditions.h; sourceTree = "<group>"; };
-		A11DC5010E3CD31A009DA8A8 /* NSInvocationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSInvocationAdditions.m; path = ../../PFKit/Sources/NSInvocationAdditions.m; sourceTree = "<group>"; };
+		A10769A10F8D5B1900BA3DAE /* NSInvocationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSInvocationAdditions.h; sourceTree = "<group>"; };
+		A10769A20F8D5B1900BA3DAE /* NSInvocationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSInvocationAdditions.m; sourceTree = "<group>"; };
 		A11DC7290E3D23CD009DA8A8 /* PFProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProduct.h; sourceTree = "<group>"; };
 		A11DC72A0E3D23CD009DA8A8 /* PFProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFProduct.m; sourceTree = "<group>"; };
 		A154EF750E3BE81F002973AE /* PotionStorefront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PotionStorefront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,7 +133,9 @@
 		A154F1440E3C1B70002973AE /* PFAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAddress.h; sourceTree = "<group>"; };
 		A154F1450E3C1B70002973AE /* PFAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAddress.m; sourceTree = "<group>"; };
 		A154F1680E3C1D6D002973AE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = /System/Library/Frameworks/AddressBook.framework; sourceTree = "<absolute>"; };
-		A16B8EDD0E3D415C00B1C248 /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = ../3rdParty/JSON/build/Release/JSON.framework; sourceTree = SOURCE_ROOT; };
+		A157E8690F942DE800FD0CD7 /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = Frameworks/JSON.framework; sourceTree = "<group>"; };
+		A15EC4F90F958A440074DCFC /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		A15EC4FC0F9592AD0074DCFC /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A16B90320E3D787500B1C248 /* PFCollectionRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCollectionRow.h; sourceTree = "<group>"; };
 		A16B90330E3D787500B1C248 /* PFCollectionRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCollectionRow.m; sourceTree = "<group>"; };
 		A1A11E7B0E3EE5D700F0C6E4 /* PFLockImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFLockImageView.h; sourceTree = "<group>"; };
@@ -168,8 +165,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A154F1690E3C1D6D002973AE /* AddressBook.framework in Frameworks */,
-				A16B8EDE0E3D415C00B1C248 /* JSON.framework in Frameworks */,
 				A1A11EB80E3EF7E700F0C6E4 /* QuartzCore.framework in Frameworks */,
+				A157E86A0F942DE800FD0CD7 /* JSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,8 +186,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A157E8690F942DE800FD0CD7 /* JSON.framework */,
 				A1A11EB70E3EF7E700F0C6E4 /* QuartzCore.framework */,
-				A16B8EDD0E3D415C00B1C248 /* JSON.framework */,
 				A154F1680E3C1D6D002973AE /* AddressBook.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
@@ -220,11 +217,12 @@
 		29B97314FDCFA39411CA2CEA /* PotionStorefront */ = {
 			isa = PBXGroup;
 			children = (
+				A15EC4F90F958A440074DCFC /* README.markdown */,
+				A15EC4FC0F9592AD0074DCFC /* LICENSE */,
 				A154EF800E3BE916002973AE /* Framework Code */,
 				080E96DDFE201D6D7F000001 /* Test App */,
 				A103336F0E32D0A100230ABD /* Tests */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				A103334D0E32CD1800230ABD /* PFKit */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -265,18 +263,6 @@
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
-		};
-		A103334D0E32CD1800230ABD /* PFKit */ = {
-			isa = PBXGroup;
-			children = (
-				A103334E0E32CD1800230ABD /* PFKit.h */,
-				A103334F0E32CD1800230ABD /* PFMacros.h */,
-				A10333500E32CD1800230ABD /* PFLogging.h */,
-				A10333510E32CD1800230ABD /* PFLogging.m */,
-			);
-			name = PFKit;
-			path = ../../Code/PFKit;
-			sourceTree = SOURCE_ROOT;
 		};
 		A103336F0E32D0A100230ABD /* Tests */ = {
 			isa = PBXGroup;
@@ -346,8 +332,8 @@
 		A1A11E390E3EDB7E00F0C6E4 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
-				A11DC5000E3CD31A009DA8A8 /* NSInvocationAdditions.h */,
-				A11DC5010E3CD31A009DA8A8 /* NSInvocationAdditions.m */,
+				A10769A10F8D5B1900BA3DAE /* NSInvocationAdditions.h */,
+				A10769A20F8D5B1900BA3DAE /* NSInvocationAdditions.m */,
 			);
 			name = Additions;
 			sourceTree = "<group>";
@@ -365,10 +351,10 @@
 				A154F0C10E3C0F1F002973AE /* PFBackgroundView.h in Headers */,
 				A154F12D0E3C19E1002973AE /* PFOrder.h in Headers */,
 				A154F1460E3C1B70002973AE /* PFAddress.h in Headers */,
-				A11DC5020E3CD31A009DA8A8 /* NSInvocationAdditions.h in Headers */,
 				A11DC72B0E3D23CD009DA8A8 /* PFProduct.h in Headers */,
 				A16B90340E3D787500B1C248 /* PFCollectionRow.h in Headers */,
 				A1A11E7D0E3EE5D700F0C6E4 /* PFLockImageView.h in Headers */,
+				A10769A30F8D5B1900BA3DAE /* NSInvocationAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				A15EC4FD0F9592AD0074DCFC /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +493,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				A10333520E32CD1800230ABD /* PFLogging.m in Sources */,
 				A10333550E32CD2200230ABD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,11 +515,10 @@
 				A154F0C20E3C0F1F002973AE /* PFBackgroundView.m in Sources */,
 				A154F12E0E3C19E1002973AE /* PFOrder.m in Sources */,
 				A154F1470E3C1B70002973AE /* PFAddress.m in Sources */,
-				A154F2440E3C37AE002973AE /* PFLogging.m in Sources */,
-				A11DC5030E3CD31A009DA8A8 /* NSInvocationAdditions.m in Sources */,
 				A11DC72C0E3D23CD009DA8A8 /* PFProduct.m in Sources */,
 				A16B90350E3D787500B1C248 /* PFCollectionRow.m in Sources */,
 				A1A11E7E0E3EE5D700F0C6E4 /* PFLockImageView.m in Sources */,
+				A10769A40F8D5B1900BA3DAE /* NSInvocationAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +637,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../3rdParty/JSON/build/Release\"",
+					"\"$(SRCROOT)/Frameworks/JSON/build/Release\"",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -685,6 +671,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../3rdParty/JSON/build/Release\"",
+					"\"$(SRCROOT)/Frameworks/JSON/build/Release\"",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
