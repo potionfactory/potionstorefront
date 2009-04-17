@@ -101,34 +101,34 @@
 #pragma mark Accessors
 
 - (NSString *)firstName { return firstName; }
-- (void)setFirstName:(NSString *)value { if (firstName != value) { [firstName release]; firstName = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
+- (void)setFirstName:(NSString *)value { if (firstName != value) { [firstName release]; firstName = [value copy]; } }
 
 - (NSString *)lastName { return lastName; }
-- (void)setLastName:(NSString *)value { if (lastName != value) { [lastName release]; lastName = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
+- (void)setLastName:(NSString *)value { if (lastName != value) { [lastName release]; lastName = [value copy]; } }
 
 - (NSString *)company { return company; }
-- (void)setCompany:(NSString *)value { if (company != value) { [company release]; company = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
+- (void)setCompany:(NSString *)value { if (company != value) { [company release]; company = [value copy]; } }
 
 - (NSString *)address1 { return address1; }
-- (void)setAddress1:(NSString *)value { if (address1 != value) { [address1 release]; address1 = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
+- (void)setAddress1:(NSString *)value { if (address1 != value) { [address1 release]; address1 = [value copy]; } }
 
 - (NSString *)address2 { return address2; }
-- (void)setAddress2:(NSString *)value { if (address2 != value) { [address2 release]; address2 = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
+- (void)setAddress2:(NSString *)value { if (address2 != value) { [address2 release]; address2 = [value copy]; } }
 
 - (NSString *)city { return city; }
-- (void)setCity:(NSString *)value { if (city != value) { [city release]; city = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
+- (void)setCity:(NSString *)value { if (city != value) { [city release]; city = [value copy]; } }
 
 - (NSString *)state { return state; }
-- (void)setState:(NSString *)value { if (state != value) { [state release]; state = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
+- (void)setState:(NSString *)value { if (state != value) { [state release]; state = [value copy]; } }
 
 - (NSString *)zipcode { return zipcode; }
-- (void)setZipcode:(NSString *)value { if (zipcode != value) { [zipcode release]; zipcode = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
+- (void)setZipcode:(NSString *)value { if (zipcode != value) { [zipcode release]; zipcode = [value copy]; } }
 
 - (NSString *)countryCode { return countryCode; }
 - (void)setCountryCode:(NSString *)value { if (countryCode != value) { [countryCode release]; countryCode = [value copy]; } }
 
 - (NSString *)email { return email; }
-- (void)setEmail:(NSString *)value { if (email != value) { [email release]; email = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] copy]; } }
+- (void)setEmail:(NSString *)value { if (email != value) { [email release]; email = [value copy]; } }
 
 #pragma mark -
 #pragma mark Validation

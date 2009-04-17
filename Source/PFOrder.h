@@ -78,7 +78,7 @@ typedef enum {
 
 // Private
 - (NSString *)p_cleanCreditCardNumber:(NSString *)value;
-
+- (void)p_prepareForSubmission;
 @end
 
 

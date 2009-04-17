@@ -146,6 +146,7 @@ fail:
 - (void)submitInBackground
 {
 	if ([NSThread currentThread] == [NSThread mainThread]) {
+		[self p_prepareForSubmission];
 		[NSThread detachNewThreadSelector:@selector(submitInBackground) toTarget:self withObject:nil];
 		return;
 	}
@@ -396,7 +397,7 @@ done:
 	NSInteger sum = 0;
 	BOOL alt = NO;
 
-	for(NSInteger i = [ccnum length] - 1; i >= 0; i--) {
+	for (NSInteger i = [ccnum length] - 1; i >= 0; i--) {
 		NSInteger thedigit = [[ccnum substringWithRange:NSMakeRange(i, 1)] integerValue];
 		if (alt) {
 			thedigit = 2 * thedigit;
@@ -484,6 +485,19 @@ fail:
 	}
 
 	return ccnum;
+}
+
+- (void)p_prepareForSubmission
+{
+	// Trim all the string fields of the address
+	NSArray *keys = [NSArray arrayWithObjects:
+					 @"firstName", @"lastName", @"company", @"address1", @"address2",
+					 @"city", @"state", @"zipcode", @"countryCode", @"email",
+					 nil];
+	for (NSString *key in keys) {
+		NSString *trimmed = [[[self billingAddress] valueForKey:key] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+		[[self billingAddress] setValue:trimmed forKey:key];
+	}
 }
 
 @end
