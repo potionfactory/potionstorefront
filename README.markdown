@@ -1,8 +1,8 @@
 PotionStorefront
 --------------------------
 
-PotionStorefront is a Cocoa framework that lets users buy a software
-from within that Mac application. It collects order information
+PotionStorefront is a Cocoa framework that lets users buy software
+from within a Mac application. It collects order information
 and sends it off to [Potion Store](http://www.potionfactory.com/potionstore)
 for final processing.
 
