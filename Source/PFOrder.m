@@ -19,15 +19,6 @@
 @synthesize lineItems;
 @synthesize currencyCode;
 
-+ (void)initialize
-{
-	[self setKeys:[NSArray arrayWithObject:@"creditCardNumber"] triggerChangeNotificationsForDependentKey:@"isVisaCard"];
-	[self setKeys:[NSArray arrayWithObject:@"creditCardNumber"] triggerChangeNotificationsForDependentKey:@"isMasterCard"];
-	[self setKeys:[NSArray arrayWithObject:@"creditCardNumber"] triggerChangeNotificationsForDependentKey:@"isAmexCard"];
-	[self setKeys:[NSArray arrayWithObject:@"creditCardNumber"] triggerChangeNotificationsForDependentKey:@"isDiscoverCard"];
-	[self setKeys:[NSArray arrayWithObject:@"lineItems"] triggerChangeNotificationsForDependentKey:@"totalAmount"];
-}
-
 - (id)init
 {
 	billingAddress = [[PFAddress alloc] init];
@@ -285,6 +276,11 @@ done:
 - (BOOL)isAmexCard { return [self creditCardType] == PFAmexType; }
 - (BOOL)isDiscoverCard { return [self creditCardType] == PFDiscoverType; }
 
++ (NSSet *)keyPathsForValuesAffectingVisaCard { return [NSSet setWithObject:@"creditCardNumber"]; }
++ (NSSet *)keyPathsForValuesAffectingMasterCard { return [NSSet setWithObject:@"creditCardNumber"]; }
++ (NSSet *)keyPathsForValuesAffectingAmexCard { return [NSSet setWithObject:@"creditCardNumber"]; }
++ (NSSet *)keyPathsForValuesAffectingDiscoverCard { return [NSSet setWithObject:@"creditCardNumber"]; }
+
 #pragma mark -
 #pragma mark Accessors
 
@@ -313,7 +309,7 @@ done:
 
 + (NSSet *)keyPathsForValuesAffectingTotalAmount
 {
-	return [NSSet setWithObjects:@"lineItems", nil];
+	return [NSSet setWithObject:@"lineItems"];
 }
 
 - (CGFloat)totalAmount
