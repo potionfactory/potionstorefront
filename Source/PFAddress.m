@@ -71,7 +71,34 @@
 		[self setCity:[address valueForKey:kABAddressCityKey]];
 		[self setState:[address valueForKey:kABAddressStateKey]];
 		[self setZipcode:[address valueForKey:kABAddressZIPKey]];
-		[self setCountryCode:[[address valueForKey:kABAddressCountryCodeKey] uppercaseString]];
+
+		NSString *addressCountryCode = [[address valueForKey:kABAddressCountryCodeKey] uppercaseString];
+		NSString *addressCountry = [[address valueForKey:kABAddressCountryKey] uppercaseString];
+
+		if (addressCountryCode) {
+			[self setCountryCode:addressCountryCode];
+		}
+		else if (addressCountry) {
+			// There's no country code in the address. Look up the code by the country name instead.
+			// First check against the various ways of saying USA
+			if ([addressCountry isEqualToString:@"USA"] ||
+				[addressCountry isEqualToString:@"U.S.A."] ||
+				[addressCountry isEqualToString:@"UNITED STATES"] ||
+				[addressCountry isEqualToString:@"UNITED STATES OF AMERICA"]) {
+				[self setCountryCode:@"US"];
+			}
+			else {
+				// Check all the other countries
+				NSArray *countryDicts = [NSArray arrayWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"countries" ofType:@"plist"]];
+
+				for (NSDictionary *countryDict in countryDicts) {
+					if ([[[countryDict objectForKey:@"displayName"] uppercaseString] isEqualToString:addressCountry]) {
+						[self setCountryCode:[countryDict objectForKey:@"code"]];
+						break;
+					}
+				}
+			}
+		}
 	}
 
 	ABMultiValue *emails = [me valueForProperty:kABEmailProperty];
