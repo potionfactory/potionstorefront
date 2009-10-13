@@ -17,7 +17,13 @@ enum {
 @class PFAddress;
 @class PFBackgroundView;
 
-@interface PFStoreWindowController : NSWindowController <NSWindowDelegate>
+#ifdef MAC_OS_X_VERSION_10_6
+#define WINDOW_DELEGATE <NSWindowDelegate>
+#else
+#define WINDOW_DELEGATE
+#endif
+
+@interface PFStoreWindowController : NSWindowController WINDOW_DELEGATE
 {
 	IBOutlet PFBackgroundView *headerView;
 	IBOutlet PFBackgroundView *mainContentView;
