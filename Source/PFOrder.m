@@ -127,7 +127,7 @@ static NSError *ErrorWithJSONResponse(NSString *string)
 		return ErrorWithObject([messages componentsJoinedByString:@" "]);
 	}
 	@catch (NSException * e) {
-		NSLog(@"ERROR -- Got exception while trying to parse JSON error response:", e);
+		NSLog(@"ERROR -- Got exception while trying to parse JSON error response: %@", e);
 		return ErrorWithObject(e);
 	}
 fail:
