@@ -2,21 +2,21 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1050</int>
-		<string key="IBDocument.SystemVersion">10A432</string>
-		<string key="IBDocument.InterfaceBuilderVersion">732</string>
-		<string key="IBDocument.AppKitVersion">1038</string>
-		<string key="IBDocument.HIToolboxVersion">437.00</string>
+		<string key="IBDocument.SystemVersion">10F569</string>
+		<string key="IBDocument.InterfaceBuilderVersion">804</string>
+		<string key="IBDocument.AppKitVersion">1038.29</string>
+		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">732</string>
+			<string key="NS.object.0">804</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="411"/>
-			<integer value="2"/>
-			<integer value="447"/>
+			<integer value="434"/>
 			<integer value="398"/>
+			<integer value="2"/>
 			<integer value="407"/>
+			<integer value="447"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -350,7 +350,7 @@
 										<reference key="NSSuperview" ref="672865758"/>
 										<string key="NSMinGridSize">{0, 0}</string>
 										<string key="NSMaxGridSize">{0, 0}</string>
-										<int key="NSMaxNumberOfGridRows">3</int>
+										<int key="NSMaxNumberOfGridRows">0</int>
 										<int key="NSMaxNumberOfGridColumns">1</int>
 										<object class="NSArray" key="NSBackgroundColors">
 											<bool key="EncodedWithXMLCoder">YES</bool>
@@ -3953,7 +3953,7 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{1330, 1085}, {508, 108}}</string>
+					<string>{{1330, 1048}, {508, 108}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3967,7 +3967,7 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 					<string>PFCollectionViewItem</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>PFCollectionRowView</string>
-					<string>{{1333, 966}, {464, 78}}</string>
+					<string>{{838, 966}, {464, 78}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4038,6 +4038,13 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 						<string key="NS.key.0">showRegistrationWindow:</string>
 						<string key="NS.object.0">id</string>
 					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">showRegistrationWindow:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">showRegistrationWindow:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Source/PotionStorefront.h</string>
@@ -4079,6 +4086,13 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 						<string key="NS.key.0">toggleItem:</string>
 						<string key="NS.object.0">id</string>
 					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">toggleItem:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">toggleItem:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<reference key="sourceIdentifier" ref="354014785"/>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -4095,6 +4109,13 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">securityExplanationField</string>
 						<string key="NS.object.0">PFSecurityExplanationTextField</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">securityExplanationField</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">securityExplanationField</string>
+							<string key="candidateClassName">PFSecurityExplanationTextField</string>
+						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="142319304">
 						<string key="majorKey">IBProjectSource</string>
@@ -4148,89 +4169,68 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 							<string>id</string>
 						</object>
 					</object>
-					<object class="NSMutableDictionary" key="outlets">
+					<object class="NSMutableDictionary" key="actionInfosByName">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>address1Field</string>
-							<string>address1Label</string>
-							<string>addressPopUpButton</string>
-							<string>addressSelectionContainerView</string>
-							<string>billingView</string>
-							<string>cityLabel</string>
-							<string>countriesArrayController</string>
-							<string>countryPopUpButton</string>
-							<string>creditCardButton</string>
-							<string>creditCardExpirationLabel</string>
-							<string>creditCardExpirationMonthField</string>
-							<string>creditCardExpirationYearField</string>
-							<string>creditCardNumberField</string>
-							<string>creditCardNumberLabel</string>
-							<string>creditCardSecurityCodeLabel</string>
-							<string>delegate</string>
-							<string>emailField</string>
-							<string>emailLabel</string>
-							<string>firstNameField</string>
-							<string>firstNameLabel</string>
-							<string>headerStepsField</string>
-							<string>headerTitleField</string>
-							<string>headerView</string>
-							<string>lastNameLabel</string>
-							<string>lockImageView</string>
-							<string>mainContentView</string>
-							<string>orderTotalField</string>
-							<string>paypalOrGoogleCheckoutButton</string>
-							<string>pricingView</string>
-							<string>primaryButton</string>
-							<string>productCollectionView</string>
-							<string>productFetchProgressSpinner</string>
-							<string>progressSpinner</string>
-							<string>secondaryButton</string>
-							<string>stateLabel</string>
-							<string>tertiaryButton</string>
-							<string>thankYouView</string>
-							<string>zipcodeLabel</string>
+							<string>close:</string>
+							<string>openWebStore:</string>
+							<string>purchase:</string>
+							<string>selectAddress:</string>
+							<string>selectCountry:</string>
+							<string>selectPaymentMethod:</string>
+							<string>showBillingInformation:</string>
+							<string>showPricing:</string>
+							<string>showRegistrationWindow:</string>
+							<string>showThankYou:</string>
+							<string>updatedOrderLineItems:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>NSTextField</string>
-							<string>NSTextField</string>
-							<string>NSPopUpButton</string>
-							<string>NSView</string>
-							<string>NSView</string>
-							<string>NSTextField</string>
-							<string>NSArrayController</string>
-							<string>NSPopUpButton</string>
-							<string>NSButton</string>
-							<string>NSTextField</string>
-							<string>NSTextField</string>
-							<string>NSTextField</string>
-							<string>NSTextField</string>
-							<string>NSTextField</string>
-							<string>NSTextField</string>
-							<string>id</string>
-							<string>NSTextField</string>
-							<string>NSTextField</string>
-							<string>NSTextField</string>
-							<string>NSTextField</string>
-							<string>NSTextField</string>
-							<string>NSTextField</string>
-							<string>PFBackgroundView</string>
-							<string>NSTextField</string>
-							<string>NSImageView</string>
-							<string>PFBackgroundView</string>
-							<string>NSTextField</string>
-							<string>NSButton</string>
-							<string>NSView</string>
-							<string>NSButton</string>
-							<string>NSCollectionView</string>
-							<string>NSProgressIndicator</string>
-							<string>NSProgressIndicator</string>
-							<string>NSButton</string>
-							<string>NSTextField</string>
-							<string>NSButton</string>
-							<string>NSView</string>
-							<string>NSTextField</string>
+							<object class="IBActionInfo">
+								<string key="name">close:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openWebStore:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">purchase:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">selectAddress:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">selectCountry:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">selectPaymentMethod:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showBillingInformation:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showPricing:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showRegistrationWindow:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showThankYou:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">updatedOrderLineItems:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -4805,6 +4805,13 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 						<string key="NS.key.0">view</string>
 						<string key="NS.object.0">NSView</string>
 					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">view</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">view</string>
+							<string key="candidateClassName">NSView</string>
+						</object>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">AppKit.framework/Headers/NSViewController.h</string>
@@ -4839,6 +4846,13 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 						<string key="NS.key.0">showWindow:</string>
 						<string key="NS.object.0">id</string>
 					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">showWindow:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">showWindow:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">AppKit.framework/Headers/NSWindowController.h</string>
@@ -4847,6 +4861,7 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 			</object>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
+		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
 			<integer value="1050" key="NS.object.0"/>
@@ -4862,5 +4877,30 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<string key="IBDocument.LastKnownRelativeProjectPath">../../PotionStorefront.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<bool key="EncodedWithXMLCoder">YES</bool>
+			<object class="NSArray" key="dict.sortedKeys">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>NSMenuCheckmark</string>
+				<string>NSMenuMixedState</string>
+				<string>NSRadioButton</string>
+				<string>amex</string>
+				<string>discover</string>
+				<string>lock</string>
+				<string>master</string>
+				<string>visa</string>
+			</object>
+			<object class="NSMutableArray" key="dict.values">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>{9, 8}</string>
+				<string>{7, 2}</string>
+				<string>{16, 15}</string>
+				<string>{44, 28}</string>
+				<string>{44, 28}</string>
+				<string>{32, 32}</string>
+				<string>{44, 28}</string>
+				<string>{44, 28}</string>
+			</object>
+		</object>
 	</data>
 </archive>
