@@ -162,7 +162,7 @@ fail:
 		[postRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 		[postRequest setValue:@"PotionStorefront" forHTTPHeaderField:@"User-Agent"];
 		[postRequest setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
-		[postRequest setTimeoutInterval:10.0];
+		[postRequest setTimeoutInterval:15.0];
 
 		NSData *responseData = [NSURLConnection sendSynchronousRequest:postRequest returningResponse:&response error:&error];
 		if (error != nil) {
