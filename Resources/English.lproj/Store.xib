@@ -2,21 +2,17 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1050</int>
-		<string key="IBDocument.SystemVersion">10F569</string>
-		<string key="IBDocument.InterfaceBuilderVersion">804</string>
-		<string key="IBDocument.AppKitVersion">1038.29</string>
+		<string key="IBDocument.SystemVersion">10J521</string>
+		<string key="IBDocument.InterfaceBuilderVersion">823</string>
+		<string key="IBDocument.AppKitVersion">1038.35</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">804</string>
+			<string key="NS.object.0">823</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="434"/>
 			<integer value="398"/>
-			<integer value="2"/>
-			<integer value="407"/>
-			<integer value="447"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -50,9 +46,9 @@
 				<string key="NSWindowTitle">Purchase Software</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
-				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<object class="NSView" key="NSWindowView" id="424248594">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -78,7 +74,7 @@
 									<string key="NSColorName">controlColor</string>
 									<object class="NSColor" key="NSColor">
 										<int key="NSColorSpace">3</int>
-										<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
+										<bytes key="NSWhite">MC42NjY2NjY2ODY1AA</bytes>
 									</object>
 								</object>
 								<object class="NSColor" key="NSTextColor" id="829598091">
@@ -262,7 +258,7 @@
 										</object>
 										<object class="NSColor" key="NSTextColor">
 											<int key="NSColorSpace">3</int>
-											<bytes key="NSWhite">MCAwLjgwMDAwMDAxAA</bytes>
+											<bytes key="NSWhite">MCAwLjgwMDAwMDAxMTkAA</bytes>
 										</object>
 									</object>
 									<int key="NSBorderType">3</int>
@@ -299,7 +295,7 @@
 								<reference key="NSBackgroundColor" ref="324245644"/>
 								<object class="NSColor" key="NSTextColor">
 									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MCAwLjgwMDAwMDAxAA</bytes>
+									<bytes key="NSWhite">MCAwLjgwMDAwMDAxMTkAA</bytes>
 								</object>
 							</object>
 							<int key="NSBorderType">3</int>
@@ -309,10 +305,9 @@
 						</object>
 					</object>
 					<string key="NSFrameSize">{508, 625}</string>
-					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {2560, 1578}}</string>
-				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
 			</object>
 			<object class="NSArrayController" id="173356464">
 				<object class="NSMutableArray" key="NSDeclaredKeys">
@@ -329,7 +324,7 @@
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
 			<object class="NSCustomView" id="691983328">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -357,7 +352,7 @@
 											<reference ref="652523439"/>
 											<object class="NSColor" id="848184118">
 												<int key="NSColorSpace">1</int>
-												<bytes key="NSRGB">MC45NDUyNjU4OSAwLjk0NTI2NTg5IDAuOTQ1MjY1ODkAA</bytes>
+												<bytes key="NSRGB">MC45NDUyNjU4ODkyIDAuOTQ1MjY1ODg5MiAwLjk0NTI2NTg4OTIAA</bytes>
 											</object>
 										</object>
 										<int key="NSDraggingSourceMaskForLocal">-1</int>
@@ -366,7 +361,6 @@
 								</object>
 								<string key="NSFrame">{{1, 1}, {466, 267}}</string>
 								<reference key="NSSuperview" ref="173779016"/>
-								<reference key="NSNextKeyView" ref="1066357762"/>
 								<reference key="NSDocView" ref="1066357762"/>
 								<reference key="NSBGColor" ref="548228222"/>
 								<int key="NScvFlags">4</int>
@@ -379,7 +373,7 @@
 								<reference key="NSTarget" ref="173779016"/>
 								<string key="NSAction">_doScroller:</string>
 								<double key="NSCurValue">1</double>
-								<double key="NSPercent">0.89655169999999995</double>
+								<double key="NSPercent">0.89655172824859619</double>
 							</object>
 							<object class="NSScroller" id="38298650">
 								<reference key="NSNextResponder" ref="173779016"/>
@@ -389,12 +383,11 @@
 								<int key="NSsFlags">1</int>
 								<reference key="NSTarget" ref="173779016"/>
 								<string key="NSAction">_doScroller:</string>
-								<double key="NSPercent">0.63157890000000005</double>
+								<double key="NSPercent">0.63157892227172852</double>
 							</object>
 						</object>
 						<string key="NSFrame">{{20, 55}, {468, 269}}</string>
 						<reference key="NSSuperview" ref="691983328"/>
-						<reference key="NSNextKeyView" ref="672865758"/>
 						<int key="NSsFlags">530</int>
 						<reference key="NSVScroller" ref="97312657"/>
 						<reference key="NSHScroller" ref="38298650"/>
@@ -497,7 +490,6 @@
 					</object>
 				</object>
 				<string key="NSFrameSize">{508, 346}</string>
-				<reference key="NSSuperview"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSCustomView" id="867003023">
@@ -1044,7 +1036,7 @@
 							<reference key="NSBackgroundColor" ref="324245644"/>
 							<object class="NSColor" key="NSTextColor">
 								<int key="NSColorSpace">3</int>
-								<bytes key="NSWhite">MCAwLjgwMDAwMDAxAA</bytes>
+								<bytes key="NSWhite">MCAwLjgwMDAwMDAxMTkAA</bytes>
 							</object>
 						</object>
 						<int key="NSBorderType">3</int>
@@ -1249,7 +1241,7 @@
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSCustomView" id="419176098">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1273,12 +1265,11 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 					</object>
 				</object>
 				<string key="NSFrameSize">{508, 108}</string>
-				<reference key="NSSuperview"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSCollectionViewItem" id="859495775"/>
 			<object class="NSView" id="689829480">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">258</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1301,7 +1292,7 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 							<reference key="NSBackgroundColor" ref="548228222"/>
 							<object class="NSColor" key="NSTextColor">
 								<int key="NSColorSpace">1</int>
-								<bytes key="NSRGB">MC4xNDk2Mjk5NyAwLjE0OTYyOTk3IDAuMTQ5NjI5OTcAA</bytes>
+								<bytes key="NSRGB">MC4xNDk2Mjk5NjU0IDAuMTQ5NjI5OTY1NCAwLjE0OTYyOTk2NTQAA</bytes>
 							</object>
 						</object>
 					</object>
@@ -1324,7 +1315,7 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 							<reference key="NSBackgroundColor" ref="548228222"/>
 							<object class="NSColor" key="NSTextColor">
 								<int key="NSColorSpace">1</int>
-								<bytes key="NSRGB">MC4zMDI5MjIxIDAuMzAyOTIyMSAwLjMwMjkyMjEAA</bytes>
+								<bytes key="NSRGB">MC4zMDI5MjIwOTk4IDAuMzAyOTIyMDk5OCAwLjMwMjkyMjA5OTgAA</bytes>
 							</object>
 						</object>
 					</object>
@@ -1401,7 +1392,6 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 					</object>
 				</object>
 				<string key="NSFrameSize">{464, 78}</string>
-				<reference key="NSSuperview"/>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -1958,70 +1948,6 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 						</object>
 					</object>
 					<int key="connectionID">353</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: order.isVisaCard</string>
-						<reference key="source" ref="473767721"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="473767721"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">enabled: order.isVisaCard</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">order.isVisaCard</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">355</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: order.isMasterCard</string>
-						<reference key="source" ref="782128149"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="782128149"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">enabled: order.isMasterCard</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">order.isMasterCard</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">356</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: order.isAmexCard</string>
-						<reference key="source" ref="172650898"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="172650898"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">enabled: order.isAmexCard</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">order.isAmexCard</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">357</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: order.isDiscoverCard</string>
-						<reference key="source" ref="740259799"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="740259799"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">enabled: order.isDiscoverCard</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">order.isDiscoverCard</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">358</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -2597,6 +2523,70 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 						</object>
 					</object>
 					<int key="connectionID">571</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: order.visaCard</string>
+						<reference key="source" ref="473767721"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="473767721"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: order.visaCard</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">order.visaCard</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">572</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: order.masterCard</string>
+						<reference key="source" ref="782128149"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="782128149"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: order.masterCard</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">order.masterCard</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">573</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: order.amexCard</string>
+						<reference key="source" ref="172650898"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="172650898"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: order.amexCard</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">order.amexCard</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">574</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: order.discoverCard</string>
+						<reference key="source" ref="740259799"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="740259799"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: order.discoverCard</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">order.discoverCard</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">575</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3949,7 +3939,7 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{351, 214}, {508, 507}}</string>
+					<string>{{775, 282}, {508, 507}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3957,7 +3947,7 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{616, 510}, {508, 346}}</string>
+					<string>{{616, 407}, {508, 346}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3967,7 +3957,7 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 					<string>PFCollectionViewItem</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>PFCollectionRowView</string>
-					<string>{{838, 966}, {464, 78}}</string>
+					<string>{{991, 966}, {464, 78}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4013,7 +4003,7 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">571</int>
+			<int key="maxID">575</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
