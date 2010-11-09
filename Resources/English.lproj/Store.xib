@@ -13,6 +13,7 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="398"/>
+			<integer value="411"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -324,7 +325,7 @@
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
 			<object class="NSCustomView" id="691983328">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -361,6 +362,7 @@
 								</object>
 								<string key="NSFrame">{{1, 1}, {466, 267}}</string>
 								<reference key="NSSuperview" ref="173779016"/>
+								<reference key="NSNextKeyView" ref="1066357762"/>
 								<reference key="NSDocView" ref="1066357762"/>
 								<reference key="NSBGColor" ref="548228222"/>
 								<int key="NScvFlags">4</int>
@@ -388,6 +390,7 @@
 						</object>
 						<string key="NSFrame">{{20, 55}, {468, 269}}</string>
 						<reference key="NSSuperview" ref="691983328"/>
+						<reference key="NSNextKeyView" ref="672865758"/>
 						<int key="NSsFlags">530</int>
 						<reference key="NSVScroller" ref="97312657"/>
 						<reference key="NSHScroller" ref="38298650"/>
@@ -417,7 +420,7 @@
 						<reference key="NSNextResponder" ref="691983328"/>
 						<int key="NSvFlags">1292</int>
 						<object class="NSPSMatrix" key="NSDrawMatrix"/>
-						<string key="NSFrame">{{246, 153}, {16, 16}}</string>
+						<string key="NSFrame">{{246, 179}, {16, 16}}</string>
 						<reference key="NSSuperview" ref="691983328"/>
 						<int key="NSpiFlags">28938</int>
 						<double key="NSMinValue">16</double>
@@ -490,6 +493,7 @@
 					</object>
 				</object>
 				<string key="NSFrameSize">{508, 346}</string>
+				<reference key="NSSuperview"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSCustomView" id="867003023">
