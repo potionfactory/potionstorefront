@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1050</int>
-		<string key="IBDocument.SystemVersion">10J521</string>
+		<string key="IBDocument.SystemVersion">10J567</string>
 		<string key="IBDocument.InterfaceBuilderVersion">823</string>
 		<string key="IBDocument.AppKitVersion">1038.35</string>
-		<string key="IBDocument.HIToolboxVersion">461.00</string>
+		<string key="IBDocument.HIToolboxVersion">462.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			<string key="NS.object.0">823</string>
@@ -4224,6 +4224,290 @@ bCBiZSBhcnJpdmluZyBzaG9ydGx5IGJ5IGVtYWlsLg</string>
 							<object class="IBActionInfo">
 								<string key="name">updatedOrderLineItems:</string>
 								<string key="candidateClassName">id</string>
+							</object>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>address1Field</string>
+							<string>address1Label</string>
+							<string>addressPopUpButton</string>
+							<string>addressSelectionContainerView</string>
+							<string>billingView</string>
+							<string>cityLabel</string>
+							<string>countriesArrayController</string>
+							<string>countryPopUpButton</string>
+							<string>creditCardButton</string>
+							<string>creditCardExpirationLabel</string>
+							<string>creditCardExpirationMonthField</string>
+							<string>creditCardExpirationYearField</string>
+							<string>creditCardNumberField</string>
+							<string>creditCardNumberLabel</string>
+							<string>creditCardSecurityCodeLabel</string>
+							<string>delegate</string>
+							<string>emailField</string>
+							<string>emailLabel</string>
+							<string>firstNameField</string>
+							<string>firstNameLabel</string>
+							<string>headerStepsField</string>
+							<string>headerTitleField</string>
+							<string>headerView</string>
+							<string>lastNameLabel</string>
+							<string>lockImageView</string>
+							<string>mainContentView</string>
+							<string>orderTotalField</string>
+							<string>paypalOrGoogleCheckoutButton</string>
+							<string>pricingView</string>
+							<string>primaryButton</string>
+							<string>productCollectionView</string>
+							<string>productFetchProgressSpinner</string>
+							<string>progressSpinner</string>
+							<string>secondaryButton</string>
+							<string>stateLabel</string>
+							<string>tertiaryButton</string>
+							<string>thankYouView</string>
+							<string>zipcodeLabel</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSTextField</string>
+							<string>NSTextField</string>
+							<string>NSPopUpButton</string>
+							<string>NSView</string>
+							<string>NSView</string>
+							<string>NSTextField</string>
+							<string>NSArrayController</string>
+							<string>NSPopUpButton</string>
+							<string>NSButton</string>
+							<string>NSTextField</string>
+							<string>NSTextField</string>
+							<string>NSTextField</string>
+							<string>NSTextField</string>
+							<string>NSTextField</string>
+							<string>NSTextField</string>
+							<string>id</string>
+							<string>NSTextField</string>
+							<string>NSTextField</string>
+							<string>NSTextField</string>
+							<string>NSTextField</string>
+							<string>NSTextField</string>
+							<string>NSTextField</string>
+							<string>PFBackgroundView</string>
+							<string>NSTextField</string>
+							<string>NSImageView</string>
+							<string>PFBackgroundView</string>
+							<string>NSTextField</string>
+							<string>NSButton</string>
+							<string>NSView</string>
+							<string>NSButton</string>
+							<string>NSCollectionView</string>
+							<string>NSProgressIndicator</string>
+							<string>NSProgressIndicator</string>
+							<string>NSButton</string>
+							<string>NSTextField</string>
+							<string>NSButton</string>
+							<string>NSView</string>
+							<string>NSTextField</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>address1Field</string>
+							<string>address1Label</string>
+							<string>addressPopUpButton</string>
+							<string>addressSelectionContainerView</string>
+							<string>billingView</string>
+							<string>cityLabel</string>
+							<string>countriesArrayController</string>
+							<string>countryPopUpButton</string>
+							<string>creditCardButton</string>
+							<string>creditCardExpirationLabel</string>
+							<string>creditCardExpirationMonthField</string>
+							<string>creditCardExpirationYearField</string>
+							<string>creditCardNumberField</string>
+							<string>creditCardNumberLabel</string>
+							<string>creditCardSecurityCodeLabel</string>
+							<string>delegate</string>
+							<string>emailField</string>
+							<string>emailLabel</string>
+							<string>firstNameField</string>
+							<string>firstNameLabel</string>
+							<string>headerStepsField</string>
+							<string>headerTitleField</string>
+							<string>headerView</string>
+							<string>lastNameLabel</string>
+							<string>lockImageView</string>
+							<string>mainContentView</string>
+							<string>orderTotalField</string>
+							<string>paypalOrGoogleCheckoutButton</string>
+							<string>pricingView</string>
+							<string>primaryButton</string>
+							<string>productCollectionView</string>
+							<string>productFetchProgressSpinner</string>
+							<string>progressSpinner</string>
+							<string>secondaryButton</string>
+							<string>stateLabel</string>
+							<string>tertiaryButton</string>
+							<string>thankYouView</string>
+							<string>zipcodeLabel</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">address1Field</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">address1Label</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">addressPopUpButton</string>
+								<string key="candidateClassName">NSPopUpButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">addressSelectionContainerView</string>
+								<string key="candidateClassName">NSView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">billingView</string>
+								<string key="candidateClassName">NSView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">cityLabel</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">countriesArrayController</string>
+								<string key="candidateClassName">NSArrayController</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">countryPopUpButton</string>
+								<string key="candidateClassName">NSPopUpButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">creditCardButton</string>
+								<string key="candidateClassName">NSButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">creditCardExpirationLabel</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">creditCardExpirationMonthField</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">creditCardExpirationYearField</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">creditCardNumberField</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">creditCardNumberLabel</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">creditCardSecurityCodeLabel</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">delegate</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">emailField</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">emailLabel</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">firstNameField</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">firstNameLabel</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">headerStepsField</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">headerTitleField</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">headerView</string>
+								<string key="candidateClassName">PFBackgroundView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">lastNameLabel</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">lockImageView</string>
+								<string key="candidateClassName">NSImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">mainContentView</string>
+								<string key="candidateClassName">PFBackgroundView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">orderTotalField</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">paypalOrGoogleCheckoutButton</string>
+								<string key="candidateClassName">NSButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">pricingView</string>
+								<string key="candidateClassName">NSView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">primaryButton</string>
+								<string key="candidateClassName">NSButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">productCollectionView</string>
+								<string key="candidateClassName">NSCollectionView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">productFetchProgressSpinner</string>
+								<string key="candidateClassName">NSProgressIndicator</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">progressSpinner</string>
+								<string key="candidateClassName">NSProgressIndicator</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">secondaryButton</string>
+								<string key="candidateClassName">NSButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">stateLabel</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">tertiaryButton</string>
+								<string key="candidateClassName">NSButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">thankYouView</string>
+								<string key="candidateClassName">NSView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">zipcodeLabel</string>
+								<string key="candidateClassName">NSTextField</string>
 							</object>
 						</object>
 					</object>

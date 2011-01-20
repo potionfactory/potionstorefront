@@ -47,7 +47,7 @@ static PFStoreWindowController *gController = nil;
 
 - (void)awakeFromNib
 {
-	[[self window] setDelegate:self];
+	[[self window] setDelegate:(id)self];
 
 	[headerTitleField setTextColor:[NSColor colorWithCalibratedRed:201/255.0 green:220/255.0 blue:255/255.0 alpha:1.0]];
 	[headerStepsField setTextColor:[NSColor colorWithCalibratedRed:201/255.0 green:220/255.0 blue:255/255.0 alpha:1.0]];

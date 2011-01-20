@@ -174,7 +174,7 @@ fail:
 		NSInteger statusCode = [response statusCode];
 
 		if (DEBUG_POTION_STORE_FRONT) {
-			NSLog(@"STATUS: %ld", statusCode);
+			NSLog(@"STATUS: %ld", (long)statusCode);
 			NSLog(@"REPLY BODY: %@", responseBody);
 		}
 

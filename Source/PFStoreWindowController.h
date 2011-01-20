@@ -17,13 +17,7 @@ enum {
 @class PFAddress;
 @class PFBackgroundView;
 
-#ifdef MAC_OS_X_VERSION_10_6
-#define WINDOW_DELEGATE <NSWindowDelegate>
-#else
-#define WINDOW_DELEGATE
-#endif
-
-@interface PFStoreWindowController : NSWindowController WINDOW_DELEGATE
+@interface PFStoreWindowController : NSWindowController
 {
 	IBOutlet PFBackgroundView *headerView;
 	IBOutlet PFBackgroundView *mainContentView;
@@ -36,7 +30,6 @@ enum {
 	IBOutlet NSImageView *lockImageView;
 	IBOutlet NSProgressIndicator *progressSpinner;
 
-	// -----
 	// STUFF FOR PRICING VIEW
 	IBOutlet NSView *pricingView;
 	IBOutlet NSCollectionView *productCollectionView;
@@ -45,7 +38,6 @@ enum {
 	IBOutlet NSButton *creditCardButton;
 	IBOutlet NSButton *paypalOrGoogleCheckoutButton;
 
-	// -----
 	// STUFF FOR BILLING VIEW
 	IBOutlet NSView *billingView;
 	IBOutlet NSView *addressSelectionContainerView;
@@ -78,11 +70,9 @@ enum {
 
 	PFAddress *customAddress;
 
-	// -----
 	// STUFF FOR THANK YOU VIEW
 	IBOutlet NSView *thankYouView;
 
-	// -----
 	// OTHER STUFF
 	id delegate;
 
