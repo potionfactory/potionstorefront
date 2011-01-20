@@ -8,8 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PFCollectionRowView : NSView
-{
+@interface PFCollectionRowView : NSView {
 	NSCollectionViewItem *item;
 }
 
@@ -19,8 +18,7 @@
 
 
 
-@interface PFCollectionViewItem : NSCollectionViewItem
-{
+@interface PFCollectionViewItem : NSCollectionViewItem {
 }
 
 - (IBAction)toggleItem:(id)sender;
@@ -28,7 +26,6 @@
 @end
 
 
-@interface PFClickThroughImageView : NSImageView
-{
+@interface PFClickThroughImageView : NSImageView {
 }
 @end

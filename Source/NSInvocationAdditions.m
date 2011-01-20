@@ -10,8 +10,7 @@
 
 
 @implementation NSInvocation (PF_NSInvocationAdditions)
-+ (id)invocationWithTarget:(id)target selector:(SEL)selector
-{
++ (id)invocationWithTarget:(id)target selector:(SEL)selector {
 	if (target == nil || selector == nil) return nil;
 
 	NSMethodSignature *signature = nil;
@@ -25,8 +24,7 @@
 	return invocation;
 }
 
-- (void)invokeOnMainThreadWaitUntilDone:(BOOL)wait
-{
+- (void)invokeOnMainThreadWaitUntilDone:(BOOL)wait {
 	[self performSelectorOnMainThread:@selector(invoke)
 						   withObject:nil
 						waitUntilDone:wait];

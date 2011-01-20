@@ -11,8 +11,7 @@
 
 @implementation PFBackgroundView
 
-- (void)dealloc
-{
+- (void)dealloc {
 	[image release];
 	[backgroundColor release];
 	[gradient release];
@@ -23,21 +22,18 @@
 
 #pragma mark Drawing
 
-- (void)viewWillMoveToSuperview
-{
+- (void)viewWillMoveToSuperview {
 	rebuild = YES;
 }
 
-- (void)setFrame:(NSRect)rect
-{
+- (void)setFrame:(NSRect)rect {
 	if (NSHeight(self.frame) != NSHeight(rect)) {
 		rebuild = YES;
 	}
 	[super setFrame:rect];
 }
 
-- (void)drawRect:(NSRect)rect
-{
+- (void)drawRect:(NSRect)rect {
 	if (backgroundColor) {
 		[backgroundColor set];
 		NSRectFillUsingOperation(rect, NSCompositeSourceOver);
@@ -78,8 +74,7 @@
 	}
 }
 
-- (void)rebuildImage
-{
+- (void)rebuildImage {
 	[image release];
 
 	BOOL drawMinYBorder = minYBorderColor != nil;
@@ -132,8 +127,7 @@
 #pragma mark Accessors
 
 - (NSColor *)backgroundColor { return backgroundColor; }
-- (void)setBackgroundColor:(NSColor *)color
-{
+- (void)setBackgroundColor:(NSColor *)color {
 	if (backgroundColor != color) {
 		[backgroundColor release];
 		backgroundColor = [color retain];
@@ -143,8 +137,7 @@
 }
 
 - (NSGradient *)gradient { return gradient; }
-- (void)setGradient:(NSGradient *)value
-{
+- (void)setGradient:(NSGradient *)value {
 	if (value != gradient) {
 		[gradient release];
 		gradient = [value retain];
@@ -155,8 +148,7 @@
 }
 
 - (NSColor *)minYBorderColor { return minYBorderColor; }
-- (void)setMinYBorderColor:(NSColor *)color
-{
+- (void)setMinYBorderColor:(NSColor *)color {
 	if (color != minYBorderColor) {
 		[minYBorderColor release];
 		minYBorderColor = [color retain];
@@ -165,8 +157,7 @@
 }
 
 - (NSColor *)maxYBorderColor { return maxYBorderColor; }
-- (void)setMaxYBorderColor:(NSColor *)color
-{
+- (void)setMaxYBorderColor:(NSColor *)color {
 	if (color != maxYBorderColor) {
 		[maxYBorderColor release];
 		maxYBorderColor = [color retain];

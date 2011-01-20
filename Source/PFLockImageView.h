@@ -9,8 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface PFSecurityExplanationTextField : NSTextField
-{
+@interface PFSecurityExplanationTextField : NSTextField {
 	NSRect initialFrame;
 }
 - (void)orderIn;
@@ -18,8 +17,7 @@
 @end
 
 
-@interface PFLockImageView : NSImageView
-{
+@interface PFLockImageView : NSImageView {
 	IBOutlet PFSecurityExplanationTextField *securityExplanationField;
 	NSTimer *orderOutTimer;
 }

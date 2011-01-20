@@ -11,8 +11,7 @@
 
 @implementation PFAddress
 
-- (id)copyWithZone:(NSZone *)zone
-{
+- (id)copyWithZone:(NSZone *)zone {
 	PFAddress *copy = [[PFAddress alloc] init];
 	copy->firstName = [firstName copy];
 	copy->lastName = [lastName copy];
@@ -27,8 +26,7 @@
 	return copy;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
 	[firstName release];
 	[lastName release];
 	[company release];
@@ -43,8 +41,7 @@
 	[super dealloc];
 }
 
-- (void)fillUsingAddressBookAddressWithLabel:(NSString *)label
-{
+- (void)fillUsingAddressBookAddressWithLabel:(NSString *)label {
 	ABPerson *me = [[ABAddressBook sharedAddressBook] me];
 
 	if (firstName == nil) [self setFirstName:[me valueForProperty:kABFirstNameProperty]];
@@ -114,8 +111,7 @@
 	}
 }
 
-- (void)fillUsingAddressBook
-{
+- (void)fillUsingAddressBook {
 	ABPerson *me = [[ABAddressBook sharedAddressBook] me];
 
 	ABMultiValue *addresses = [me valueForProperty:kABAddressProperty];
@@ -160,44 +156,37 @@
 #pragma mark -
 #pragma mark Validation
 
-- (BOOL)validateFirstName:(id *)value error:(NSError **)outError
-{
+- (BOOL)validateFirstName:(id *)value error:(NSError **)outError {
 	if (outError) *outError = nil;
 	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
 }
 
-- (BOOL)validateLastName:(id *)value error:(NSError **)outError
-{
+- (BOOL)validateLastName:(id *)value error:(NSError **)outError {
 	if (outError) *outError = nil;
 	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
 }
 
-- (BOOL)validateAddress1:(id *)value error:(NSError **)outError
-{
+- (BOOL)validateAddress1:(id *)value error:(NSError **)outError {
 	if (outError) *outError = nil;
 	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
 }
 
-- (BOOL)validateCity:(id *)value error:(NSError **)outError
-{
+- (BOOL)validateCity:(id *)value error:(NSError **)outError {
 	if (outError) *outError = nil;
 	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
 }
 
-- (BOOL)validateState:(id *)value error:(NSError **)outError
-{
+- (BOOL)validateState:(id *)value error:(NSError **)outError {
 	if (outError) *outError = nil;
 	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
 }
 
-- (BOOL)validateZipcode:(id *)value error:(NSError **)outError
-{
+- (BOOL)validateZipcode:(id *)value error:(NSError **)outError {
 	if (outError) *outError = nil;
 	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
 }
 
-- (BOOL)validateEmail:(id *)value error:(NSError **)outError
-{
+- (BOOL)validateEmail:(id *)value error:(NSError **)outError {
 	// Very basic validation of an email address
 	// Passes validation when value is a string, at least 5 letters long, and has a '@' and a '.'
 	if (outError) *outError = nil;

@@ -12,8 +12,7 @@
 
 @implementation AppDelegate
 
-- (IBAction)buy:(id)sender
-{
+- (IBAction)buy:(id)sender {
 	[[PotionStorefront sharedStorefront] setDelegate:self];
 	[[PotionStorefront sharedStorefront] setPotionStoreURL:[NSURL URLWithString:@"http://localhost:3000/store"]];
 	[[PotionStorefront sharedStorefront] setProductsPlistURL:[NSURL URLWithString:@"http://www.potionfactory.com/files/thehitlist/store_products.plist"]];

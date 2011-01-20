@@ -9,8 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface AppDelegate : NSObject
-{
+@interface AppDelegate : NSObject {
 	IBOutlet NSWindow *mainWindow;
 }
 

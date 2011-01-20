@@ -31,14 +31,12 @@
 //	return copy;
 //}
 
-- (id)init
-{
+- (id)init {
 	[self setQuantity:[NSNumber numberWithInteger:1]];
 	return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
 	[identifierNumber release]; identifierNumber = nil;
 	[currencyCode release]; currencyCode = nil;
 	[price release]; price = nil;
@@ -53,8 +51,7 @@
 }
 
 // Helper error constructor used in fetchedProductsFromURL:error:
-static NSError *ErrorWithObject(id object)
-{
+static NSError *ErrorWithObject(id object) {
 	NSString *message = nil;
 	if ([object isKindOfClass:[NSError class]])
 		message = [NSString stringWithFormat:NSLocalizedString(@"Please make sure that you're connected to the Internet. (Error: %@)", nil), [(NSError *)object localizedDescription]];
@@ -68,8 +65,7 @@ static NSError *ErrorWithObject(id object)
 									 nil]];
 }
 
-+ (void)beginFetchingProductsFromURL:(NSURL *)aURL delegate:(id)delegate
-{
++ (void)beginFetchingProductsFromURL:(NSURL *)aURL delegate:(id)delegate {
 	if ([NSThread currentThread] == [NSThread mainThread]) {
 		NSInvocation *invocation = [NSInvocation invocationWithTarget:self selector:@selector(beginFetchingProductsFromURL:delegate:)];
 		[invocation setArgument:&aURL atIndex:2];
@@ -120,8 +116,7 @@ static NSError *ErrorWithObject(id object)
 	[pool drain];
 }
 
-+ (PFProduct *)productWithDictionary:(NSDictionary *)dictionary
-{
++ (PFProduct *)productWithDictionary:(NSDictionary *)dictionary {
 	PFProduct *p = [[[PFProduct alloc] init] autorelease];
 	[p setIdentifierNumber:[dictionary objectForKey:@"id"]];
 	[p setName:[dictionary objectForKey:@"name"]];
@@ -169,13 +164,11 @@ static NSError *ErrorWithObject(id object)
 - (NSNumber *)price { return price; }
 - (void)setPrice:(NSNumber *)value { if (price != value) { [price release]; price = [value copy]; } }
 
-+ (NSSet *)keyPathsForValuesAffectingPriceString
-{
++ (NSSet *)keyPathsForValuesAffectingPriceString {
 	return [NSSet setWithObjects:@"price", @"currencyCode", nil];
 }
 
-- (NSString *)priceString
-{
+- (NSString *)priceString {
 	return [NSString stringWithFormat:@"%@%.2lf", [PFOrder currencySymbolForCode:[self currencyCode]], [[self price] floatValue]];
 }
 

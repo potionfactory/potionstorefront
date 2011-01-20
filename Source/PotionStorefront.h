@@ -13,8 +13,7 @@
 
 #define DEBUG_POTION_STORE_FRONT 0
 
-@interface PotionStorefront : NSObject
-{
+@interface PotionStorefront : NSObject {
 }
 
 + (PotionStorefront *)sharedStorefront;

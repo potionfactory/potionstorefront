@@ -9,8 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface PFLineBox : NSBox
-{
+@interface PFLineBox : NSBox {
 }
 
 @end

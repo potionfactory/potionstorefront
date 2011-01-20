@@ -11,8 +11,7 @@
 
 @implementation BasicTests
 
-- (void)testBasics
-{
+- (void)testBasics {
 	STAssertTrue(NO, @"should fail");
 }
 

@@ -18,8 +18,7 @@ typedef enum {
 	PFDiscoverType
 } PFCreditCardType;
 
-@interface PFOrder : NSObject
-{
+@interface PFOrder : NSObject {
 	id delegate;
 
 	NSArray *lineItems;

@@ -10,8 +10,7 @@
 
 @implementation PFLineBox
 
-- (void)drawRect:(NSRect)rect
-{
+- (void)drawRect:(NSRect)rect {
 	BOOL drawHighlight = YES;
 	BOOL drawShadow = YES;
 

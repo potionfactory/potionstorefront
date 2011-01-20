@@ -17,8 +17,7 @@ enum {
 @class PFAddress;
 @class PFBackgroundView;
 
-@interface PFStoreWindowController : NSWindowController
-{
+@interface PFStoreWindowController : NSWindowController {
 	IBOutlet PFBackgroundView *headerView;
 	IBOutlet PFBackgroundView *mainContentView;
 

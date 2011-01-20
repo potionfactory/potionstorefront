@@ -9,8 +9,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 
-@interface BasicTests : SenTestCase
-{
+@interface BasicTests : SenTestCase {
 }
 
 @end

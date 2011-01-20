@@ -16,15 +16,13 @@
 
 @synthesize item;
 
-- (void)dealloc
-{
+- (void)dealloc {
 	// Don't need to release item it's a weak reference
 	// This is here to keep scan-build happy
 	[super dealloc];
 }
 
-- (void)mouseDown:(NSEvent *)event
-{
+- (void)mouseDown:(NSEvent *)event {
 	// Make the whole view toggle the item. The checkbox can't cover the whole view.
 	[super mouseDown:event];
 	[[self viewWithTag:1] performClick:self];
@@ -37,8 +35,7 @@
 
 @implementation PFCollectionViewItem
 
-- (IBAction)toggleItem:(id)sender
-{
+- (IBAction)toggleItem:(id)sender {
 	[[self representedObject] setChecked:[sender state]];
 
 	PFOrder *order = [[PFStoreWindowController sharedController] order];
@@ -59,13 +56,11 @@
 	[[PFStoreWindowController sharedController] updatedOrderLineItems:sender];
 }
 
-- (NSButton *)checkboxButton
-{
+- (NSButton *)checkboxButton {
 	return (NSButton *)[[self view] viewWithTag:1];
 }
 
-- (void)setRepresentedObject:(id)object
-{
+- (void)setRepresentedObject:(id)object {
 	[super setRepresentedObject:object];
 
 	if (object && [object radioGroupName] == nil) {
@@ -84,8 +79,7 @@
 	}
 }
 
-- (void)setView:(PFCollectionRowView *)view
-{
+- (void)setView:(PFCollectionRowView *)view {
 	[super setView:view];
 	[view setItem:self];
 }
@@ -97,8 +91,7 @@
 
 @implementation PFClickThroughImageView
 
-- (void)mouseDown:(NSEvent *)event
-{
+- (void)mouseDown:(NSEvent *)event {
 	[[self nextResponder] mouseDown:event];
 }
 

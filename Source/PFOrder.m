@@ -19,8 +19,7 @@
 @synthesize lineItems;
 @synthesize currencyCode;
 
-- (id)init
-{
+- (id)init {
 	billingAddress = [[PFAddress alloc] init];
 	[billingAddress fillUsingAddressBook];
 
@@ -30,8 +29,7 @@
 	return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
 	[lineItems release]; lineItems = nil;
 	[currencyCode release]; currencyCode = nil;
 	[billingAddress release]; billingAddress = nil;
@@ -46,8 +44,7 @@
 	[super dealloc];
 }
 
-- (NSDictionary *)dictionaryRepresentationForPotionStore
-{
+- (NSDictionary *)dictionaryRepresentationForPotionStore {
 	PFAddress *a = [self billingAddress];
 	NSString *creditCard = [self creditCardTypeString];
 	NSAssert(creditCard != nil, @"credit card type should not be unknown at this point");
@@ -91,8 +88,7 @@
 }
 
 // Helper error constructor used in submitInBackground
-static NSError *ErrorWithObject(id object)
-{
+static NSError *ErrorWithObject(id object) {
 	NSString *message = nil;
 	if ([object isKindOfClass:[NSError class]]) {
 		message = [NSString stringWithFormat:NSLocalizedString(@"Error: %@", nil), [(NSError *)object localizedDescription]];
@@ -112,8 +108,7 @@ static NSError *ErrorWithObject(id object)
 									 nil]];
 }
 
-static NSError *ErrorWithJSONResponse(NSString *string)
-{
+static NSError *ErrorWithJSONResponse(NSString *string) {
 	NSArray *array = [string JSONValue];
 	if ([array isKindOfClass:[NSArray class]] == NO) goto fail;
 	@try {
@@ -134,8 +129,7 @@ fail:
 	return ErrorWithObject(@"Could not process order due to an unexpected error. Please try again later.");
 }
 
-- (void)submitInBackground
-{
+- (void)submitInBackground {
 	if ([NSThread currentThread] == [NSThread mainThread]) {
 		[self p_prepareForSubmission];
 		[NSThread detachNewThreadSelector:@selector(submitInBackground) toTarget:self withObject:nil];
@@ -220,14 +214,12 @@ done:
 	[pool release];
 }
 
-- (NSString *)cleanedCreditCardNumber
-{
+- (NSString *)cleanedCreditCardNumber {
 	return [self p_cleanCreditCardNumber:[self creditCardNumber]];
 }
 
 // Return the credit card type based on the credit card number
-- (PFCreditCardType)creditCardType
-{
+- (PFCreditCardType)creditCardType {
 	NSString *ccnum = [self cleanedCreditCardNumber];
 
 	if ([ccnum length] == 0) return PFUnknownType;
@@ -254,8 +246,7 @@ done:
 	return PFUnknownType;
 }
 
-- (NSString *)creditCardTypeString
-{
+- (NSString *)creditCardTypeString {
 	switch ([self creditCardType]) {
 		case PFVisaType:
 			return @"Visa";
@@ -287,13 +278,11 @@ done:
 - (id)delegate { return delegate; }
 - (void)setDelegate:(id)object { delegate = object; }
 
-+ (NSSet *)keyPathsForValuesAffectingCurrencySymbol
-{
++ (NSSet *)keyPathsForValuesAffectingCurrencySymbol {
 	return [NSSet setWithObject:@"currencyCode"];
 }
 
-+ (NSString *)currencySymbolForCode:(NSString *)code
-{
++ (NSString *)currencySymbolForCode:(NSString *)code {
 	// Just a few of the most common currency symbols
 	if ([code isEqualToString:@"USD"])
 		return @"$";
@@ -307,13 +296,11 @@ done:
 		return @"$";
 }
 
-+ (NSSet *)keyPathsForValuesAffectingTotalAmount
-{
++ (NSSet *)keyPathsForValuesAffectingTotalAmount {
 	return [NSSet setWithObject:@"lineItems"];
 }
 
-- (CGFloat)totalAmount
-{
+- (CGFloat)totalAmount {
 	CGFloat total = 0;
 	for (PFProduct *product in lineItems) {
 		total += [[product price] floatValue] * [[product quantity] floatValue];
@@ -322,13 +309,11 @@ done:
 	return total;
 }
 
-+ (NSSet *)keyPathsForValuesAffectingTotalAmountString
-{
++ (NSSet *)keyPathsForValuesAffectingTotalAmountString {
 	return [NSSet setWithObjects:@"currencyCode", @"totalAmount", nil];
 }
 
-- (NSString *)totalAmountString
-{
+- (NSString *)totalAmountString {
 	return [NSString stringWithFormat:@"%@%.2lf", [PFOrder currencySymbolForCode:[self currencyCode]], [self totalAmount]];
 }
 
@@ -348,8 +333,7 @@ done:
 - (void)setCreditCardSecurityCode:(NSString *)value { if (creditCardSecurityCode != value) { [creditCardSecurityCode release]; creditCardSecurityCode = [value copy]; } }
 
 - (NSNumber *)creditCardExpirationMonth { return creditCardExpirationMonth; }
-- (void)setCreditCardExpirationMonth:(id)value
-{
+- (void)setCreditCardExpirationMonth:(id)value {
 	if (creditCardExpirationMonth != value) {
 		[creditCardExpirationMonth release];
 		if ([value isKindOfClass:[NSNumber class]])
@@ -362,8 +346,7 @@ done:
 }
 
 - (NSNumber *)creditCardExpirationYear { return creditCardExpirationYear; }
-- (void)setCreditCardExpirationYear:(id)value
-{
+- (void)setCreditCardExpirationYear:(id)value {
 	if (creditCardExpirationYear != value) {
 		[creditCardExpirationYear release];
 		if ([value isKindOfClass:[NSNumber class]])
@@ -378,8 +361,7 @@ done:
 #pragma mark -
 #pragma mark Validation
 
-- (BOOL)validateCreditCardNumber:(id *)value error:(NSError **)outError
-{
+- (BOOL)validateCreditCardNumber:(id *)value error:(NSError **)outError {
 	// Do a Luhn algorithm check
 
 	// 1. Double all the alternating numbers starting from the end.
@@ -421,14 +403,12 @@ fail:
 	return NO;
 }
 
-- (BOOL)validateCreditCardSecurityCode:(id *)value error:(NSError **)outError
-{
+- (BOOL)validateCreditCardSecurityCode:(id *)value error:(NSError **)outError {
 	if (outError) *outError = nil;
 	return [[*value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
 }
 
-- (BOOL)validateCreditCardExpiration:(NSError **)outError
-{
+- (BOOL)validateCreditCardExpiration:(NSError **)outError {
 	NSInteger month = [[self creditCardExpirationMonth] integerValue];
 	NSInteger year = [[self creditCardExpirationYear] integerValue];
 	if (month < 1 || month > 12 || year <= 0 || year > 99) {
@@ -468,8 +448,7 @@ fail:
 #pragma mark -
 #pragma mark Private
 
-- (NSString *)p_cleanCreditCardNumber:(NSString *)value
-{
+- (NSString *)p_cleanCreditCardNumber:(NSString *)value {
 	NSCharacterSet *digitCharacterSet = [NSCharacterSet decimalDigitCharacterSet];
 
 	// Construct credit card number string using only numbers
@@ -483,8 +462,7 @@ fail:
 	return ccnum;
 }
 
-- (void)p_prepareForSubmission
-{
+- (void)p_prepareForSubmission {
 	// Trim all the string fields of the address
 	NSArray *keys = [NSArray arrayWithObjects:
 					 @"firstName", @"lastName", @"company", @"address1", @"address2",

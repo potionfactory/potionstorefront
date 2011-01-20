@@ -17,8 +17,7 @@
 
 static PFStoreWindowController *gController = nil;
 
-+ (id)sharedController
-{
++ (id)sharedController {
 	if (gController == nil) {
 		gController = [[PFStoreWindowController alloc] init];
 		[gController window]; // Load the whole nib immediately
@@ -27,8 +26,7 @@ static PFStoreWindowController *gController = nil;
 	return gController;
 }
 
-- (id)init
-{
+- (id)init {
 	self = [super initWithWindowNibName:@"Store"];
 	if (self) {
 		order = [[PFOrder alloc] init];
@@ -36,8 +34,7 @@ static PFStoreWindowController *gController = nil;
 	return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
 	[storeURL release];
 	[productsPlistURL release];
 	[customAddress release];
@@ -45,8 +42,7 @@ static PFStoreWindowController *gController = nil;
 	[super dealloc];
 }
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
 	[[self window] setDelegate:(id)self];
 
 	[headerTitleField setTextColor:[NSColor colorWithCalibratedRed:201/255.0 green:220/255.0 blue:255/255.0 alpha:1.0]];
@@ -67,8 +63,7 @@ static PFStoreWindowController *gController = nil;
 	[countriesArrayController setContent:countries];
 }
 
-static void PFUnbindEverythingInViewTree(NSView *view)
-{
+static void PFUnbindEverythingInViewTree(NSView *view) {
 	if (view == nil) return; // just in case
 
 	for (NSView *subview in view.subviews) {
@@ -100,8 +95,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	}
 }
 
-- (void)close
-{
+- (void)close {
 	// Unbind everything so that circular retain cycles are released and everything can get deallocated
 	PFUnbindEverythingInViewTree([[self window] contentView]);
 	PFUnbindEverythingInViewTree(pricingView);
@@ -115,8 +109,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 #pragma mark -
 #pragma mark Actions
 
-- (IBAction)showPricing:(id)sender
-{
+- (IBAction)showPricing:(id)sender {
 	// Don't validate email and credit card number right away when going from billing information to pricing
 	validateFieldsImmediately = NO;
 
@@ -144,8 +137,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	[self p_setContentView:pricingView];
 }
 
-- (IBAction)showBillingInformation:(id)sender
-{
+- (IBAction)showBillingInformation:(id)sender {
 	if (paymentMethod != PFCreditCardPaymentMethod) {
 		// TODO: build URL to preset quantity at the web store
 		[self openWebStore:nil];
@@ -207,8 +199,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 		[[self window] makeFirstResponder:creditCardNumberField];
 }
 
-- (IBAction)showThankYou:(id)sender
-{
+- (IBAction)showThankYou:(id)sender {
 	[self p_setHeaderTitle:NSLocalizedString(@"Thank You", nil)];
 	[headerStepsField setStringValue:@""];
 
@@ -222,8 +213,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	[self p_setContentView:thankYouView];
 }
 
-- (IBAction)selectPaymentMethod:(id)sender
-{
+- (IBAction)selectPaymentMethod:(id)sender {
 	if (sender == creditCardButton) {
 		paymentMethod = PFCreditCardPaymentMethod;
 		[paypalOrGoogleCheckoutButton setState:NSOffState];
@@ -234,14 +224,12 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	}
 }
 
-- (IBAction)updatedOrderLineItems:(id)sender
-{
+- (IBAction)updatedOrderLineItems:(id)sender {
 	// Reset to regular text color in case the error color got set
 	[orderTotalField setTextColor:[NSColor controlTextColor]];
 }
 
-- (IBAction)purchase:(id)sender
-{
+- (IBAction)purchase:(id)sender {
 	if ([self p_validateOrder]) {
 		// Make the editing field commit
 		[[self window] makeFirstResponder:nil];
@@ -259,14 +247,12 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	}
 }
 
-- (IBAction)close:(id)sender
-{
+- (IBAction)close:(id)sender {
 	[self close];
 	[NSApp endSheet:[self window] returnCode:NSCancelButton];
 }
 
-- (IBAction)selectAddress:(id)sender
-{
+- (IBAction)selectAddress:(id)sender {
 	NSInteger index = [sender indexOfItem:[sender selectedItem]];
 
 	if (index < [self p_countOfAddresses]) {
@@ -280,18 +266,15 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	}
 }
 
-- (IBAction)selectCountry:(id)sender
-{
+- (IBAction)selectCountry:(id)sender {
 	[self controlTextDidChange:nil];
 }
 
-- (IBAction)openWebStore:(id)sender
-{
+- (IBAction)openWebStore:(id)sender {
 	[[NSWorkspace sharedWorkspace] openURL:storeURL];
 }
 
-- (IBAction)showRegistrationWindow:(id)sender
-{
+- (IBAction)showRegistrationWindow:(id)sender {
 	if ([[self delegate] respondsToSelector:@selector(showRegistrationWindow:)]) {
 		[self close:nil];
 		[[self delegate] showRegistrationWindow:sender];
@@ -301,8 +284,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 #pragma mark -
 #pragma mark Delegate
 
-- (void)didFinishFetchingProducts:(NSArray *)products error:(NSError *)error
-{
+- (void)didFinishFetchingProducts:(NSArray *)products error:(NSError *)error {
 	[productFetchProgressSpinner stopAnimation:self];
 	[productFetchProgressSpinner removeFromSuperview];
 
@@ -319,8 +301,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	}
 }
 
-- (void)orderDidFinishSubmitting:(PFOrder *)anOrder error:(NSError *)error
-{
+- (void)orderDidFinishSubmitting:(PFOrder *)anOrder error:(NSError *)error {
 	[progressSpinner stopAnimation:self];
 
 	if (error == nil) {
@@ -343,8 +324,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	}
 }
 
-- (void)didPresentOrderSubmitError:(BOOL)didRecover
-{
+- (void)didPresentOrderSubmitError:(BOOL)didRecover {
 	[self p_setEnabled:YES toAllControlsInView:[[self window] contentView]];
 
 	// Trigger a key value observer update so that the credit card buttons get their
@@ -353,8 +333,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	[order didChangeValueForKey:@"creditCardNumber"];
 }
 
-- (void)controlTextDidChange:(NSNotification *)aNotification
-{
+- (void)controlTextDidChange:(NSNotification *)aNotification {
 	if ([aNotification object] == creditCardNumberField) return;
 	if ([aNotification object] == creditCardExpirationMonthField) return;
 	if ([aNotification object] == creditCardExpirationYearField) return;
@@ -379,8 +358,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	}
 }
 
-- (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor
-{
+- (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor {
 	if (!validateFieldsImmediately) return YES;
 
 	// It would be nice to validate in control:isValidObject:, but I can't figure out how to customize
@@ -413,8 +391,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 
 #pragma mark Outline View Delegate
 
-- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
-{
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item {
 	return NO;
 }
 
@@ -427,8 +404,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 - (void)setDelegate:(id)object { delegate = object; }
 
 - (NSURL *)storeURL { return storeURL; }
-- (void)setStoreURL:(NSURL *)value
-{
+- (void)setStoreURL:(NSURL *)value {
 	if (storeURL != value) {
 		[storeURL release]; storeURL = [value copy];
 		if ([[storeURL scheme] isEqualToString:@"https"] == NO) {
@@ -440,8 +416,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 }
 
 - (NSURL *)productsPlistURL { return productsPlistURL; }
-- (void)setProductsPlistURL:(NSURL *)value
-{
+- (void)setProductsPlistURL:(NSURL *)value {
 	if (productsPlistURL != value) {
 		[productsPlistURL release];
 		productsPlistURL = [value copy];
@@ -454,8 +429,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	}
 }
 
-- (void)setWebStoreSupportsPayPal:(BOOL)paypal googleCheckout:(BOOL)gc
-{
+- (void)setWebStoreSupportsPayPal:(BOOL)paypal googleCheckout:(BOOL)gc {
 	if (paypal && gc) {
 		[paypalOrGoogleCheckoutButton setTitle:NSLocalizedString(@"PayPal or Google Checkout", nil)];
 	}
@@ -477,14 +451,12 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 #pragma mark -
 #pragma mark Private
 
-- (NSInteger)p_countOfAddresses
-{
+- (NSInteger)p_countOfAddresses {
 	ABMultiValue *addresses = [[[ABAddressBook sharedAddressBook] me] valueForProperty:kABAddressProperty];
 	return [addresses count];
 }
 
-- (void)p_setupAddressPopUpButton
-{
+- (void)p_setupAddressPopUpButton {
 	ABMultiValue *addresses = [[[ABAddressBook sharedAddressBook] me] valueForProperty:kABAddressProperty];
 
 	[addressPopUpButton removeAllItems];
@@ -504,8 +476,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	[addressPopUpButton setAction:@selector(selectAddress:)];
 }
 
-- (void)p_setEnabled:(BOOL)enabled toAllControlsInView:(NSView *)view
-{
+- (void)p_setEnabled:(BOOL)enabled toAllControlsInView:(NSView *)view {
 	NSEnumerator *e = [[view subviews] objectEnumerator];
 	NSView *subview = nil;
 	while ((subview = [e nextObject])) {
@@ -517,8 +488,7 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	}
 }
 
-- (void)p_setContentView:(NSView *)view
-{
+- (void)p_setContentView:(NSView *)view {
 	CGFloat diff = NSHeight([mainContentView frame]) - NSHeight([view frame]);
 	NSRect wframe = [[self window] frame];
 	wframe.origin.y += diff;
@@ -532,15 +502,13 @@ static void PFUnbindEverythingInViewTree(NSView *view)
 	[[self window] recalculateKeyViewLoop];
 }
 
-- (void)p_setHeaderTitle:(NSString *)title
-{
+- (void)p_setHeaderTitle:(NSString *)title {
 	NSMutableAttributedString *as = [[[headerTitleField attributedStringValue] mutableCopy] autorelease];
 	[as replaceCharactersInRange:NSMakeRange(0, [as length]) withString:title];
 	[headerTitleField setAttributedStringValue:as];
 }
 
-- (BOOL)p_validateOrder
-{
+- (BOOL)p_validateOrder {
 	BOOL success = YES;
 
 	NSColor *good = [NSColor controlTextColor];

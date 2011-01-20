@@ -9,8 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface PFBackgroundView : NSView
-{
+@interface PFBackgroundView : NSView {
 	NSImage *image;
 	NSGradient *gradient;
 	NSColor *backgroundColor;

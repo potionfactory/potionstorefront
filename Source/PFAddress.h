@@ -9,8 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface PFAddress : NSObject <NSCopying>
-{
+@interface PFAddress : NSObject <NSCopying> {
 	NSString *firstName;
 	NSString *lastName;
 	NSString *company;
