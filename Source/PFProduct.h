@@ -12,7 +12,7 @@
 
 @class PFOrder;
 
-@interface PFProduct : NSObject //<NSCopying> {
+@interface PFProduct : NSObject {
 	NSNumber *identifierNumber;
 	NSString *currencyCode;
 	NSNumber *price;

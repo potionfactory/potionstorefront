@@ -17,20 +17,6 @@
 @synthesize currencyCode;
 @synthesize checked;
 
-//- (id)copyWithZone:(NSZone *)zone
-//{
-//	PFProduct *copy = [[PFProduct alloc] init];
-//	[copy setIdentifierNumber:identifierNumber];
-//	[copy setPrice:price];
-//	[copy setName:name];
-//	[copy setByline:byline];
-//	[copy setIconImage:iconImage];
-//	[copy setLicenseKey:licenseKey];
-//	[copy setQuantity:quantity];
-//	[copy
-//	return copy;
-//}
-
 - (id)init {
 	[self setQuantity:[NSNumber numberWithInteger:1]];
 	return self;
