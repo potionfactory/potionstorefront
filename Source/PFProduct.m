@@ -10,7 +10,6 @@
 #import "PotionStorefront.h"
 
 #import "NSInvocationAdditions.h"
-#import <JSON/JSON.h>
 
 @implementation PFProduct
 

@@ -10,7 +10,7 @@
 #import "PFAddress.h"
 #import "PotionStorefront.h"
 
-#import <JSON/JSON.h>
+#import <JSONKit/JSONKit.h>
 
 #import "NSInvocationAdditions.h"
 
@@ -20,6 +20,14 @@
 @synthesize currencyCode;
 
 - (id)init {
+	// Load JSONKit if necessary
+	if (NSClassFromString(@"JSONDecoder") == nil &&
+		![[NSDictionary dictionary] respondsToSelector:@selector(JSONString)]) {
+		NSString *frameworkPath = [[[NSBundle bundleForClass:[self class]] bundlePath]
+								   stringByAppendingPathComponent:@"Versions/A/Frameworks/JSONKit.framework"];
+		[[NSBundle bundleWithPath:frameworkPath] load];
+	}
+
 	billingAddress = [[PFAddress alloc] init];
 	[billingAddress fillUsingAddressBook];
 
@@ -109,7 +117,7 @@ static NSError *ErrorWithObject(id object) {
 }
 
 static NSError *ErrorWithJSONResponse(NSString *string) {
-	NSArray *array = [string JSONValue];
+	NSArray *array = [string objectFromJSONString];
 	if ([array isKindOfClass:[NSArray class]] == NO) goto fail;
 	@try {
 		NSMutableArray *messages = [NSMutableArray array];
@@ -146,7 +154,7 @@ fail:
 		}
 		NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:[self submitURL]];
 		NSHTTPURLResponse *response = nil;
-		NSString *json = [[self dictionaryRepresentationForPotionStore] JSONRepresentation];
+		NSString *json = [[self dictionaryRepresentationForPotionStore] JSONString];
 
 		if (DEBUG_POTION_STORE_FRONT) {
 			NSLog(@"SENDING JSON: %@", json);
@@ -173,7 +181,7 @@ fail:
 		}
 
 		if (statusCode == 200) {
-			NSDictionary *responseOrder = [responseBody JSONValue];
+			NSDictionary *responseOrder = [responseBody objectFromJSONString];
 			if (DEBUG_POTION_STORE_FRONT) {
 				NSLog(@"RESPONSE ORDER: %@", responseOrder);
 			}

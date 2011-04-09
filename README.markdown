@@ -19,6 +19,8 @@ Features
 Usage:
 ------
 
+- After cloning from GitHub, make sure to run "git submodule init" and "git submodule update"
+  to fetch JSONKit.
 - Example product data file: http://www.potionfactory.com/files/thehitlist/store_products.plist
 - Look at AppDelegate.m to see example usage.
 - The delegate object needs to implement the following method to be notified

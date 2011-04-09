@@ -1,4 +1,5 @@
 .svn
 *.mode1v3
 *.pbxuser
+xcuserdata
 build

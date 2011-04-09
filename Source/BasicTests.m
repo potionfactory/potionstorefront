@@ -7,12 +7,12 @@
 //
 
 #import "BasicTests.h"
-
+#import "JSONKit.h"
 
 @implementation BasicTests
 
 - (void)testBasics {
-	STAssertTrue(NO, @"should fail");
+	STAssertTrue(NO, @"No tests yet");
 }
 
 @end

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		A10333550E32CD2200230ABD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333540E32CD2200230ABD /* AppDelegate.m */; };
 		A10333720E32D0CC00230ABD /* BasicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333710E32D0CC00230ABD /* BasicTests.m */; };
 		A10769A30F8D5B1900BA3DAE /* NSInvocationAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A10769A10F8D5B1900BA3DAE /* NSInvocationAdditions.h */; };
@@ -38,14 +37,25 @@
 		A154F1460E3C1B70002973AE /* PFAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F1440E3C1B70002973AE /* PFAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A154F1470E3C1B70002973AE /* PFAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F1450E3C1B70002973AE /* PFAddress.m */; };
 		A154F1690E3C1D6D002973AE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A154F1680E3C1D6D002973AE /* AddressBook.framework */; };
-		A157E8840F942E6000FD0CD7 /* JSON.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A157E8690F942DE800FD0CD7 /* JSON.framework */; };
 		A15EC4FD0F9592AD0074DCFC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A15EC4FC0F9592AD0074DCFC /* LICENSE */; };
 		A16B90340E3D787500B1C248 /* PFCollectionRow.h in Headers */ = {isa = PBXBuildFile; fileRef = A16B90320E3D787500B1C248 /* PFCollectionRow.h */; };
 		A16B90350E3D787500B1C248 /* PFCollectionRow.m in Sources */ = {isa = PBXBuildFile; fileRef = A16B90330E3D787500B1C248 /* PFCollectionRow.m */; };
 		A1A11E7D0E3EE5D700F0C6E4 /* PFLockImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = A1A11E7B0E3EE5D700F0C6E4 /* PFLockImageView.h */; };
 		A1A11E7E0E3EE5D700F0C6E4 /* PFLockImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A11E7C0E3EE5D700F0C6E4 /* PFLockImageView.m */; };
 		A1A11EB80E3EF7E700F0C6E4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A11EB70E3EF7E700F0C6E4 /* QuartzCore.framework */; };
-		A1BC93A70F95970D00FE3993 /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A157E8690F942DE800FD0CD7 /* JSON.framework */; };
+		A1DA2ED2134FAE4C00A21642 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DA2ED0134FAE4C00A21642 /* JSONKit.h */; };
+		A1E56BB5134FE5C900C75FF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1E56BB3134FE5C900C75FF9 /* InfoPlist.strings */; };
+		A1E56BBD134FE5C900C75FF9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E56BAE134FE5C900C75FF9 /* Cocoa.framework */; };
+		A1E56BC0134FE5C900C75FF9 /* JSONKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E56BAD134FE5C900C75FF9 /* JSONKit.framework */; };
+		A1E56BC6134FE5C900C75FF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1E56BC4134FE5C900C75FF9 /* InfoPlist.strings */; };
+		A1E56BC9134FE5C900C75FF9 /* JSONKitTests.h in Resources */ = {isa = PBXBuildFile; fileRef = A1E56BC8134FE5C900C75FF9 /* JSONKitTests.h */; };
+		A1E56BCB134FE5C900C75FF9 /* JSONKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E56BCA134FE5C900C75FF9 /* JSONKitTests.m */; };
+		A1E56BD2134FE5F400C75FF9 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DA2ED1134FAE4C00A21642 /* JSONKit.m */; };
+		A1E56BD3134FE5F700C75FF9 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DA2ED1134FAE4C00A21642 /* JSONKit.m */; };
+		A1E56BD4134FE6CC00C75FF9 /* JSONKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A1E56BAD134FE5C900C75FF9 /* JSONKit.framework */; };
+		A1E56BDF13501B0700C75FF9 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DA2ED0134FAE4C00A21642 /* JSONKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1E56BE0135020AC00C75FF9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E56BAE134FE5C900C75FF9 /* Cocoa.framework */; };
+		A1E56BE4135021F800C75FF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E56BE3135021F800C75FF9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +72,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = A154EF740E3BE81F002973AE;
 			remoteInfo = PotionStorefront;
+		};
+		A1E56BBE134FE5C900C75FF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1E56BAC134FE5C900C75FF9;
+			remoteInfo = JSONKit;
+		};
+		A1E56BE11350218700C75FF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1E56BAC134FE5C900C75FF9;
+			remoteInfo = JSONKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -83,7 +107,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A157E8840F942E6000FD0CD7 /* JSON.framework in Copy Frameworks */,
+				A1E56BD4134FE6CC00C75FF9 /* JSONKit.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,12 +116,8 @@
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* PotionStorefront_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotionStorefront_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TestApp-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +153,6 @@
 		A154F1440E3C1B70002973AE /* PFAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAddress.h; sourceTree = "<group>"; };
 		A154F1450E3C1B70002973AE /* PFAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAddress.m; sourceTree = "<group>"; };
 		A154F1680E3C1D6D002973AE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = /System/Library/Frameworks/AddressBook.framework; sourceTree = "<absolute>"; };
-		A157E8690F942DE800FD0CD7 /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = Frameworks/JSON.framework; sourceTree = "<group>"; };
 		A15EC4F90F958A440074DCFC /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		A15EC4FC0F9592AD0074DCFC /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A16B90320E3D787500B1C248 /* PFCollectionRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCollectionRow.h; sourceTree = "<group>"; };
@@ -141,6 +160,20 @@
 		A1A11E7B0E3EE5D700F0C6E4 /* PFLockImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFLockImageView.h; sourceTree = "<group>"; };
 		A1A11E7C0E3EE5D700F0C6E4 /* PFLockImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFLockImageView.m; sourceTree = "<group>"; };
 		A1A11EB70E3EF7E700F0C6E4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		A1DA2ED0134FAE4C00A21642 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = Externals/JSONKit/JSONKit.h; sourceTree = SOURCE_ROOT; };
+		A1DA2ED1134FAE4C00A21642 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = Externals/JSONKit/JSONKit.m; sourceTree = SOURCE_ROOT; };
+		A1E56BAD134FE5C900C75FF9 /* JSONKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1E56BAE134FE5C900C75FF9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A1E56BB2134FE5C900C75FF9 /* JSONKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JSONKit-Info.plist"; sourceTree = "<group>"; };
+		A1E56BB4134FE5C900C75FF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A1E56BB6134FE5C900C75FF9 /* JSONKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSONKit-Prefix.pch"; sourceTree = "<group>"; };
+		A1E56BBC134FE5C900C75FF9 /* JSONKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1E56BC3134FE5C900C75FF9 /* JSONKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JSONKitTests-Info.plist"; sourceTree = "<group>"; };
+		A1E56BC5134FE5C900C75FF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A1E56BC7134FE5C900C75FF9 /* JSONKitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSONKitTests-Prefix.pch"; sourceTree = "<group>"; };
+		A1E56BC8134FE5C900C75FF9 /* JSONKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONKitTests.h; sourceTree = "<group>"; };
+		A1E56BCA134FE5C900C75FF9 /* JSONKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONKitTests.m; sourceTree = "<group>"; };
+		A1E56BE3135021F800C75FF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +181,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				A154EFD50E3BED02002973AE /* PotionStorefront.framework in Frameworks */,
+				A1E56BE0135020AC00C75FF9 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +199,23 @@
 			files = (
 				A154F1690E3C1D6D002973AE /* AddressBook.framework in Frameworks */,
 				A1A11EB80E3EF7E700F0C6E4 /* QuartzCore.framework in Frameworks */,
-				A1BC93A70F95970D00FE3993 /* JSON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1E56BA9134FE5C900C75FF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1E56BE4135021F800C75FF9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1E56BB8134FE5C900C75FF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1E56BBD134FE5C900C75FF9 /* Cocoa.framework in Frameworks */,
+				A1E56BC0134FE5C900C75FF9 /* JSONKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,33 +232,14 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
-		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A157E8690F942DE800FD0CD7 /* JSON.framework */,
-				A1A11EB70E3EF7E700F0C6E4 /* QuartzCore.framework */,
-				A154F1680E3C1D6D002973AE /* AddressBook.framework */,
-				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-			);
-			name = "Linked Frameworks";
-			sourceTree = "<group>";
-		};
-		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
-				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
-				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				A154EF750E3BE81F002973AE /* PotionStorefront.framework */,
 				8D1107320486CEB800E47090 /* TestApp.app */,
 				A10333670E32CEF800230ABD /* Tests.octest */,
+				A1E56BAD134FE5C900C75FF9 /* JSONKit.framework */,
+				A1E56BBC134FE5C900C75FF9 /* JSONKitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,7 +249,8 @@
 			children = (
 				A15EC4F90F958A440074DCFC /* README.markdown */,
 				A15EC4FC0F9592AD0074DCFC /* LICENSE */,
-				A154EF800E3BE916002973AE /* Framework Code */,
+				A154EF800E3BE916002973AE /* PotionStorefront Framework */,
+				A1E56BB0134FE5C900C75FF9 /* JSONKit Framework */,
 				080E96DDFE201D6D7F000001 /* Test App */,
 				A103336F0E32D0A100230ABD /* Tests */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -258,8 +289,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
-				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+				A1E56BAE134FE5C900C75FF9 /* Cocoa.framework */,
+				A1A11EB70E3EF7E700F0C6E4 /* QuartzCore.framework */,
+				A154F1680E3C1D6D002973AE /* AddressBook.framework */,
+				A1E56BE3135021F800C75FF9 /* Foundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -267,6 +300,7 @@
 		A103336F0E32D0A100230ABD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				A1E56BC1134FE5C900C75FF9 /* JSONKitTests */,
 				A10333700E32D0CC00230ABD /* BasicTests.h */,
 				A10333710E32D0CC00230ABD /* BasicTests.m */,
 			);
@@ -274,7 +308,7 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
-		A154EF800E3BE916002973AE /* Framework Code */ = {
+		A154EF800E3BE916002973AE /* PotionStorefront Framework */ = {
 			isa = PBXGroup;
 			children = (
 				A154EF820E3BE93C002973AE /* PotionStorefront.h */,
@@ -284,7 +318,7 @@
 				A154F32C0E3C5DC1002973AE /* Model */,
 				A154F32D0E3C5DC9002973AE /* View */,
 			);
-			name = "Framework Code";
+			name = "PotionStorefront Framework";
 			path = Source;
 			sourceTree = "<group>";
 		};
@@ -338,6 +372,48 @@
 			name = Additions;
 			sourceTree = "<group>";
 		};
+		A1E56BB0134FE5C900C75FF9 /* JSONKit Framework */ = {
+			isa = PBXGroup;
+			children = (
+				A1DA2ED0134FAE4C00A21642 /* JSONKit.h */,
+				A1DA2ED1134FAE4C00A21642 /* JSONKit.m */,
+				A1E56BB1134FE5C900C75FF9 /* Supporting Files */,
+			);
+			name = "JSONKit Framework";
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
+		A1E56BB1134FE5C900C75FF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1E56BB2134FE5C900C75FF9 /* JSONKit-Info.plist */,
+				A1E56BB3134FE5C900C75FF9 /* InfoPlist.strings */,
+				A1E56BB6134FE5C900C75FF9 /* JSONKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A1E56BC1134FE5C900C75FF9 /* JSONKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				A1E56BC8134FE5C900C75FF9 /* JSONKitTests.h */,
+				A1E56BCA134FE5C900C75FF9 /* JSONKitTests.m */,
+				A1E56BC2134FE5C900C75FF9 /* Supporting Files */,
+			);
+			name = JSONKitTests;
+			path = ../JSONKitTests;
+			sourceTree = "<group>";
+		};
+		A1E56BC2134FE5C900C75FF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1E56BC3134FE5C900C75FF9 /* JSONKitTests-Info.plist */,
+				A1E56BC4134FE5C900C75FF9 /* InfoPlist.strings */,
+				A1E56BC7134FE5C900C75FF9 /* JSONKitTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -355,6 +431,15 @@
 				A16B90340E3D787500B1C248 /* PFCollectionRow.h in Headers */,
 				A1A11E7D0E3EE5D700F0C6E4 /* PFLockImageView.h in Headers */,
 				A10769A30F8D5B1900BA3DAE /* NSInvocationAdditions.h in Headers */,
+				A1DA2ED2134FAE4C00A21642 /* JSONKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1E56BAA134FE5C900C75FF9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1E56BDF13501B0700C75FF9 /* JSONKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,11 +498,49 @@
 			buildRules = (
 			);
 			dependencies = (
+				A1E56BE21350218700C75FF9 /* PBXTargetDependency */,
 			);
 			name = PotionStorefront;
 			productName = PotionStorefront;
 			productReference = A154EF750E3BE81F002973AE /* PotionStorefront.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		A1E56BAC134FE5C900C75FF9 /* JSONKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1E56BD0134FE5C900C75FF9 /* Build configuration list for PBXNativeTarget "JSONKit" */;
+			buildPhases = (
+				A1E56BA8134FE5C900C75FF9 /* Sources */,
+				A1E56BA9134FE5C900C75FF9 /* Frameworks */,
+				A1E56BAA134FE5C900C75FF9 /* Headers */,
+				A1E56BAB134FE5C900C75FF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSONKit;
+			productName = JSONKit;
+			productReference = A1E56BAD134FE5C900C75FF9 /* JSONKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A1E56BBB134FE5C900C75FF9 /* JSONKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1E56BD1134FE5C900C75FF9 /* Build configuration list for PBXNativeTarget "JSONKitTests" */;
+			buildPhases = (
+				A1E56BB7134FE5C900C75FF9 /* Sources */,
+				A1E56BB8134FE5C900C75FF9 /* Frameworks */,
+				A1E56BB9134FE5C900C75FF9 /* Resources */,
+				A1E56BBA134FE5C900C75FF9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1E56BBF134FE5C900C75FF9 /* PBXTargetDependency */,
+			);
+			name = JSONKitTests;
+			productName = JSONKitTests;
+			productReference = A1E56BBC134FE5C900C75FF9 /* JSONKitTests.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -433,14 +556,17 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* PotionStorefront */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				A154EF740E3BE81F002973AE /* PotionStorefront */,
+				A1E56BAC134FE5C900C75FF9 /* JSONKit */,
 				8D1107260486CEB800E47090 /* TestApp */,
 				A10333660E32CEF800230ABD /* Tests */,
+				A1E56BBB134FE5C900C75FF9 /* JSONKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -476,10 +602,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1E56BAB134FE5C900C75FF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1E56BB5134FE5C900C75FF9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1E56BB9134FE5C900C75FF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1E56BC6134FE5C900C75FF9 /* InfoPlist.strings in Resources */,
+				A1E56BC9134FE5C900C75FF9 /* JSONKitTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		A10333650E32CEF800230ABD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		A1E56BBA134FE5C900C75FF9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -529,6 +685,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1E56BA8134FE5C900C75FF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1E56BD2134FE5F400C75FF9 /* JSONKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1E56BB7134FE5C900C75FF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1E56BCB134FE5C900C75FF9 /* JSONKitTests.m in Sources */,
+				A1E56BD3134FE5F700C75FF9 /* JSONKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -541,6 +714,16 @@
 			isa = PBXTargetDependency;
 			target = A154EF740E3BE81F002973AE /* PotionStorefront */;
 			targetProxy = A154EF7A0E3BE8C8002973AE /* PBXContainerItemProxy */;
+		};
+		A1E56BBF134FE5C900C75FF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1E56BAC134FE5C900C75FF9 /* JSONKit */;
+			targetProxy = A1E56BBE134FE5C900C75FF9 /* PBXContainerItemProxy */;
+		};
+		A1E56BE21350218700C75FF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1E56BAC134FE5C900C75FF9 /* JSONKit */;
+			targetProxy = A1E56BE11350218700C75FF9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -575,6 +758,22 @@
 				A154F11D0E3C1678002973AE /* English */,
 			);
 			name = countries.plist;
+			sourceTree = "<group>";
+		};
+		A1E56BB3134FE5C900C75FF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1E56BB4134FE5C900C75FF9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A1E56BC4134FE5C900C75FF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1E56BC5134FE5C900C75FF9 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -641,26 +840,21 @@
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Frameworks\"",
-				);
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/PotionStorefront_Prefix.pch;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks/";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = PotionStorefront;
 				SKIP_INSTALL = YES;
 			};
@@ -674,27 +868,117 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Frameworks\"",
-				);
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/PotionStorefront_Prefix.pch;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks/";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = PotionStorefront;
 				SKIP_INSTALL = YES;
-				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		A1E56BCC134FE5C900C75FF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSONKit/JSONKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "JSONKit/JSONKit-Info.plist";
+				INSTALL_PATH = "@rpath";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		A1E56BCD134FE5C900C75FF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSONKit/JSONKit-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "JSONKit/JSONKit-Info.plist";
+				INSTALL_PATH = "@rpath";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		A1E56BCE134FE5C900C75FF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSONKitTests/JSONKitTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "JSONKitTests/JSONKitTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		A1E56BCF134FE5C900C75FF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSONKitTests/JSONKitTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "JSONKitTests/JSONKitTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -735,15 +1019,12 @@
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_MISSING_PARENTHESES = YES;
 				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks/ @loader_path/Frameworks/";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -753,14 +1034,11 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_MISSING_PARENTHESES = YES;
 				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks/ @loader_path/Frameworks/";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				PREBINDING = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -782,6 +1060,24 @@
 			buildConfigurations = (
 				A154EF770E3BE81F002973AE /* Debug */,
 				A154EF780E3BE81F002973AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1E56BD0134FE5C900C75FF9 /* Build configuration list for PBXNativeTarget "JSONKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1E56BCC134FE5C900C75FF9 /* Debug */,
+				A1E56BCD134FE5C900C75FF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1E56BD1134FE5C900C75FF9 /* Build configuration list for PBXNativeTarget "JSONKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1E56BCE134FE5C900C75FF9 /* Debug */,
+				A1E56BCF134FE5C900C75FF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
