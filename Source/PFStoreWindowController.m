@@ -463,13 +463,7 @@ static void PFUnbindEverythingInViewTree(NSView *view) {
 
 	for (NSUInteger i = 0; i < [addresses count]; i++) {
 		NSString *label = [addresses labelAtIndex:i];
-
-		if ([label isEqualToString:kABHomeLabel])
-			label = NSLocalizedString(@"home", nil);
-		else if ([label isEqualToString:kABWorkLabel])
-			label = NSLocalizedString(@"work", nil);
-
-		[addressPopUpButton addItemWithTitle:label];
+		[addressPopUpButton addItemWithTitle:ABLocalizedPropertyOrLabel(label)];
 	}
 
 	[addressPopUpButton setTarget:self];
