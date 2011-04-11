@@ -8,17 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-
-@interface PFSecurityExplanationTextField : NSTextField {
-	NSRect initialFrame;
-}
-- (void)orderIn;
-- (void)orderOut;
-@end
-
-
 @interface PFLockImageView : NSImageView {
-	IBOutlet PFSecurityExplanationTextField *securityExplanationField;
+	IBOutlet NSTextField *securityExplanationField;
 	NSTimer *orderOutTimer;
 }
 @end

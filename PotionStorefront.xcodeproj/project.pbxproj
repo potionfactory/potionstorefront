@@ -30,7 +30,6 @@
 		A154F0A10E3C02AB002973AE /* PFLineBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F09F0E3C02AB002973AE /* PFLineBox.m */; };
 		A154F0C10E3C0F1F002973AE /* PFBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F0BF0E3C0F1F002973AE /* PFBackgroundView.h */; };
 		A154F0C20E3C0F1F002973AE /* PFBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F0C00E3C0F1F002973AE /* PFBackgroundView.m */; };
-		A154F0FE0E3C1227002973AE /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = A154F0FC0E3C1227002973AE /* lock.png */; };
 		A154F11E0E3C1678002973AE /* countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A154F11C0E3C1678002973AE /* countries.plist */; };
 		A154F12D0E3C19E1002973AE /* PFOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = A154F12B0E3C19E1002973AE /* PFOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A154F12E0E3C19E1002973AE /* PFOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = A154F12C0E3C19E1002973AE /* PFOrder.m */; };
@@ -44,6 +43,7 @@
 		A1A11E7E0E3EE5D700F0C6E4 /* PFLockImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A11E7C0E3EE5D700F0C6E4 /* PFLockImageView.m */; };
 		A1A11EB80E3EF7E700F0C6E4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A11EB70E3EF7E700F0C6E4 /* QuartzCore.framework */; };
 		A1DA2ED2134FAE4C00A21642 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DA2ED0134FAE4C00A21642 /* JSONKit.h */; };
+		A1E2AD83135357230062EB4A /* lock.tiff in Resources */ = {isa = PBXBuildFile; fileRef = A1E2AD82135357230062EB4A /* lock.tiff */; };
 		A1E56BB5134FE5C900C75FF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1E56BB3134FE5C900C75FF9 /* InfoPlist.strings */; };
 		A1E56BBD134FE5C900C75FF9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E56BAE134FE5C900C75FF9 /* Cocoa.framework */; };
 		A1E56BC0134FE5C900C75FF9 /* JSONKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E56BAD134FE5C900C75FF9 /* JSONKit.framework */; };
@@ -146,7 +146,6 @@
 		A154F09F0E3C02AB002973AE /* PFLineBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFLineBox.m; sourceTree = "<group>"; };
 		A154F0BF0E3C0F1F002973AE /* PFBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFBackgroundView.h; sourceTree = "<group>"; };
 		A154F0C00E3C0F1F002973AE /* PFBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFBackgroundView.m; sourceTree = "<group>"; };
-		A154F0FC0E3C1227002973AE /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
 		A154F11D0E3C1678002973AE /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = English; path = English.lproj/countries.plist; sourceTree = "<group>"; };
 		A154F12B0E3C19E1002973AE /* PFOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFOrder.h; sourceTree = "<group>"; };
 		A154F12C0E3C19E1002973AE /* PFOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFOrder.m; sourceTree = "<group>"; };
@@ -162,6 +161,7 @@
 		A1A11EB70E3EF7E700F0C6E4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		A1DA2ED0134FAE4C00A21642 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = Externals/JSONKit/JSONKit.h; sourceTree = SOURCE_ROOT; };
 		A1DA2ED1134FAE4C00A21642 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = Externals/JSONKit/JSONKit.m; sourceTree = SOURCE_ROOT; };
+		A1E2AD82135357230062EB4A /* lock.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = lock.tiff; sourceTree = "<group>"; };
 		A1E56BAD134FE5C900C75FF9 /* JSONKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E56BAE134FE5C900C75FF9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A1E56BB2134FE5C900C75FF9 /* JSONKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JSONKit-Info.plist"; sourceTree = "<group>"; };
@@ -325,7 +325,7 @@
 		A154F0880E3BFFB3002973AE /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				A154F0FC0E3C1227002973AE /* lock.png */,
+				A1E2AD82135357230062EB4A /* lock.tiff */,
 				A154F08A0E3BFFBB002973AE /* master.png */,
 				A154F08B0E3BFFBB002973AE /* amex.png */,
 				A154F08C0E3BFFBB002973AE /* discover.png */,
@@ -597,8 +597,8 @@
 				A154F08F0E3BFFBB002973AE /* amex.png in Resources */,
 				A154F0900E3BFFBB002973AE /* discover.png in Resources */,
 				A154F0910E3BFFBB002973AE /* visa.png in Resources */,
-				A154F0FE0E3C1227002973AE /* lock.png in Resources */,
 				A154F11E0E3C1678002973AE /* countries.plist in Resources */,
+				A1E2AD83135357230062EB4A /* lock.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

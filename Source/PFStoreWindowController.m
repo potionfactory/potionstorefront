@@ -121,7 +121,7 @@ static void PFUnbindEverythingInViewTree(NSView *view) {
 	validateFieldsImmediately = NO;
 
 	[self p_setHeaderTitle:NSLocalizedString(@"Purchase", nil)];
-	[headerStepsField setStringValue:NSLocalizedString(@"Step 1 / 2", nil)];
+	[headerStepsField setStringValue:NSLocalizedString(@"Step 1 of 2", nil)];
 
 	[primaryButton setTitle:NSLocalizedString(@"Next", nil)];
 	[primaryButton setAction:@selector(showBillingInformation:)];
@@ -162,7 +162,7 @@ static void PFUnbindEverythingInViewTree(NSView *view) {
 	}
 
 	[self p_setHeaderTitle:NSLocalizedString(@"Billing Information", nil)];
-	[headerStepsField setStringValue:NSLocalizedString(@"Step 2 / 2", nil)];
+	[headerStepsField setStringValue:NSLocalizedString(@"Step 2 of 2", nil)];
 
 	[primaryButton setTitle:NSLocalizedString(@"Purchase", nil)];
 	[primaryButton setAction:@selector(purchase:)];
