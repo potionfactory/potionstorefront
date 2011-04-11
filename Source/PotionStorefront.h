@@ -29,8 +29,11 @@
 
 - (void)setWebStoreSupportsPayPal:(BOOL)flag1 googleCheckout:(BOOL)flag2;
 
+- (void)setCancelButtonQuits:(BOOL)flag;
+
 - (void)beginSheetModalForWindow:(NSWindow *)window;
 
+- (void)runModal;
 @end
 
 

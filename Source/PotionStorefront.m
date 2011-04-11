@@ -48,6 +48,10 @@ static PotionStorefront *gStorefront = nil;
 	[[PFStoreWindowController sharedController] setWebStoreSupportsPayPal:flag1 googleCheckout:flag2];
 }
 
+- (void)setCancelButtonQuits:(BOOL)flag {
+	[[PFStoreWindowController sharedController] setCancelButtonQuits:flag];
+}
+
 - (void)beginSheetModalForWindow:(NSWindow *)window {
 	NSWindow *storeWindow = [[PFStoreWindowController sharedController] window];
 
@@ -68,6 +72,29 @@ static PotionStorefront *gStorefront = nil;
 
 	// Clear the first responder. By default it's getting set to the web store button, and that looks quite fugly
 	[storeWindow makeFirstResponder:nil];
+}
+
+- (void)runModal {
+	NSWindow *storeWindow = [[PFStoreWindowController sharedController] window];
+
+	// Don't open twice
+	if ([storeWindow isVisible]) {
+		[storeWindow makeKeyAndOrderFront:self];
+		return;
+	}
+
+	// Call the showPricing: action here because by now the delegate should be set
+	[[PFStoreWindowController sharedController] showPricing:nil];
+
+	// Center and open the window first
+	[storeWindow center];
+	[storeWindow makeKeyAndOrderFront:self];
+
+	// Clear the first responder. By default it's getting set to the web store button, and that looks quite fugly
+	[storeWindow makeFirstResponder:nil];
+
+	// Begin modal session
+	[NSApp runModalForWindow:storeWindow];
 }
 
 @end

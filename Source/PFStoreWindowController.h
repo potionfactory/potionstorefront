@@ -79,6 +79,7 @@ enum {
 	NSURL *productsPlistURL;
 	PFOrder *order;
 	NSInteger paymentMethod;
+	BOOL cancelButtonQuits;
 	BOOL validateFieldsImmediately;
 }
 
@@ -94,6 +95,7 @@ enum {
 - (NSURL *)productsPlistURL;
 - (void)setProductsPlistURL:(NSURL *)value;
 - (void)setWebStoreSupportsPayPal:(BOOL)flag1 googleCheckout:(BOOL)flag2;
+- (void)setCancelButtonQuits:(BOOL)flag;
 
 // Actions
 - (IBAction)showPricing:(id)sender;
@@ -103,7 +105,7 @@ enum {
 - (IBAction)selectPaymentMethod:(id)sender;
 - (IBAction)updatedOrderLineItems:(id)sender;
 - (IBAction)purchase:(id)sender;
-- (IBAction)close:(id)sender;
+- (IBAction)cancel:(id)sender;
 - (IBAction)selectAddress:(id)sender;
 - (IBAction)selectCountry:(id)sender;
 - (IBAction)openWebStore:(id)sender;

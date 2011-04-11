@@ -95,13 +95,20 @@ static void PFUnbindEverythingInViewTree(NSView *view) {
 	}
 }
 
-- (void)close {
+- (void)windowWillClose:(NSNotification *)notification {
+	if ([NSApp modalWindow] == [self window]) {
+		[NSApp stopModal];
+	}
+	else {
+		[NSApp endSheet:[self window] returnCode:NSCancelButton];
+	}
+
 	// Unbind everything so that circular retain cycles are released and everything can get deallocated
 	PFUnbindEverythingInViewTree([[self window] contentView]);
 	PFUnbindEverythingInViewTree(pricingView);
 	PFUnbindEverythingInViewTree(billingView);
 	PFUnbindEverythingInViewTree(thankYouView);
-	[super close];
+
 	[self autorelease];
 	gController = nil;
 }
@@ -119,8 +126,8 @@ static void PFUnbindEverythingInViewTree(NSView *view) {
 	[primaryButton setTitle:NSLocalizedString(@"Next", nil)];
 	[primaryButton setAction:@selector(showBillingInformation:)];
 
-	[secondaryButton setTitle:NSLocalizedString(@"Cancel", nil)];
-	[secondaryButton setAction:@selector(close:)];
+	[secondaryButton setTitle:cancelButtonQuits ? NSLocalizedString(@"Quit", nil) : NSLocalizedString(@"Cancel", nil)];
+	[secondaryButton setAction:@selector(cancel:)];
 
 	if ([[self delegate] respondsToSelector:@selector(showRegistrationWindow:)]) {
 		[tertiaryButton setTitle:NSLocalizedString(@"Unlock with License Key...", nil)];
@@ -141,7 +148,7 @@ static void PFUnbindEverythingInViewTree(NSView *view) {
 	if (paymentMethod != PFCreditCardPaymentMethod) {
 		// TODO: build URL to preset quantity at the web store
 		[self openWebStore:nil];
-		[self close:nil];
+		[self close];
 		return;
 	}
 
@@ -204,7 +211,7 @@ static void PFUnbindEverythingInViewTree(NSView *view) {
 	[headerStepsField setStringValue:@""];
 
 	[primaryButton setTitle:NSLocalizedString(@"Done", nil)];
-	[primaryButton setAction:@selector(close:)];
+	[primaryButton setAction:@selector(close)];
 
 	[secondaryButton setHidden:YES];
 
@@ -247,9 +254,11 @@ static void PFUnbindEverythingInViewTree(NSView *view) {
 	}
 }
 
-- (IBAction)close:(id)sender {
-	[self close];
-	[NSApp endSheet:[self window] returnCode:NSCancelButton];
+- (IBAction)cancel:(id)sender {
+	if (cancelButtonQuits)
+		exit(0);
+	else
+		[self close];
 }
 
 - (IBAction)selectAddress:(id)sender {
@@ -276,7 +285,7 @@ static void PFUnbindEverythingInViewTree(NSView *view) {
 
 - (IBAction)showRegistrationWindow:(id)sender {
 	if ([[self delegate] respondsToSelector:@selector(showRegistrationWindow:)]) {
-		[self close:nil];
+		[self close];
 		[[self delegate] showRegistrationWindow:sender];
 	}
 }
@@ -446,6 +455,10 @@ static void PFUnbindEverythingInViewTree(NSView *view) {
 
 	// Size the button
 	[paypalOrGoogleCheckoutButton sizeToFit];
+}
+
+- (void)setCancelButtonQuits:(BOOL)flag {
+	cancelButtonQuits = flag;
 }
 
 #pragma mark -
