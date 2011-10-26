@@ -806,7 +806,7 @@
 			};
 			name = Debug;
 		};
-		A103336A0E32CEF800230ABD /* Release */ = {
+		A103336A0E32CEF800230ABD /* Release-Universal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -831,7 +831,7 @@
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
-			name = Release;
+			name = "Release-Universal";
 		};
 		A154EF770E3BE81F002973AE /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -860,7 +860,52 @@
 			};
 			name = Debug;
 		};
-		A154EF780E3BE81F002973AE /* Release */ = {
+		A154EF780E3BE81F002973AE /* Release-Universal */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					ppc,
+					"$(ARCHS_STANDARD_32_64_BIT)",
+				);
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Source/PotionStorefront_Prefix.pch;
+				INFOPLIST_FILE = Resources/Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks/";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = PotionStorefront;
+				SKIP_INSTALL = YES;
+			};
+			name = "Release-Universal";
+		};
+		A17E05D31457B818007A17B3 /* Release-Intel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = "Release-Intel";
+		};
+		A17E05D41457B818007A17B3 /* Release-Intel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -884,7 +929,93 @@
 				PRODUCT_NAME = PotionStorefront;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = "Release-Intel";
+		};
+		A17E05D51457B818007A17B3 /* Release-Intel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSONKit/JSONKit-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "JSONKit/JSONKit-Info.plist";
+				INSTALL_PATH = "@rpath";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = "Release-Intel";
+		};
+		A17E05D61457B818007A17B3 /* Release-Intel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Source/PotionStorefront_Prefix.pch;
+				INFOPLIST_FILE = "Resources/TestApp-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = TestApp;
+			};
+			name = "Release-Intel";
+		};
+		A17E05D71457B818007A17B3 /* Release-Intel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Source/PotionStorefront_Prefix.pch;
+				INFOPLIST_FILE = "Resources/Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Tests;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = "Release-Intel";
+		};
+		A17E05D81457B818007A17B3 /* Release-Intel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSONKitTests/JSONKitTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "JSONKitTests/JSONKitTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = "Release-Intel";
 		};
 		A1E56BCC134FE5C900C75FF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -911,7 +1042,7 @@
 			};
 			name = Debug;
 		};
-		A1E56BCD134FE5C900C75FF9 /* Release */ = {
+		A1E56BCD134FE5C900C75FF9 /* Release-Universal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -927,11 +1058,11 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "JSONKit/JSONKit-Info.plist";
 				INSTALL_PATH = "@rpath";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
-			name = Release;
+			name = "Release-Universal";
 		};
 		A1E56BCE134FE5C900C75FF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -959,7 +1090,7 @@
 			};
 			name = Debug;
 		};
-		A1E56BCF134FE5C900C75FF9 /* Release */ = {
+		A1E56BCF134FE5C900C75FF9 /* Release-Universal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -980,7 +1111,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
-			name = Release;
+			name = "Release-Universal";
 		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -999,7 +1130,7 @@
 			};
 			name = Debug;
 		};
-		C01FCF4C08A954540054247B /* Release */ = {
+		C01FCF4C08A954540054247B /* Release-Universal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1011,7 +1142,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = TestApp;
 			};
-			name = Release;
+			name = "Release-Universal";
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1023,13 +1154,13 @@
 				GCC_WARN_MISSING_PARENTHESES = YES;
 				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
-		C01FCF5008A954540054247B /* Release */ = {
+		C01FCF5008A954540054247B /* Release-Universal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -1038,10 +1169,10 @@
 				GCC_WARN_MISSING_PARENTHESES = YES;
 				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 			};
-			name = Release;
+			name = "Release-Universal";
 		};
 /* End XCBuildConfiguration section */
 
@@ -1050,55 +1181,61 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A10333690E32CEF800230ABD /* Debug */,
-				A103336A0E32CEF800230ABD /* Release */,
+				A103336A0E32CEF800230ABD /* Release-Universal */,
+				A17E05D71457B818007A17B3 /* Release-Intel */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release-Universal";
 		};
 		A154EF790E3BE81F002973AE /* Build configuration list for PBXNativeTarget "PotionStorefront" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A154EF770E3BE81F002973AE /* Debug */,
-				A154EF780E3BE81F002973AE /* Release */,
+				A154EF780E3BE81F002973AE /* Release-Universal */,
+				A17E05D41457B818007A17B3 /* Release-Intel */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release-Universal";
 		};
 		A1E56BD0134FE5C900C75FF9 /* Build configuration list for PBXNativeTarget "JSONKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1E56BCC134FE5C900C75FF9 /* Debug */,
-				A1E56BCD134FE5C900C75FF9 /* Release */,
+				A1E56BCD134FE5C900C75FF9 /* Release-Universal */,
+				A17E05D51457B818007A17B3 /* Release-Intel */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release-Universal";
 		};
 		A1E56BD1134FE5C900C75FF9 /* Build configuration list for PBXNativeTarget "JSONKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1E56BCE134FE5C900C75FF9 /* Debug */,
-				A1E56BCF134FE5C900C75FF9 /* Release */,
+				A1E56BCF134FE5C900C75FF9 /* Release-Universal */,
+				A17E05D81457B818007A17B3 /* Release-Intel */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release-Universal";
 		};
 		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "TestApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
-				C01FCF4C08A954540054247B /* Release */,
+				C01FCF4C08A954540054247B /* Release-Universal */,
+				A17E05D61457B818007A17B3 /* Release-Intel */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release-Universal";
 		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PotionStorefront" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
-				C01FCF5008A954540054247B /* Release */,
+				C01FCF5008A954540054247B /* Release-Universal */,
+				A17E05D31457B818007A17B3 /* Release-Intel */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release-Universal";
 		};
 /* End XCConfigurationList section */
 	};
